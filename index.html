@@ -1,459 +1,146 @@
 <!DOCTYPE html>
-
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" style="background:#020510;background-color:#020510;">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
   <title>Fadi Abu Sa'ada — AI & Automation</title>
-  <meta name="color-scheme" content="dark only" />
-  <meta name="supported-color-schemes" content="dark" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { color-scheme: dark only; }
-
-```
-:root {
-  --bg: #020510;
-  --surface: rgba(0, 240, 255, 0.04);
-  --border: rgba(0, 240, 255, 0.15);
-  --cyan: #00f0ff;
-  --purple: #7b2fff;
-  --text: #e8f4ff;
-  --muted: rgba(232, 244, 255, 0.45);
-  --glow: 0 0 20px rgba(0, 240, 255, 0.35), 0 0 60px rgba(0, 240, 255, 0.1);
-}
-
-html, body {
-  height: 100%;
-  background: #020510 !important;
-  background-color: #020510 !important;
-  color: var(--text);
-  font-family: 'Tajawal', sans-serif;
-  overflow-x: hidden;
-}
-
-/* ── Starfield ── */
-canvas#stars {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* ── Grid overlay ── */
-.grid-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  background-image:
-    linear-gradient(rgba(0,240,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,240,255,0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-  pointer-events: none;
-}
-
-/* ── Radial glow bg ── */
-.bg-glow {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  background: radial-gradient(ellipse 70% 55% at 50% 0%, rgba(123,47,255,0.18) 0%, transparent 70%),
-              radial-gradient(ellipse 50% 40% at 80% 80%, rgba(0,240,255,0.1) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-/* ── Main layout ── */
-main {
-  position: relative;
-  z-index: 1;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 60px 20px 80px;
-}
-
-/* ── Header ── */
-.header {
-  text-align: center;
-  margin-bottom: 48px;
-  animation: fadeDown 0.9s ease both;
-}
-
-.avatar-ring {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin: 0 auto 20px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.avatar-ring::before {
-  content: '';
-  position: absolute;
-  inset: -3px;
-  border-radius: 50%;
-  background: conic-gradient(var(--cyan), var(--purple), var(--cyan));
-  animation: spin 4s linear infinite;
-  z-index: -1;
-}
-.avatar-ring::after {
-  content: '';
-  position: absolute;
-  inset: -8px;
-  border-radius: 50%;
-  background: conic-gradient(transparent 60%, rgba(0,240,255,0.2));
-  animation: spin 6s linear infinite reverse;
-  z-index: -2;
-}
-.avatar-inner {
-  width: 94px;
-  height: 94px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #0a0e2a 0%, #12063a 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Orbitron', monospace;
-  font-size: 28px;
-  font-weight: 900;
-  color: var(--cyan);
-  text-shadow: var(--glow);
-  border: 2px solid rgba(0,240,255,0.2);
-}
-
-.name {
-  font-family: 'Orbitron', monospace;
-  font-size: clamp(22px, 5vw, 32px);
-  font-weight: 900;
-  letter-spacing: 2px;
-  background: linear-gradient(90deg, var(--cyan), #a78bfa, var(--cyan));
-  background-size: 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmer 4s linear infinite;
-}
-
-.tagline {
-  font-family: 'Tajawal', sans-serif;
-  font-size: 14px;
-  color: var(--muted);
-  margin-top: 8px;
-  letter-spacing: 1px;
-}
-
-/* ── Separator ── */
-.sep {
-  width: 180px;
-  height: 1px;
-  margin: 22px auto 0;
-  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-  opacity: 0.5;
-}
-
-/* ── Links grid ── */
-.links {
-  width: 100%;
-  max-width: 480px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.link-card {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px 22px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  text-decoration: none;
-  color: var(--text);
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-  animation: fadeUp 0.6s ease both;
-}
-
-.link-card:nth-child(1) { animation-delay: 0.1s; }
-.link-card:nth-child(2) { animation-delay: 0.18s; }
-.link-card:nth-child(3) { animation-delay: 0.26s; }
-.link-card:nth-child(4) { animation-delay: 0.34s; }
-.link-card:nth-child(5) { animation-delay: 0.42s; }
-.link-card:nth-child(6) { animation-delay: 0.50s; }
-.link-card:nth-child(7) { animation-delay: 0.58s; }
-.link-card:nth-child(8) { animation-delay: 0.66s; }
-
-.link-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, transparent 0%, rgba(0,240,255,0.06) 50%, transparent 100%);
-  transform: translateX(-100%);
-  transition: transform 0.5s ease;
-}
-
-.link-card:hover::before { transform: translateX(100%); }
-.link-card:hover {
-  transform: translateY(-3px) scale(1.01);
-  border-color: var(--cyan);
-  box-shadow: 0 0 24px rgba(0,240,255,0.2), inset 0 0 20px rgba(0,240,255,0.03);
-}
-
-.link-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-size: 20px;
-  position: relative;
-}
-
-.link-text {
-  flex: 1;
-}
-.link-title {
-  font-family: 'Orbitron', monospace;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--cyan);
-}
-.link-sub {
-  font-size: 12px;
-  color: var(--muted);
-  margin-top: 2px;
-  font-family: 'Tajawal', sans-serif;
-}
-
-.link-arrow {
-  font-size: 16px;
-  color: var(--muted);
-  transition: color 0.2s, transform 0.2s;
-}
-.link-card:hover .link-arrow {
-  color: var(--cyan);
-  transform: translateX(-4px);
-}
-
-/* icon bg colors */
-.ic-github  { background: rgba(255,255,255,0.07); }
-.ic-linkedin { background: rgba(0,119,181,0.2); }
-.ic-upwork  { background: rgba(20,163,74,0.2); }
-.ic-khamsat { background: rgba(255,165,0,0.15); }
-.ic-mostaql { background: rgba(0,170,220,0.15); }
-.ic-wa      { background: rgba(37,211,102,0.15); }
-.ic-email   { background: rgba(255,80,80,0.15); }
-.ic-web     { background: rgba(123,47,255,0.2); }
-
-/* ── Footer ── */
-footer {
-  position: relative;
-  z-index: 1;
-  margin-top: 52px;
-  text-align: center;
-  font-size: 11px;
-  color: rgba(232,244,255,0.2);
-  letter-spacing: 2px;
-  font-family: 'Orbitron', monospace;
-}
-
-/* ── Animations ── */
-@keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-@keyframes shimmer {
-  0%   { background-position: 0% center; }
-  100% { background-position: 200% center; }
-}
-
-/* ── Scan line ── */
-.scanline {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-  opacity: 0.4;
-  animation: scan 6s linear infinite;
-  z-index: 10;
-  pointer-events: none;
-}
-@keyframes scan {
-  0%   { top: 0; }
-  100% { top: 100vh; }
-}
-```
-
+    :root {
+      color-scheme: dark;
+      --cyan: #00f0ff;
+      --purple: #7b2fff;
+      --text: #e8f4ff;
+    }
+    html { background: #020510 !important; }
+    body {
+      min-height: 100vh;
+      background: #020510 !important;
+      color: #e8f4ff !important;
+      font-family: 'Tajawal', sans-serif;
+      overflow-x: hidden;
+    }
+    canvas#stars { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+    .grid-overlay {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image: linear-gradient(rgba(0,240,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,240,255,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .bg-glow {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background: radial-gradient(ellipse 70% 55% at 50% 0%, rgba(123,47,255,0.2) 0%, transparent 70%), radial-gradient(ellipse 50% 40% at 80% 80%, rgba(0,240,255,0.12) 0%, transparent 60%);
+    }
+    main { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 60px 20px 80px; }
+    .header { text-align: center; margin-bottom: 48px; animation: fadeDown 0.9s ease both; }
+    .avatar-ring { width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 20px; position: relative; display: flex; align-items: center; justify-content: center; }
+    .avatar-ring::before { content: ''; position: absolute; inset: -3px; border-radius: 50%; background: conic-gradient(#00f0ff, #7b2fff, #00f0ff); animation: spin 4s linear infinite; z-index: -1; }
+    .avatar-inner { width: 94px; height: 94px; border-radius: 50%; background: linear-gradient(135deg, #0a0e2a 0%, #12063a 100%); display: flex; align-items: center; justify-content: center; font-family: 'Orbitron', monospace; font-size: 28px; font-weight: 900; color: #00f0ff; border: 2px solid rgba(0,240,255,0.3); }
+    .name { font-family: 'Orbitron', monospace; font-size: clamp(20px, 5vw, 30px); font-weight: 900; letter-spacing: 2px; background: linear-gradient(90deg, #00f0ff, #a78bfa, #00f0ff); background-size: 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: shimmer 4s linear infinite; }
+    .tagline { font-size: 13px; color: rgba(232,244,255,0.5); margin-top: 8px; letter-spacing: 1px; }
+    .sep { width: 180px; height: 1px; margin: 20px auto 0; background: linear-gradient(90deg, transparent, #00f0ff, transparent); opacity: 0.5; }
+    .links { width: 100%; max-width: 460px; display: flex; flex-direction: column; gap: 12px; }
+    .link-card { display: flex; align-items: center; gap: 14px; padding: 15px 20px; background: rgba(0,240,255,0.05); border: 1px solid rgba(0,240,255,0.18); border-radius: 12px; text-decoration: none; color: #e8f4ff; position: relative; overflow: hidden; transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s; animation: fadeUp 0.6s ease both; }
+    .link-card:nth-child(1){animation-delay:.10s} .link-card:nth-child(2){animation-delay:.18s} .link-card:nth-child(3){animation-delay:.26s} .link-card:nth-child(4){animation-delay:.34s} .link-card:nth-child(5){animation-delay:.42s} .link-card:nth-child(6){animation-delay:.50s} .link-card:nth-child(7){animation-delay:.58s} .link-card:nth-child(8){animation-delay:.66s}
+    .link-card:hover { transform: translateY(-3px); border-color: #00f0ff; box-shadow: 0 0 20px rgba(0,240,255,0.2); }
+    .link-icon { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 20px; }
+    .link-text { flex: 1; }
+    .link-title { font-family: 'Orbitron', monospace; font-size: 12px; font-weight: 700; letter-spacing: 1px; color: #00f0ff; }
+    .link-sub { font-size: 12px; color: rgba(232,244,255,0.45); margin-top: 2px; }
+    .link-arrow { font-size: 16px; color: rgba(232,244,255,0.3); }
+    .ic-web     { background: rgba(123,47,255,0.2); }
+    .ic-github  { background: rgba(255,255,255,0.07); }
+    .ic-linkedin{ background: rgba(0,119,181,0.2); }
+    .ic-upwork  { background: rgba(20,163,74,0.2); }
+    .ic-khamsat { background: rgba(255,165,0,0.15); }
+    .ic-mostaql { background: rgba(0,170,220,0.15); }
+    .ic-wa      { background: rgba(37,211,102,0.15); }
+    .ic-email   { background: rgba(255,80,80,0.15); }
+    footer { position: relative; z-index: 1; margin-top: 48px; text-align: center; font-size: 10px; color: rgba(232,244,255,0.2); letter-spacing: 2px; font-family: 'Orbitron', monospace; }
+    .scanline { position: fixed; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, #00f0ff, transparent); opacity: 0.35; animation: scan 6s linear infinite; z-index: 10; pointer-events: none; }
+    @keyframes fadeDown { from{opacity:0;transform:translateY(-20px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes fadeUp   { from{opacity:0;transform:translateY(16px)}  to{opacity:1;transform:translateY(0)} }
+    @keyframes spin     { to{transform:rotate(360deg)} }
+    @keyframes shimmer  { 0%{background-position:0% center} 100%{background-position:200% center} }
+    @keyframes scan     { 0%{top:-2px} 100%{top:100vh} }
   </style>
 </head>
 <body>
-
 <div class="scanline"></div>
 <canvas id="stars"></canvas>
 <div class="grid-overlay"></div>
 <div class="bg-glow"></div>
-
 <main>
   <header class="header">
-    <div class="avatar-ring">
-      <div class="avatar-inner">FA</div>
-    </div>
+    <div class="avatar-ring"><div class="avatar-inner">FA</div></div>
     <h1 class="name">FADI ABU SA'ADA</h1>
     <p class="tagline">AI Engineer · Automation · Freelancer</p>
     <div class="sep"></div>
   </header>
-
   <div class="links">
 
-```
-<a class="link-card" href="https://eng2fadi.github.io" target="_blank" rel="noopener">
-  <div class="link-icon ic-web">🌐</div>
-  <div class="link-text">
-    <div class="link-title">PORTFOLIO</div>
-    <div class="link-sub">eng2fadi.github.io</div>
-  </div>
-  <span class="link-arrow">←</span>
-</a>
+    <a class="link-card" href="https://eng2fadi.github.io" target="_blank" rel="noopener">
+      <div class="link-icon ic-web">🌐</div>
+      <div class="link-text"><div class="link-title">PORTFOLIO</div><div class="link-sub">eng2fadi.github.io</div></div>
+      <span class="link-arrow">←</span>
+    </a>
 
-<a class="link-card" href="https://github.com/Eng2Fadi" target="_blank" rel="noopener">
-  <div class="link-icon ic-github">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-  </div>
-  <div class="link-text">
-    <div class="link-title">GITHUB</div>
-    <div class="link-sub">Eng2Fadi</div>
-  </div>
-  <span class="link-arrow">←</span>
-</a>
+    <a class="link-card" href="https://github.com/Eng2Fadi" target="_blank" rel="noopener">
+      <div class="link-icon ic-github"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></div>
+      <div class="link-text"><div class="link-title">GITHUB</div><div class="link-sub">Eng2Fadi</div></div>
+      <span class="link-arrow">←</span>
+    </a>
 
-<a class="link-card" href="https://linkedin.com/in/eng-fadi-abusaada" target="_blank" rel="noopener">
-  <div class="link-icon ic-linkedin">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-  </div>
-  <div class="link-text">
-    <div class="link-title">LINKEDIN</div>
-    <div class="link-sub">eng-fadi-abusaada</div>
-  </div>
-  <span class="link-arrow">←</span>
-</a>
+    <a class="link-card" href="https://linkedin.com/in/eng-fadi-abusaada" target="_blank" rel="noopener">
+      <div class="link-icon ic-linkedin"><svg width="22" height="22" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+      <div class="link-text"><div class="link-title">LINKEDIN</div><div class="link-sub">eng-fadi-abusaada</div></div>
+      <span class="link-arrow">←</span>
+    </a>
 
-<a class="link-card" href="https://www.upwork.com/freelancers/~01f088b792f305e12a?mp_source=share" target="_blank" rel="noopener">
-  <div class="link-icon ic-upwork">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="#14A800"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H8.557v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.545-2.546V3.492H1.462v7.112c0 2.513 2.051 4.564 4.548 4.564 2.497 0 4.547-2.052 4.547-4.564v-1.194c.528 1.107 1.164 2.237 1.938 3.258l-1.636 7.697h2.05l1.189-5.607c1.054.679 2.222 1.079 3.464 1.079 3.372 0 6.11-2.738 6.11-6.11-.001-3.372-2.739-6.11-6.111-6.11z"/></svg>
-  </div>
-  <div class="link-text">
-    <div class="link-title">UPWORK</div>
-    <div class="link-sub">Hire me on Upwork</div>
-  </div>
-  <span class="link-arrow">←</span>
-</a>
+    <a class="link-card" href="https://www.upwork.com/freelancers/~01f088b792f305e12a?mp_source=share" target="_blank" rel="noopener">
+      <div class="link-icon ic-upwork"><svg width="22" height="22" viewBox="0 0 24 24" fill="#14A800"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H8.557v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.545-2.546V3.492H1.462v7.112c0 2.513 2.051 4.564 4.548 4.564 2.497 0 4.547-2.052 4.547-4.564v-1.194c.528 1.107 1.164 2.237 1.938 3.258l-1.636 7.697h2.05l1.189-5.607c1.054.679 2.222 1.079 3.464 1.079 3.372 0 6.11-2.738 6.11-6.11-.001-3.372-2.739-6.11-6.111-6.11z"/></svg></div>
+      <div class="link-text"><div class="link-title">UPWORK</div><div class="link-sub">Hire me on Upwork</div></div>
+      <span class="link-arrow">←</span>
+    </a>
 
-<a class="link-card" href="https://khamsat.com/user/fadisaada" target="_blank" rel="noopener">
-  <div class="link-icon ic-khamsat">🟠</div>
-  <div class="link-text">
-    <div class="link-title">KHAMSAT</div>
-    <div class="link-sub">خدماتي على خمسات</div>
-  </div>
-  <span class="link-arrow">←</span>
-</a>
+    <a class="link-card" href="https://khamsat.com/user/fadisaada" target="_blank" rel="noopener">
+      <div class="link-icon ic-khamsat">🟠</div>
+      <div class="link-text"><div class="link-title">KHAMSAT</div><div class="link-sub">خدماتي على خمسات</div></div>
+      <span class="link-arrow">←</span>
+    </a>
 
-<a class="link-card" href="https://mostaql.com/u/FadiSaada" target="_blank" rel="noopener">
-  <div class="link-icon ic-mostaql">🔵</div>
-  <div class="link-text">
-    <div class="link-title">MOSTAQL</div>
-    <div class="link-sub">ملفي على مستقل</div>
-  </div>
-  <span class="link-arrow">←</span>
-</a>
+    <a class="link-card" href="https://mostaql.com/u/FadiSaada" target="_blank" rel="noopener">
+      <div class="link-icon ic-mostaql">🔵</div>
+      <div class="link-text"><div class="link-title">MOSTAQL</div><div class="link-sub">ملفي على مستقل</div></div>
+      <span class="link-arrow">←</span>
+    </a>
 
-<a class="link-card" href="https://wa.me/972599930699" target="_blank" rel="noopener">
-  <div class="link-icon ic-wa">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </div>
-  <div class="link-text">
-    <div class="link-title">WHATSAPP</div>
-    <div class="link-sub">تواصل مباشر</div>
-  </div>
-  <span class="link-arrow">←</span>
-</a>
+    <a class="link-card" href="https://wa.me/972599930699" target="_blank" rel="noopener">
+      <div class="link-icon ic-wa"><svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+      <div class="link-text"><div class="link-title">WHATSAPP</div><div class="link-sub">تواصل مباشر</div></div>
+      <span class="link-arrow">←</span>
+    </a>
 
-<a class="link-card" href="mailto:Eng.Fadi990@gmail.com" target="_blank" rel="noopener">
-  <div class="link-icon ic-email">📧</div>
-  <div class="link-text">
-    <div class="link-title">EMAIL</div>
-    <div class="link-sub">Eng.Fadi990@gmail.com</div>
-  </div>
-  <span class="link-arrow">←</span>
-</a>
-```
+    <a class="link-card" href="mailto:Eng.Fadi990@gmail.com">
+      <div class="link-icon ic-email">📧</div>
+      <div class="link-text"><div class="link-title">EMAIL</div><div class="link-sub">Eng.Fadi990@gmail.com</div></div>
+      <span class="link-arrow">←</span>
+    </a>
 
   </div>
-
-  <footer>
-    <p>© 2025 FADI ABU SA'ADA · AI & AUTOMATION</p>
-  </footer>
+  <footer><p>© 2025 FADI ABU SA'ADA · AI & AUTOMATION</p></footer>
 </main>
-
 <script>
-  // Starfield
   const canvas = document.getElementById('stars');
   const ctx = canvas.getContext('2d');
   let stars = [];
-
-  function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-
-  function initStars() {
-    stars = [];
-    for (let i = 0; i < 160; i++) {
-      stars.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 1.2 + 0.2,
-        a: Math.random(),
-        speed: Math.random() * 0.3 + 0.05
-      });
-    }
-  }
-
-  function drawStars() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    stars.forEach(s => {
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(180, 230, 255, ${s.a})`;
-      ctx.fill();
-      s.a += s.speed * 0.01;
-      if (s.a > 1) s.speed = -Math.abs(s.speed);
-      if (s.a < 0.1) s.speed = Math.abs(s.speed);
-    });
-    requestAnimationFrame(drawStars);
-  }
-
-  resize();
-  initStars();
-  drawStars();
-  window.addEventListener('resize', () => { resize(); initStars(); });
+  function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  function initStars() { stars = []; for (let i = 0; i < 160; i++) { stars.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, r: Math.random()*1.2+0.2, a: Math.random(), speed: Math.random()*0.3+0.05 }); } }
+  function drawStars() { ctx.clearRect(0,0,canvas.width,canvas.height); stars.forEach(s => { ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2); ctx.fillStyle='rgba(180,230,255,'+s.a+')'; ctx.fill(); s.a+=s.speed*0.01; if(s.a>1)s.speed=-Math.abs(s.speed); if(s.a<0.1)s.speed=Math.abs(s.speed); }); requestAnimationFrame(drawStars); }
+  resize(); initStars(); drawStars();
+  window.addEventListener('resize', ()=>{ resize(); initStars(); });
 </script>
-
 </body>
 </html>
