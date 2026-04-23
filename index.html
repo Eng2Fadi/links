@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ar" style="background:#00040f;">
 <head>
 <meta charset="UTF-8"/>
@@ -13,11 +14,11 @@
 /* LIGHT MODE */
 /* ══ LIGHT MODE — Clean White Professional ══ */
 body.light{
-  --bg:#ffffff;
-  --text:#1a1a2e;
-  --muted:rgba(26,26,46,0.55);
-  --border:rgba(99,102,241,0.18);
-  --card:rgba(99,102,241,0.04);
+–bg:#ffffff;
+–text:#1a1a2e;
+–muted:rgba(26,26,46,0.55);
+–border:rgba(99,102,241,0.18);
+–card:rgba(99,102,241,0.04);
 }
 body.light{background:#f8f9ff!important;color:#1a1a2e!important}
 body.light html{background:#f8f9ff!important}
@@ -27,15 +28,15 @@ body.light .link-card,
 body.light .service-card,
 body.light .project-card,
 body.light .testi-card{
-  background:rgba(255,255,255,0.9)!important;
-  border-color:rgba(99,102,241,0.15)!important;
-  box-shadow:0 2px 12px rgba(99,102,241,0.08)!important;
+background:rgba(255,255,255,0.9)!important;
+border-color:rgba(99,102,241,0.15)!important;
+box-shadow:0 2px 12px rgba(99,102,241,0.08)!important;
 }
 body.light .link-card:hover,
 body.light .service-card:hover,
 body.light .project-card:hover{
-  border-color:rgba(99,102,241,0.4)!important;
-  box-shadow:0 6px 24px rgba(99,102,241,0.15)!important;
+border-color:rgba(99,102,241,0.4)!important;
+box-shadow:0 6px 24px rgba(99,102,241,0.15)!important;
 }
 body.light .chat-box{background:rgba(255,255,255,0.95)!important;border-color:rgba(99,102,241,0.2)!important}
 body.light .game-arena{background:rgba(240,242,255,0.8)!important;border-color:rgba(99,102,241,0.2)!important}
@@ -64,11 +65,11 @@ body.light .visitor-bar{color:rgba(26,26,46,0.5)!important}
 
 /* Name gradient */
 body.light .name{
-  background:linear-gradient(90deg,#4f46e5,#7c3aed,#4f46e5)!important;
-  background-size:200%!important;
-  -webkit-background-clip:text!important;
-  background-clip:text!important;
-  -webkit-text-fill-color:transparent!important;
+background:linear-gradient(90deg,#4f46e5,#7c3aed,#4f46e5)!important;
+background-size:200%!important;
+-webkit-background-clip:text!important;
+background-clip:text!important;
+-webkit-text-fill-color:transparent!important;
 }
 
 /* Buttons & badges */
@@ -110,7 +111,753 @@ body.light .footer-line{background:linear-gradient(90deg,transparent,rgba(99,102
 body.light .avatar-hex2{background:#f8f9ff!important}
 
 html{background:#00040f!important}
-< truncated lines 113-857 >
+body{background:#00040f!important;min-height:100vh;color:#e2eeff!important;font-family:‘Tajawal’,sans-serif;overflow-x:hidden;transition:background .4s,color .4s}
+
+/* NOTIFICATION BAR */
+#notifBar{position:fixed;top:0;left:0;right:0;z-index:300;background:linear-gradient(90deg,#7c3aed,#1877f2,#7c3aed);background-size:200%;animation:notifShimmer 4s linear infinite;padding:8px 16px;display:flex;align-items:center;justify-content:center;gap:10px;font-family:‘Tajawal’,sans-serif;font-size:12px;color:#fff;transition:transform .3s}
+#notifBar.hidden{transform:translateY(-100%)}
+.notif-text{text-align:center;letter-spacing:.3px}
+.notif-close{background:none;border:none;color:rgba(255,255,255,0.7);cursor:pointer;font-size:16px;line-height:1;padding:0 4px;flex-shrink:0;transition:color .2s}
+.notif-close:hover{color:#fff}
+@keyframes notifShimmer{0%{background-position:0% center}100%{background-position:200% center}}
+
+/* Cursor */
+.cursor{position:fixed;width:10px;height:10px;background:#00f5ff;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen}
+.cursor-ring{position:fixed;width:34px;height:34px;border:1.5px solid rgba(0,245,255,0.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .2s,height .2s,border-color .2s}
+.cursor-ring.big{width:48px;height:48px;border-color:#00f5ff}
+.trail{position:fixed;border-radius:50%;pointer-events:none;z-index:9997;transform:translate(-50%,-50%);animation:trailFade .6s ease forwards}
+@keyframes trailFade{0%{opacity:.6;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) scale(0)}}
+
+/* BG */
+#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+.grid-overlay{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(0,245,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,0.025) 1px,transparent 1px);background-size:80px 80px}
+.orb{position:fixed;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0}
+.orb1{width:700px;height:700px;background:radial-gradient(circle,rgba(139,92,246,0.12),transparent 70%);top:-250px;left:-250px;animation:orbF1 20s ease-in-out infinite}
+.orb2{width:600px;height:600px;background:radial-gradient(circle,rgba(0,245,255,0.08),transparent 70%);bottom:-150px;right:-150px;animation:orbF2 25s ease-in-out infinite}
+@keyframes orbF1{0%,100%{transform:translate(0,0)}50%{transform:translate(100px,70px)}}
+@keyframes orbF2{0%,100%{transform:translate(0,0)}50%{transform:translate(-70px,-100px)}}
+.scanline{position:fixed;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#00f5ff,transparent);opacity:.25;animation:scan 9s linear infinite;z-index:5;pointer-events:none}
+@keyframes scan{0%{top:-1px}100%{top:100vh}}
+
+/* Scroll progress */
+#scrollBar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,#00f5ff,#8b5cf6,#fbbf24);z-index:200;width:0%;pointer-events:none;transition:width .08s}
+
+/* Fixed buttons */
+.wa-float{position:fixed;bottom:24px;right:20px;z-index:200;width:54px;height:54px;background:linear-gradient(135deg,#25D366,#128C7E);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);animation:waPulse 3s ease infinite;text-decoration:none;transition:transform .2s}
+.wa-float:hover{transform:scale(1.12)}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4)}50%{box-shadow:0 4px 35px rgba(37,211,102,0.7)}}
+.wa-float svg{width:28px;height:28px}
+.top-btns{position:fixed;top:50px;right:16px;z-index:200;display:flex;gap:8px}
+.top-btn{background:rgba(0,10,30,0.8);border:1px solid rgba(0,245,255,0.3);color:#00f5ff;border-radius:20px;padding:6px 12px;font-family:‘JetBrains Mono’,monospace;font-size:10px;cursor:pointer;transition:all .2s;backdrop-filter:blur(10px);letter-spacing:.5px}
+.top-btn:hover{background:rgba(0,245,255,0.15);border-color:#00f5ff}
+
+/* Copy toast */
+.copy-toast{position:fixed;bottom:90px;right:20px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;padding:8px 16px;border-radius:10px;font-family:‘JetBrains Mono’,monospace;font-size:11px;z-index:300;opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none}
+.copy-toast.show{opacity:1;transform:translateY(0)}
+
+main{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;padding:110px 20px 120px}
+
+/* HERO */
+.hero{text-align:center;margin-bottom:52px;animation:fadeDown .9s ease both}
+.avatar-wrap{position:relative;width:120px;height:120px;margin:0 auto 24px}
+.avatar-hex{position:absolute;inset:-8px;background:conic-gradient(#00f5ff,#8b5cf6,#fbbf24,#00f5ff);border-radius:50%;animation:spin 7s linear infinite;opacity:.85}
+.avatar-hex2{position:absolute;inset:-3px;background:#00040f;border-radius:50%}
+body.light .avatar-hex2{background:#f0f4ff}
+.avatar-inner{position:relative;width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#060d2e,#0d0530);display:flex;align-items:center;justify-content:center;font-family:‘Orbitron’,monospace;font-size:30px;font-weight:900;color:#00f5ff;border:1px solid rgba(0,245,255,0.3);z-index:1;overflow:hidden;cursor:pointer;transition:transform .1s}
+.avatar-inner img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%}
+.status-dot{position:absolute;bottom:6px;right:6px;width:14px;height:14px;background:#10b981;border-radius:50%;border:2px solid #00040f;z-index:2}
+.status-dot::after{content:’’;position:absolute;inset:-3px;border-radius:50%;background:rgba(16,185,129,0.4);animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.7);opacity:0}}
+
+.name-row{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:4px;flex-wrap:wrap;overflow:visible;position:relative}
+.name{font-family:‘Orbitron’,monospace;font-size:clamp(20px,5vw,34px);font-weight:900;letter-spacing:3px;background:linear-gradient(90deg,#00f5ff,#a78bfa,#00f5ff);background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s linear infinite}
+
+/* Verified */
+.verified-wrap{position:relative;display:inline-flex;align-items:center;flex-shrink:0;cursor:default}
+.verified{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;flex-shrink:0;position:relative;animation:verifyGlow 3s ease infinite}
+.verified::before{content:’’;position:absolute;inset:0;background:linear-gradient(160deg,#1877f2,#0a5dc4);border-radius:50%;box-shadow:0 0 0 2px rgba(24,119,242,0.3),0 2px 8px rgba(24,119,242,0.5)}
+.verified svg{position:relative;z-index:1;width:16px;height:16px;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.3))}
+.verified-tooltip{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(4px);background:linear-gradient(135deg,rgba(10,20,50,0.98),rgba(5,10,30,0.98));border:1px solid rgba(24,119,242,0.6);color:#e2eeff;font-family:‘JetBrains Mono’,monospace;font-size:11px;padding:7px 14px;border-radius:10px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .25s,transform .25s;z-index:999;letter-spacing:.5px;box-shadow:0 4px 20px rgba(24,119,242,0.3)}
+.verified-tooltip::after{content:’’;position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:rgba(24,119,242,0.5)}
+.verified-wrap:hover .verified-tooltip{opacity:1;transform:translateX(-50%) translateY(0)}
+@keyframes verifyGlow{0%,100%{filter:drop-shadow(0 0 4px rgba(24,119,242,0.6))}50%{filter:drop-shadow(0 0 10px rgba(24,119,242,1))}}
+
+/* PRO badge */
+.pro-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;background:linear-gradient(135deg,#7c3aed,#a78bfa);border-radius:20px;font-family:‘Orbitron’,monospace;font-size:9px;font-weight:700;letter-spacing:2px;color:#fff;box-shadow:0 0 12px rgba(139,92,246,0.5),inset 0 1px 0 rgba(255,255,255,0.2);animation:proBadgeGlow 3s ease infinite;cursor:default;flex-shrink:0}
+.pro-badge::before{content:‘✦’;font-size:8px;opacity:.8}
+@keyframes proBadgeGlow{0%,100%{box-shadow:0 0 10px rgba(139,92,246,0.5)}50%{box-shadow:0 0 20px rgba(167,139,250,0.8),0 0 40px rgba(139,92,246,0.3)}}
+
+.title-line{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:8px;flex-wrap:wrap}
+.title-badge{font-family:‘JetBrains Mono’,monospace;font-size:10px;padding:3px 10px;border:1px solid;border-radius:20px;letter-spacing:1px}
+.tb-ai{color:#00f5ff;border-color:rgba(0,245,255,0.4);background:rgba(0,245,255,0.06)}
+.tb-auto{color:#a78bfa;border-color:rgba(167,139,250,0.4);background:rgba(167,139,250,0.06)}
+.tb-free{color:#10b981;border-color:rgba(16,185,129,0.4);background:rgba(16,185,129,0.06)}
+
+.avail-badge{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:5px 14px;border-radius:20px;font-size:11px;font-family:‘JetBrains Mono’,monospace;border:1px solid;cursor:pointer;transition:all .2s}
+.avail-badge.open{color:#10b981;border-color:rgba(16,185,129,0.4);background:rgba(16,185,129,0.08)}
+.avail-badge.busy{color:#ff4466;border-color:rgba(255,68,102,0.4);background:rgba(255,68,102,0.08)}
+.avail-dot{width:7px;height:7px;border-radius:50%;background:currentColor;animation:pulse 2s infinite}
+
+/* Typing tagline */
+.tagline{font-size:13px;color:var(–muted);margin-top:12px;max-width:340px;margin-left:auto;margin-right:auto;line-height:1.7;min-height:44px}
+.tagline-cursor{display:inline-block;width:2px;height:14px;background:#00f5ff;margin-left:2px;animation:blink .7s step-end infinite;vertical-align:middle}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* Visitor counter */
+.visitor-bar{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:10px;font-family:‘JetBrains Mono’,monospace;font-size:10px;color:var(–muted)}
+.visitor-dot{width:6px;height:6px;border-radius:50%;background:#10b981;animation:pulse 2s infinite;flex-shrink:0}
+
+.sep{width:200px;height:1px;margin:18px auto 0;background:linear-gradient(90deg,transparent,#00f5ff,transparent);opacity:.4}
+
+/* STATS */
+.stats-bar{display:flex;width:100%;max-width:460px;margin-bottom:36px;animation:fadeUp .6s ease .15s both;border-radius:14px;overflow:hidden;border:1px solid var(–border)}
+.stat{flex:1;padding:14px 8px;background:var(–card);text-align:center;transition:background .3s;cursor:default}
+.stat:hover{background:rgba(0,245,255,0.09)}
+.stat+.stat{border-left:1px solid var(–border)}
+.stat-n{font-family:‘Orbitron’,monospace;font-size:18px;font-weight:700;color:#00f5ff}
+.stat-l{font-size:9px;color:var(–muted);letter-spacing:1px;margin-top:3px}
+.section-title{font-family:‘Orbitron’,monospace;font-size:10px;letter-spacing:3px;color:var(–muted);margin-bottom:14px;text-align:center}
+
+/* LINKS */
+.links{width:100%;max-width:460px;display:flex;flex-direction:column;gap:10px;margin-bottom:48px}
+.link-card{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(–card);border:1px solid var(–border);border-radius:14px;text-decoration:none;color:#e2eeff!important;position:relative;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;animation:fadeUp .5s ease both}
+.link-card::after{content:’’;position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(0,245,255,0.06),transparent);transform:translateX(-100%);transition:transform .5s}
+.link-card:hover::after{transform:translateX(100%)}
+.link-card:hover{transform:translateY(-2px) scale(1.01);border-color:rgba(0,245,255,0.4);box-shadow:0 4px 30px rgba(0,245,255,0.15)}
+.link-card:nth-child(1){animation-delay:.04s}.link-card:nth-child(2){animation-delay:.08s}.link-card:nth-child(3){animation-delay:.12s}.link-card:nth-child(4){animation-delay:.16s}.link-card:nth-child(5){animation-delay:.20s}.link-card:nth-child(6){animation-delay:.24s}.link-card:nth-child(7){animation-delay:.28s}.link-card:nth-child(8){animation-delay:.32s}
+.link-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px}
+.link-text{flex:1}
+.link-title{font-family:‘Orbitron’,monospace;font-size:11px;font-weight:700;letter-spacing:1.5px;color:#00f5ff!important}
+.link-sub{font-size:11px;color:var(–muted);margin-top:2px;font-family:‘JetBrains Mono’,monospace}
+.link-right{display:flex;align-items:center;gap:8px}
+.copy-btn{width:24px;height:24px;border-radius:6px;background:rgba(0,245,255,0.08);border:1px solid rgba(0,245,255,0.2);color:var(–muted);font-size:11px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+.copy-btn:hover{background:rgba(0,245,255,0.2);color:#00f5ff;border-color:#00f5ff}
+.link-arrow{width:28px;height:28px;border-radius:50%;border:1px solid var(–border);display:flex;align-items:center;justify-content:center;color:var(–muted);font-size:12px;transition:all .2s;flex-shrink:0}
+.link-card:hover .link-arrow{border-color:#00f5ff;color:#00f5ff;transform:scale(1.1)}
+.ic-web{background:rgba(139,92,246,0.2)}.ic-github{background:rgba(255,255,255,0.07)}.ic-linkedin{background:rgba(0,119,181,0.2)}.ic-upwork{background:rgba(20,163,74,0.2)}.ic-khamsat{background:rgba(255,165,0,0.15)}.ic-mostaql{background:rgba(0,170,220,0.15)}.ic-wa{background:rgba(37,211,102,0.15)}.ic-email{background:rgba(255,80,80,0.15)}
+
+/* SERVICES */
+.services{width:100%;max-width:460px;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:48px}
+.service-card{background:var(–card);border:1px solid var(–border);border-radius:14px;padding:18px 14px;text-align:center;transition:transform .25s,border-color .25s,box-shadow .25s;animation:fadeUp .5s ease both;position:relative;overflow:hidden}
+.service-card::before{content:’’;position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(0,245,255,0.06),transparent 70%);pointer-events:none}
+.service-card:hover{transform:translateY(-3px);border-color:rgba(0,245,255,0.4);box-shadow:0 6px 30px rgba(0,245,255,0.12)}
+.service-card:nth-child(1){animation-delay:.05s}.service-card:nth-child(2){animation-delay:.10s}.service-card:nth-child(3){animation-delay:.15s}.service-card:nth-child(4){animation-delay:.20s}
+.service-icon{font-size:28px;margin-bottom:10px}
+.service-name{font-family:‘Orbitron’,monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#00f5ff;margin-bottom:6px}
+.service-desc{font-size:11px;color:var(–muted);line-height:1.5;margin-bottom:12px}
+.service-price{font-family:‘JetBrains Mono’,monospace;font-size:11px;color:#fbbf24;margin-bottom:12px}
+.service-btn{display:inline-block;padding:6px 14px;background:linear-gradient(135deg,rgba(0,245,255,0.15),rgba(139,92,246,0.15));border:1px solid rgba(0,245,255,0.3);border-radius:20px;font-size:10px;color:#00f5ff;text-decoration:none;font-family:‘JetBrains Mono’,monospace;transition:all .2s;cursor:pointer}
+.service-btn:hover{background:linear-gradient(135deg,rgba(0,245,255,0.3),rgba(139,92,246,0.3));box-shadow:0 0 15px rgba(0,245,255,0.2)}
+
+/* PROJECTS */
+.projects{width:100%;max-width:460px;display:flex;flex-direction:column;gap:10px;margin-bottom:48px}
+.project-card{background:var(–card);border:1px solid var(–border);border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;transition:transform .25s,border-color .25s;animation:fadeUp .5s ease both}
+.project-card:hover{transform:translateY(-2px);border-color:rgba(0,245,255,0.4);box-shadow:0 4px 25px rgba(0,245,255,0.12)}
+.project-card:nth-child(1){animation-delay:.05s}.project-card:nth-child(2){animation-delay:.10s}.project-card:nth-child(3){animation-delay:.15s}
+.project-emoji{font-size:28px;flex-shrink:0}
+.project-info{flex:1}
+.project-name{font-family:‘Orbitron’,monospace;font-size:11px;font-weight:700;color:#00f5ff;letter-spacing:1px}
+.project-desc{font-size:11px;color:var(–muted);margin-top:3px;line-height:1.4}
+.project-tags{display:flex;gap:5px;margin-top:6px;flex-wrap:wrap}
+.ptag{font-size:9px;padding:2px 7px;border-radius:10px;border:1px solid;font-family:‘JetBrains Mono’,monospace}
+.ptag-cyan{color:#00f5ff;border-color:rgba(0,245,255,0.3);background:rgba(0,245,255,0.05)}
+.ptag-purple{color:#a78bfa;border-color:rgba(167,139,250,0.3);background:rgba(167,139,250,0.05)}
+.ptag-green{color:#10b981;border-color:rgba(16,185,129,0.3);background:rgba(16,185,129,0.05)}
+
+/* TESTIMONIALS */
+.testimonials{width:100%;max-width:460px;display:flex;flex-direction:column;gap:10px;margin-bottom:48px}
+.testi-card{background:var(–card);border:1px solid var(–border);border-radius:14px;padding:16px 18px;animation:fadeUp .5s ease both;position:relative}
+.testi-card::before{content:’\201C’;position:absolute;top:10px;right:16px;font-size:40px;color:rgba(0,245,255,0.1);font-family:serif;line-height:1}
+.testi-card:nth-child(1){animation-delay:.05s}.testi-card:nth-child(2){animation-delay:.10s}.testi-card:nth-child(3){animation-delay:.15s}
+.testi-text{font-size:12px;color:var(–text);line-height:1.6;margin-bottom:10px}
+.testi-footer{display:flex;align-items:center;gap:8px}
+.testi-avatar{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#00f5ff,#8b5cf6);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.testi-name{font-family:‘JetBrains Mono’,monospace;font-size:10px;color:#00f5ff}
+.testi-role{font-size:10px;color:var(–muted)}
+.testi-stars{margin-left:auto;color:#fbbf24;font-size:11px}
+
+/* SKILLS */
+.skills-section{width:100%;max-width:460px;margin-bottom:48px;animation:fadeUp .6s ease .3s both}
+.skill-item{margin-bottom:14px}
+.skill-header{display:flex;justify-content:space-between;margin-bottom:6px;font-family:‘JetBrains Mono’,monospace;font-size:11px}
+.skill-name{color:var(–text)}.skill-pct{color:#00f5ff}
+.skill-bar{height:4px;background:rgba(0,245,255,0.08);border-radius:4px;overflow:hidden}
+.skill-fill{height:100%;border-radius:4px;transform:scaleX(0);transform-origin:left;transition:transform 1.4s cubic-bezier(.22,.61,.36,1)}
+.skill-fill.animated{transform:scaleX(1)}
+.fill-cyan{background:linear-gradient(90deg,#00f5ff,#8b5cf6)}
+.fill-purple{background:linear-gradient(90deg,#8b5cf6,#a78bfa)}
+.fill-green{background:linear-gradient(90deg,#10b981,#00f5ff)}
+.fill-gold{background:linear-gradient(90deg,#fbbf24,#f59e0b)}
+
+/* CHAT */
+.chat-section{width:100%;max-width:460px;margin-bottom:48px;animation:fadeUp .6s ease .4s both}
+.chat-box{background:rgba(0,4,15,0.85);border:1px solid var(–border);border-radius:16px;overflow:hidden;backdrop-filter:blur(20px)}
+.chat-header{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(–border);background:rgba(0,245,255,0.03)}
+.chat-avatar-bot{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#00f5ff,#8b5cf6);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.chat-bot-name{font-family:‘Orbitron’,monospace;font-size:11px;font-weight:700;color:#00f5ff}
+.chat-bot-status{font-size:10px;color:#10b981;font-family:‘JetBrains Mono’,monospace;margin-top:1px}
+.chat-messages{height:200px;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}
+.chat-messages::-webkit-scrollbar{width:3px}
+.chat-messages::-webkit-scrollbar-thumb{background:rgba(0,245,255,0.3);border-radius:3px}
+.msg{max-width:85%;padding:9px 13px;border-radius:12px;font-size:13px;line-height:1.55;animation:msgIn .3s ease;white-space:pre-line}
+.msg.bot{background:rgba(0,245,255,0.07);border:1px solid rgba(0,245,255,0.15);color:#e2eeff;border-radius:4px 12px 12px 12px;align-self:flex-start}
+.msg.user{background:linear-gradient(135deg,rgba(139,92,246,0.3),rgba(0,245,255,0.1));border:1px solid rgba(139,92,246,0.3);color:#e2eeff;border-radius:12px 4px 12px 12px;align-self:flex-end}
+.msg.typing{background:rgba(0,245,255,0.05);border:1px solid rgba(0,245,255,0.1);align-self:flex-start;border-radius:4px 12px 12px 12px}
+.typing-dots{display:flex;gap:4px;padding:2px 4px}
+.typing-dots span{width:6px;height:6px;background:#00f5ff;border-radius:50%;animation:dot .9s infinite}
+.typing-dots span:nth-child(2){animation-delay:.2s}.typing-dots span:nth-child(3){animation-delay:.4s}
+@keyframes dot{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(-5px);opacity:1}}
+@keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.chat-quick{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px;border-top:1px solid var(–border)}
+.quick-btn{background:rgba(0,245,255,0.06);border:1px solid rgba(0,245,255,0.2);color:#00f5ff;border-radius:20px;padding:5px 12px;font-size:11px;cursor:pointer;font-family:‘Tajawal’,sans-serif;transition:all .2s}
+.quick-btn:hover{background:rgba(0,245,255,0.15);border-color:#00f5ff}
+.chat-input-row{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(–border)}
+.chat-input{flex:1;background:rgba(0,245,255,0.05);border:1px solid var(–border);border-radius:10px;padding:9px 14px;color:#e2eeff;font-family:‘Tajawal’,sans-serif;font-size:13px;outline:none;transition:border-color .2s}
+.chat-input:focus{border-color:rgba(0,245,255,0.4)}
+.chat-input::placeholder{color:var(–muted)}
+.chat-send{width:40px;height:40px;background:linear-gradient(135deg,#00f5ff,#8b5cf6);border:none;border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#000;font-size:16px;flex-shrink:0;transition:transform .2s,box-shadow .2s}
+.chat-send:hover{transform:scale(1.07);box-shadow:0 0 15px rgba(0,245,255,0.4)}
+
+/* GAME */
+.game-section{width:100%;max-width:460px;animation:fadeUp .6s ease .5s both}
+.game-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.game-title{font-family:‘Orbitron’,monospace;font-size:12px;font-weight:700;color:#00f5ff;letter-spacing:2px}
+.game-subtitle{font-size:11px;color:var(–muted);margin-top:2px}
+.game-scores{display:flex;gap:16px}
+.gscore-label{font-size:9px;color:var(–muted);letter-spacing:1px;font-family:‘JetBrains Mono’,monospace}
+.gscore-val{font-family:‘Orbitron’,monospace;font-size:18px;font-weight:700;color:#00f5ff}
+.gscore-val.best-val{color:#a78bfa}
+.game-arena{position:relative;width:100%;height:180px;background:rgba(0,4,15,0.6);border:1px solid var(–border);border-radius:16px;overflow:hidden;cursor:crosshair}
+.game-arena::before{content:’’;position:absolute;inset:0;background:radial-gradient(ellipse at 50% 110%,rgba(139,92,246,0.15),transparent 60%);pointer-events:none}
+#gameCanvas{display:block;width:100%;height:100%}
+.game-legend{display:flex;gap:12px;margin-top:10px;justify-content:center;flex-wrap:wrap}
+.legend-item{display:flex;align-items:center;gap:5px;font-family:‘JetBrains Mono’,monospace;font-size:10px;color:var(–muted)}
+.legend-dot{width:8px;height:8px;border-radius:50%}
+.score-pop{position:fixed;font-family:‘Orbitron’,monospace;font-size:16px;font-weight:900;pointer-events:none;z-index:999;animation:popUp .8s ease forwards}
+@keyframes popUp{0%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-55px) scale(1.3)}}
+
+/* EASTER EGG */
+.easter-overlay{position:fixed;inset:0;z-index:500;background:rgba(0,4,15,0.96);display:none;align-items:center;justify-content:center;flex-direction:column;gap:16px;text-align:center;padding:20px}
+.easter-overlay.show{display:flex}
+.easter-msg{font-family:‘Orbitron’,monospace;font-size:22px;font-weight:900;background:linear-gradient(90deg,#00f5ff,#a78bfa,#fbbf24,#00f5ff);background-size:300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 2s linear infinite}
+.easter-sub{font-size:13px;color:var(–muted);max-width:300px;line-height:1.6}
+.easter-close{margin-top:8px;padding:8px 24px;background:linear-gradient(135deg,#00f5ff,#8b5cf6);border:none;border-radius:20px;color:#000;font-family:‘Orbitron’,monospace;font-size:11px;cursor:pointer;font-weight:700}
+
+footer{position:relative;z-index:1;margin-top:60px;text-align:center;padding-bottom:20px}
+.footer-line{width:200px;height:1px;background:linear-gradient(90deg,transparent,var(–border),transparent);margin:0 auto 16px}
+.footer-text{font-family:‘JetBrains Mono’,monospace;font-size:10px;color:rgba(226,238,255,0.2);letter-spacing:2px}
+
+/* LANG */
+body.en-mode{direction:ltr}
+body.en-mode .hero{text-align:center}
+
+@keyframes fadeDown{from{opacity:0;transform:translateY(-24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes shimmer{0%{background-position:0% center}100%{background-position:200% center}}
+
+/* ── FREE CONSULTATION BUTTON ── */
+.consult-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:460px;margin-bottom:48px;padding:16px 24px;background:linear-gradient(135deg,#10b981,#059669);border:none;border-radius:16px;color:#fff;font-family:‘Orbitron’,monospace;font-size:13px;font-weight:700;letter-spacing:1px;cursor:pointer;text-decoration:none;position:relative;overflow:hidden;animation:fadeUp .6s ease both;box-shadow:0 4px 24px rgba(16,185,129,0.35)}
+.consult-btn::before{content:’’;position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);transform:translateX(-100%);transition:transform .5s}
+.consult-btn:hover::before{transform:translateX(100%)}
+.consult-btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(16,185,129,0.5);color:#fff}
+.consult-icon{font-size:20px;animation:pulse 2s ease infinite}
+.consult-sub{font-family:‘JetBrains Mono’,monospace;font-size:10px;opacity:.8;letter-spacing:.5px;margin-top:2px}
+body.light .consult-btn{box-shadow:0 4px 24px rgba(5,150,105,0.25)}
+
+/* ── LIVE CLOCK & LAST PROJECT ── */
+.live-info{width:100%;max-width:460px;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:48px;animation:fadeUp .6s ease both}
+.live-card{background:var(–card);border:1px solid var(–border);border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:12px}
+body.light .live-card{background:rgba(255,255,255,0.9)!important;border-color:rgba(99,102,241,0.15)!important;box-shadow:0 2px 12px rgba(99,102,241,0.08)!important}
+.live-icon{font-size:22px;flex-shrink:0}
+.live-label{font-family:‘JetBrains Mono’,monospace;font-size:9px;color:var(–muted);letter-spacing:1px;margin-bottom:3px}
+.live-value{font-family:‘Orbitron’,monospace;font-size:13px;font-weight:700;color:#00f5ff}
+body.light .live-value{color:#4f46e5!important}
+.live-sub{font-size:10px;color:var(–muted);margin-top:2px}
+.last-project-dot{width:8px;height:8px;border-radius:50%;background:#10b981;flex-shrink:0;animation:pulse 2s ease infinite}
+
+/* ── FAQ ACCORDION ── */
+.faq-section{width:100%;max-width:460px;margin-bottom:48px;display:flex;flex-direction:column;gap:8px;animation:fadeUp .6s ease both}
+.faq-item{background:var(–card);border:1px solid var(–border);border-radius:14px;overflow:hidden;transition:border-color .25s}
+.faq-item.open{border-color:rgba(0,245,255,0.4)}
+body.light .faq-item{background:rgba(255,255,255,0.9)!important;border-color:rgba(99,102,241,0.15)!important}
+body.light .faq-item.open{border-color:rgba(79,70,229,0.4)!important}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;cursor:pointer;font-family:‘Tajawal’,sans-serif;font-size:13px;font-weight:500;color:var(–text);gap:10px;user-select:none}
+.faq-icon{width:22px;height:22px;border-radius:50%;border:1px solid var(–border);display:flex;align-items:center;justify-content:center;color:var(–muted);font-size:12px;transition:all .3s;flex-shrink:0}
+.faq-item.open .faq-icon{background:rgba(0,245,255,0.1);border-color:#00f5ff;color:#00f5ff;transform:rotate(45deg)}
+body.light .faq-item.open .faq-icon{background:rgba(79,70,229,0.1)!important;border-color:#4f46e5!important;color:#4f46e5!important}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:14px}
+.faq-a-inner{padding:0 18px;font-size:12px;color:var(–muted);line-height:1.7}
+
+/* ── INTERACTIVE PARTICLES ── */
+#particleCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+</style>
+
+</head>
+<body>
+
+<!-- NOTIFICATION BAR -->
+
+<div id="notifBar">
+  <span class="notif-text">🎉 خصم 20% على أول مشروع هذا الشهر — تواصل الآن واذكر كود <strong>FIRST20</strong></span>
+  <button class="notif-close" onclick="document.getElementById('notifBar').classList.add('hidden')">✕</button>
+</div>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div id="scrollBar"></div>
+<div class="scanline"></div>
+<canvas id="particleCanvas"></canvas>
+<canvas id="bgCanvas"></canvas>
+<div class="grid-overlay"></div>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+
+<a class="wa-float" href="https://wa.me/972599930699" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<div class="top-btns">
+  <button class="top-btn" onclick="toggleLang()" id="langBtn">EN</button>
+  <button class="top-btn" onclick="toggleTheme()" id="themeBtn">☀️</button>
+</div>
+
+<div class="copy-toast" id="copyToast">✓ تم النسخ!</div>
+
+<div class="easter-overlay" id="easterEgg">
+  <div style="font-size:52px">🚀</div>
+  <div class="easter-msg">SECRET UNLOCKED!</div>
+  <div class="easter-sub">أنت من الـ 1% اللي اكتشفوا هاد السر 🎉<br>تواصل معي وقل <strong style="color:#00f5ff">FIRST20</strong> للحصول على خصم 20%!</div>
+  <button class="easter-close" onclick="document.getElementById('easterEgg').classList.remove('show')">CLOSE ✕</button>
+</div>
+
+<main>
+  <header class="hero">
+    <div class="avatar-wrap">
+      <div class="avatar-hex"></div>
+      <div class="avatar-hex2"></div>
+      <div class="avatar-inner" id="avatarEl" onclick="easterClick()">
+        <img src="avatar.jpg" onerror="this.style.display='none';document.getElementById('avatarInitials').style.display='block'" alt="Fadi"/>
+        <span id="avatarInitials" style="display:none">FA</span>
+      </div>
+      <div class="status-dot"></div>
+    </div>
+    <div class="name-row">
+      <h1 class="name" id="heroName">FADI ABU SA'ADA</h1>
+      <div class="verified-wrap">
+        <div class="verified">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="verified-tooltip">✓ تم التحقق من الهوية</div>
+      </div>
+      <div class="pro-badge">PRO</div>
+    </div>
+    <div class="title-line">
+      <span class="title-badge tb-ai">AI ENGINEER</span>
+      <span class="title-badge tb-auto">AUTOMATION</span>
+      <span class="title-badge tb-free">FREELANCER</span>
+    </div>
+    <div class="avail-badge open" id="availBadge" onclick="toggleAvail()">
+      <span class="avail-dot"></span>
+      <span id="availText">متاح للمشاريع الجديدة</span>
+    </div>
+    <p class="tagline"><span id="typingText"></span><span class="tagline-cursor"></span></p>
+    <div class="visitor-bar">
+      <span class="visitor-dot"></span>
+      <span id="visitorCount">يتصفح الصفحة الآن <strong style="color:#00f5ff">---</strong> زائر</span>
+    </div>
+    <div class="sep"></div>
+  </header>
+
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-n" id="cProjects">0</div><div class="stat-l">PROJECTS</div></div>
+    <div class="stat"><div class="stat-n" id="cClients">0</div><div class="stat-l">CLIENTS</div></div>
+    <div class="stat"><div class="stat-n" id="cYears">0</div><div class="stat-l">YEARS</div></div>
+    <div class="stat"><div class="stat-n">⭐</div><div class="stat-l">TOP RATED</div></div>
+  </div>
+
+  <p class="section-title">— CONNECT WITH ME —</p>
+  <div class="links">
+    <a class="link-card" href="https://eng2fadi.github.io" target="_blank" rel="noopener">
+      <div class="link-icon ic-web">🌐</div>
+      <div class="link-text"><div class="link-title">PORTFOLIO</div><div class="link-sub">eng2fadi.github.io</div></div>
+      <div class="link-right"><div class="link-arrow">↗</div></div>
+    </a>
+    <a class="link-card" href="https://github.com/Eng2Fadi" target="_blank" rel="noopener">
+      <div class="link-icon ic-github"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></div>
+      <div class="link-text"><div class="link-title">GITHUB</div><div class="link-sub">Eng2Fadi</div></div>
+      <div class="link-right"><div class="link-arrow">↗</div></div>
+    </a>
+    <a class="link-card" href="https://linkedin.com/in/eng-fadi-abusaada" target="_blank" rel="noopener">
+      <div class="link-icon ic-linkedin"><svg width="22" height="22" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+      <div class="link-text"><div class="link-title">LINKEDIN</div><div class="link-sub">eng-fadi-abusaada</div></div>
+      <div class="link-right"><div class="link-arrow">↗</div></div>
+    </a>
+    <a class="link-card" href="https://www.upwork.com/freelancers/~01f088b792f305e12a?mp_source=share" target="_blank" rel="noopener">
+      <div class="link-icon ic-upwork"><svg width="22" height="22" viewBox="0 0 24 24" fill="#14A800"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H8.557v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.545-2.546V3.492H1.462v7.112c0 2.513 2.051 4.564 4.548 4.564 2.497 0 4.547-2.052 4.547-4.564v-1.194c.528 1.107 1.164 2.237 1.938 3.258l-1.636 7.697h2.05l1.189-5.607c1.054.679 2.222 1.079 3.464 1.079 3.372 0 6.11-2.738 6.11-6.11-.001-3.372-2.739-6.11-6.111-6.11z"/></svg></div>
+      <div class="link-text"><div class="link-title">UPWORK</div><div class="link-sub">Hire me on Upwork</div></div>
+      <div class="link-right"><div class="link-arrow">↗</div></div>
+    </a>
+    <a class="link-card" href="https://khamsat.com/user/fadisaada" target="_blank" rel="noopener">
+      <div class="link-icon ic-khamsat">🟠</div>
+      <div class="link-text"><div class="link-title">KHAMSAT</div><div class="link-sub">خدماتي على خمسات</div></div>
+      <div class="link-right"><div class="link-arrow">↗</div></div>
+    </a>
+    <a class="link-card" href="https://mostaql.com/u/FadiSaada" target="_blank" rel="noopener">
+      <div class="link-icon ic-mostaql">🔵</div>
+      <div class="link-text"><div class="link-title">MOSTAQL</div><div class="link-sub">ملفي على مستقل</div></div>
+      <div class="link-right"><div class="link-arrow">↗</div></div>
+    </a>
+    <a class="link-card" href="https://wa.me/972599930699" target="_blank" rel="noopener">
+      <div class="link-icon ic-wa"><svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+      <div class="link-text"><div class="link-title">WHATSAPP</div><div class="link-sub">+972 599 930 699</div></div>
+      <div class="link-right">
+        <button class="copy-btn" onclick="copyText(event,'972599930699','رقم الواتساب')" title="نسخ الرقم">📋</button>
+        <div class="link-arrow">↗</div>
+      </div>
+    </a>
+    <a class="link-card" href="mailto:Eng.Fadi990@gmail.com">
+      <div class="link-icon ic-email">📧</div>
+      <div class="link-text"><div class="link-title">EMAIL</div><div class="link-sub">Eng.Fadi990@gmail.com</div></div>
+      <div class="link-right">
+        <button class="copy-btn" onclick="copyText(event,'Eng.Fadi990@gmail.com','الإيميل')" title="نسخ الإيميل">📋</button>
+        <div class="link-arrow">↗</div>
+      </div>
+    </a>
+  </div>
+
+  <p class="section-title">— MY SERVICES —</p>
+  <div class="services">
+    <div class="service-card">
+      <div class="service-icon">🤖</div>
+      <div class="service-name">AI AGENTS</div>
+      <div class="service-desc" id="s1d">وكلاء ذكية تعمل تلقائياً وتنجز مهام معقدة</div>
+      <div class="service-price">من $150</div>
+      <a class="service-btn" href="https://wa.me/972599930699?text=مرحبا، أريد الاستفسار عن خدمة AI Agents" target="_blank">احجز الآن</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">⚡</div>
+      <div class="service-name">AUTOMATION</div>
+      <div class="service-desc" id="s2d">أتمتة كاملة لعملياتك بـ n8n و Make</div>
+      <div class="service-price">من $100</div>
+      <a class="service-btn" href="https://wa.me/972599930699?text=مرحبا، أريد الاستفسار عن خدمة Automation" target="_blank">احجز الآن</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💬</div>
+      <div class="service-name">CHATBOTS</div>
+      <div class="service-desc" id="s3d">شات بوتات ذكية لخدمة العملاء 24/7</div>
+      <div class="service-price">من $50</div>
+      <a class="service-btn" href="https://wa.me/972599930699?text=مرحبا، أريد الاستفسار عن خدمة Chatbot" target="_blank">احجز الآن</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌐</div>
+      <div class="service-name">SAAS DEV</div>
+      <div class="service-desc" id="s4d">تطوير منصات SaaS بـ Next.js</div>
+      <div class="service-price">حسب الطلب</div>
+      <a class="service-btn" href="https://wa.me/972599930699?text=مرحبا، أريد الاستفسار عن تطوير SaaS" target="_blank">احجز الآن</a>
+    </div>
+  </div>
+
+  <p class="section-title">— LATEST PROJECTS —</p>
+  <div class="projects">
+    <div class="project-card">
+      <div class="project-emoji">🧠</div>
+      <div class="project-info">
+        <div class="project-name">AI SALES AGENT</div>
+        <div class="project-desc">وكيل مبيعات ذكي يرد على العملاء ويغلق الصفقات تلقائياً</div>
+        <div class="project-tags"><span class="ptag ptag-cyan">Claude API</span><span class="ptag ptag-purple">n8n</span><span class="ptag ptag-green">WhatsApp</span></div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-emoji">📊</div>
+      <div class="project-info">
+        <div class="project-name">DATA AUTOMATION</div>
+        <div class="project-desc">نظام أتمتة يجمع البيانات ويولد تقارير تلقائية يومياً</div>
+        <div class="project-tags"><span class="ptag ptag-cyan">Make</span><span class="ptag ptag-purple">Google Sheets</span><span class="ptag ptag-green">GPT-4</span></div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-emoji">🛒</div>
+      <div class="project-info">
+        <div class="project-name">E-COMMERCE BOT</div>
+        <div class="project-desc">شات بوت لمتجر إلكتروني يتعامل مع الطلبات والاستفسارات</div>
+        <div class="project-tags"><span class="ptag ptag-cyan">Next.js</span><span class="ptag ptag-purple">OpenAI</span><span class="ptag ptag-green">Stripe</span></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="section-title">— CLIENT REVIEWS —</p>
+  <div class="testimonials">
+    <div class="testi-card">
+      <div class="testi-text">"فادي محترف جداً، أنجز المشروع بوقت قياسي وكان التواصل ممتاز. الوكيل الذكي الذي بناه وفّر علينا ساعات عمل يومياً!"</div>
+      <div class="testi-footer"><div class="testi-avatar">👨‍💼</div><div><div class="testi-name">أحمد الشمري</div><div class="testi-role">صاحب متجر — السعودية</div></div><div class="testi-stars">★★★★★</div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-text">"من أفضل المطورين اللي تعاملت معهم. فهم المشروع من أول جلسة وقدّم حلولاً ذكية ما كنت أتوقعها."</div>
+      <div class="testi-footer"><div class="testi-avatar">👩‍💼</div><div><div class="testi-name">سارة العتيبي</div><div class="testi-role">مديرة تسويق — الكويت</div></div><div class="testi-stars">★★★★★</div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-text">"شات بوت خدمة العملاء الذي طوّره فادي غيّر طريقة عملنا كلياً. استجابة فورية 24/7 وعملاؤنا سعداء جداً!"</div>
+      <div class="testi-footer"><div class="testi-avatar">👨‍💻</div><div><div class="testi-name">محمد القحطاني</div><div class="testi-role">مؤسس شركة — الإمارات</div></div><div class="testi-stars">★★★★★</div></div>
+    </div>
+  </div>
+
+  <p class="section-title">— TECH STACK —</p>
+  <div class="skills-section">
+    <div class="skill-item"><div class="skill-header"><span class="skill-name">AI Agents & Chatbots</span><span class="skill-pct">95%</span></div><div class="skill-bar"><div class="skill-fill fill-cyan" style="width:95%"></div></div></div>
+    <div class="skill-item"><div class="skill-header"><span class="skill-name">n8n / Make Automation</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill fill-purple" style="width:90%"></div></div></div>
+    <div class="skill-item"><div class="skill-header"><span class="skill-name">Next.js / React</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill fill-green" style="width:85%"></div></div></div>
+    <div class="skill-item"><div class="skill-header"><span class="skill-name">Prompt Engineering</span><span class="skill-pct">98%</span></div><div class="skill-bar"><div class="skill-fill fill-gold" style="width:98%"></div></div></div>
+  </div>
+
+  <p class="section-title">— AI ASSISTANT —</p>
+  <div class="chat-section">
+    <div class="chat-box">
+      <div class="chat-header">
+        <div class="chat-avatar-bot">🤖</div>
+        <div><div class="chat-bot-name">FADI.AI ASSISTANT</div><div class="chat-bot-status">● Online — جاهز للمساعدة</div></div>
+      </div>
+      <div class="chat-messages" id="chatMessages"></div>
+      <div class="chat-quick" id="quickReplies">
+        <button class="quick-btn" onclick="sendQuick(this)">خدماتك؟</button>
+        <button class="quick-btn" onclick="sendQuick(this)">كيف أتواصل؟</button>
+        <button class="quick-btn" onclick="sendQuick(this)">ما تخصصك؟</button>
+        <button class="quick-btn" onclick="sendQuick(this)">أسعارك؟</button>
+      </div>
+      <div class="chat-input-row">
+        <input class="chat-input" id="chatInput" type="text" placeholder="اكتب رسالتك..." autocomplete="off"/>
+        <button class="chat-send" onclick="sendMsg()">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <p class="section-title">— FREE CONSULTATION —</p>
+  <a class="consult-btn" href="https://wa.me/972599930699?text=مرحبا فادي، أريد حجز استشارة مجانية 15 دقيقة 🚀" target="_blank" rel="noopener">
+    <span class="consult-icon">📅</span>
+    <div>
+      <div>احجز استشارة مجانية — 15 دقيقة</div>
+      <div class="consult-sub">Book a Free 15-min Consultation</div>
+    </div>
+    <span style="margin-left:auto;font-size:18px">→</span>
+  </a>
+
+  <p class="section-title">— LIVE INFO —</p>
+  <div class="live-info">
+    <div class="live-card">
+      <div class="live-icon">🕐</div>
+      <div>
+        <div class="live-label">LOCAL TIME</div>
+        <div class="live-value" id="liveClock">--:--</div>
+        <div class="live-sub" id="liveDate">Gaza, Palestine</div>
+      </div>
+    </div>
+    <div class="live-card">
+      <div class="last-project-dot"></div>
+      <div>
+        <div class="live-label">LAST PROJECT</div>
+        <div class="live-value" id="lastProjectTime">3 أيام</div>
+        <div class="live-sub">✅ أُنجز مؤخراً</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="section-title">— FAQ —</p>
+  <div class="faq-section" id="faqSection">
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span>كم يستغرق تنفيذ مشروع AI Agent؟</span><div class="faq-icon">+</div></div>
+      <div class="faq-a"><div class="faq-a-inner">يعتمد على التعقيد، لكن المشاريع البسيطة تنتهي خلال 3-5 أيام، والمشاريع المتوسطة 1-2 أسبوع. أبدأ دائماً بجلسة تحليل مجانية لتحديد الجدول الزمني الدقيق.</div></div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span>هل تدعم المشاريع بعد التسليم؟</span><div class="faq-icon">+</div></div>
+      <div class="faq-a"><div class="faq-a-inner">نعم، أقدم دعماً مجانياً لمدة 14 يوماً بعد التسليم لضمان عمل المشروع بشكل مثالي. بعدها يمكن الاتفاق على خطة صيانة شهرية.</div></div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span>ما هي طرق الدفع المتاحة؟</span><div class="faq-icon">+</div></div>
+      <div class="faq-a"><div class="faq-a-inner">أقبل الدفع عبر Payoneer, Wise, Binance Pay، وأيضاً عبر منصات خمسات ومستقل وUpwork للحماية الإضافية للطرفين.</div></div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span>هل يمكنك بناء chatbot بالعربية؟</span><div class="faq-icon">+</div></div>
+      <div class="faq-a"><div class="faq-a-inner">بالتأكيد! أتخصص في بناء حلول AI للسوق العربي. الشات بوتات تدعم العربية والإنجليزية وتفهم اللهجات المختلفة بكفاءة عالية.</div></div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span>هل تحتاج إلى معلومات تقنية للتعامل معك؟</span><div class="faq-icon">+</div></div>
+      <div class="faq-a"><div class="faq-a-inner">لا على الإطلاق! أتعامل مع العملاء من كل الخلفيات. فقط أخبرني بمشكلتك التجارية وأنا أترجمها إلى حل تقني متكامل.</div></div>
+    </div>
+  </div>
+
+  <p class="section-title">— STAR HUNTER MINI GAME —</p>
+  <div class="game-section">
+    <div class="game-header">
+      <div><div class="game-title">⚡ STAR HUNTER</div><div class="game-subtitle">اصطد النجوم — تجنب الأحمر</div></div>
+      <div class="game-scores">
+        <div style="text-align:center"><div class="gscore-label">SCORE</div><div class="gscore-val" id="scoreDisplay">0</div></div>
+        <div style="text-align:center"><div class="gscore-label">BEST</div><div class="gscore-val best-val" id="bestDisplay">0</div></div>
+      </div>
+    </div>
+    <div class="game-arena" id="gameWrapper"><canvas id="gameCanvas"></canvas></div>
+    <div class="game-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#00f5ff"></div>+1</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#a78bfa"></div>+3</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#fbbf24"></div>+10</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ff4466"></div>-3 تجنبه</div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-line"></div>
+    <p class="footer-text">© 2025 FADI ABU SA'ADA · BUILT WITH AI & PASSION</p>
+  </footer>
+</main>
+
+<script>
+// ── Cursor ──
+const cur=document.getElementById('cursor'),curR=document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0,lastTrail=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY;
+  cur.style.left=mx+'px';cur.style.top=my+'px';
+  if(Date.now()-lastTrail>35){
+    lastTrail=Date.now();
+    const t=document.createElement('div');
+    t.className='trail';
+    t.style.cssText='left:'+mx+'px;top:'+my+'px;width:5px;height:5px;background:rgba(0,245,255,0.5)';
+    document.body.appendChild(t);
+    setTimeout(()=>t.remove(),600);
+  }
+});
+(function animCur(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;curR.style.left=rx+'px';curR.style.top=ry+'px';requestAnimationFrame(animCur);})();
+document.querySelectorAll('a,.service-btn,.quick-btn,.chat-send,.game-arena,.avail-badge,.copy-btn,.top-btn').forEach(el=>{
+  el.addEventListener('mouseenter',()=>curR.classList.add('big'));
+  el.addEventListener('mouseleave',()=>curR.classList.remove('big'));
+});
+
+// ── Scroll progress ──
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollBar').style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';
+});
+
+// ── BG Stars ──
+const bgC=document.getElementById('bgCanvas'),bgX=bgC.getContext('2d');
+let bgS=[];
+function resizeBg(){bgC.width=window.innerWidth;bgC.height=window.innerHeight;}
+function initBg(){bgS=[];for(let i=0;i<220;i++)bgS.push({x:Math.random()*bgC.width,y:Math.random()*bgC.height,r:Math.random()*1.4+0.1,a:Math.random()*.8+.1,sp:Math.random()*.4+.03});}
+function drawBg(){bgX.clearRect(0,0,bgC.width,bgC.height);bgS.forEach(s=>{bgX.beginPath();bgX.arc(s.x,s.y,s.r,0,Math.PI*2);bgX.fillStyle='rgba(180,230,255,'+s.a+')';bgX.fill();s.a+=s.sp*.008;if(s.a>.9)s.sp=-Math.abs(s.sp);if(s.a<.1)s.sp=Math.abs(s.sp);});requestAnimationFrame(drawBg);}
+resizeBg();initBg();drawBg();
+window.addEventListener('resize',()=>{resizeBg();initBg();});
+
+// ── Counters ──
+function animCount(el,target,suffix){let c=0,step=Math.ceil(target/40);const t=setInterval(()=>{c=Math.min(c+step,target);el.textContent=c+suffix;if(c>=target)clearInterval(t);},40);}
+setTimeout(()=>{animCount(document.getElementById('cProjects'),30,'+');animCount(document.getElementById('cClients'),25,'+');animCount(document.getElementById('cYears'),3,'+');},600);
+
+// ── Skills observer ──
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('animated');});},{threshold:.3});
+document.querySelectorAll('.skill-fill').forEach(f=>obs.observe(f));
+
+// ── Typing tagline ──
+const phrases=[
+  'أحوّل أفكارك إلى وكلاء AI تعمل 24/7 ⚡',
+  'أبني أنظمة أتمتة توفر وقتك وجهدك 🤖',
+  'شات بوتات ذكية تخدم عملاءك على مدار الساعة 💬',
+  'SaaS solutions powered by AI 🚀',
+];
+let pIdx=0,cIdx=0,deleting=false,typingEl=document.getElementById('typingText');
+function typeLoop(){
+  const phrase=phrases[pIdx];
+  if(!deleting){
+    typingEl.textContent=phrase.slice(0,++cIdx);
+    if(cIdx===phrase.length){deleting=true;setTimeout(typeLoop,2000);return;}
+  } else {
+    typingEl.textContent=phrase.slice(0,--cIdx);
+    if(cIdx===0){deleting=false;pIdx=(pIdx+1)%phrases.length;}
+  }
+  setTimeout(typeLoop,deleting?40:80);
+}
+setTimeout(typeLoop,1200);
+
+// ── Visitor counter (simulated) ──
+function updateVisitors(){
+  const base=42,variance=Math.floor(Math.random()*8)-3;
+  const n=Math.max(35,base+variance);
+  const el=document.getElementById('visitorCount');
+  el.innerHTML='يتصفح الصفحة الآن <strong style="color:#00f5ff">'+n+'</strong> زائر';
+}
+updateVisitors();
+setInterval(updateVisitors,8000);
+
+// ── Copy text ──
+function copyText(e,text,label){
+  e.preventDefault();e.stopPropagation();
+  navigator.clipboard.writeText(text).then(()=>{
+    const t=document.getElementById('copyToast');
+    t.textContent='✓ تم نسخ '+label+'!';
+    t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'),2500);
+  });
+}
+
+// ── Availability toggle ──
+let isAvail=true;
+function toggleAvail(){
+  isAvail=!isAvail;
+  const b=document.getElementById('availBadge'),t=document.getElementById('availText');
+  b.className='avail-badge '+(isAvail?'open':'busy');
+  t.textContent=isAvail?'متاح للمشاريع الجديدة':'مشغول حالياً 🔴';
+}
+
+// ── Theme toggle ──
+let isLight=false;
+function toggleTheme(){
+  isLight=!isLight;
+  document.body.classList.toggle('light',isLight);
+  document.getElementById('themeBtn').textContent=isLight?'🌙':'☀️';
+  document.querySelector('.avatar-hex2').style.background=isLight?'#f0f4ff':'#00040f';
+}
+
+// ── Language toggle ──
+let isEn=false;
+const T={
+  ar:{taglines:['أحوّل أفكارك إلى وكلاء AI تعمل 24/7 ⚡','أبني أنظمة أتمتة توفر وقتك وجهدك 🤖','شات بوتات ذكية تخدم عملاءك على مدار الساعة 💬'],avail:'متاح للمشاريع الجديدة',langBtn:'EN',s1d:'وكلاء ذكية تعمل تلقائياً وتنجز مهام معقدة',s2d:'أتمتة كاملة لعملياتك بـ n8n و Make',s3d:'شات بوتات ذكية لخدمة العملاء 24/7',s4d:'تطوير منصات SaaS بـ Next.js'},
+  en:{taglines:['I turn your ideas into AI agents that work 24/7 ⚡','I build automation systems that save your time 🤖','Smart chatbots serving your customers around the clock 💬'],avail:'Available for Projects',langBtn:'AR',s1d:'Smart agents that work automatically on complex tasks',s2d:'Full workflow automation with n8n & Make',s3d:'Intelligent 24/7 customer support chatbots',s4d:'Full-stack SaaS development with Next.js'}
+};
+function toggleLang(){
+  isEn=!isEn;const d=isEn?T.en:T.ar;
+  phrases.splice(0,phrases.length,...d.taglines);
+  document.getElementById('availText').textContent=isAvail?d.avail:'Currently Busy 🔴';
+  document.getElementById('langBtn').textContent=d.langBtn;
+  document.getElementById('s1d').textContent=d.s1d;
+  document.getElementById('s2d').textContent=d.s2d;
+  document.getElementById('s3d').textContent=d.s3d;
+  document.getElementById('s4d').textContent=d.s4d;
+  document.body.classList.toggle('en-mode',isEn);
+}
+
+// ── Easter Egg ──
+let eClicks=0,eTimer=0;
+function easterClick(){
+  if(Date.now()-eTimer>2000)eClicks=0;
+  eTimer=Date.now();
+  if(++eClicks>=5){
+    eClicks=0;
+    document.getElementById('easterEgg').classList.add('show');
+    launchConfetti();
+  }
+}
+function launchConfetti(){
+  const colors=['#00f5ff','#a78bfa','#fbbf24','#10b981','#ff4466'];
+  const style=document.createElement('style');
+  style.textContent='@keyframes cFall{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}';
+  document.head.appendChild(style);
+  for(let i=0;i<80;i++){
+    setTimeout(()=>{
+      const c=document.createElement('div');
+      c.style.cssText='position:fixed;width:'+( 6+Math.random()*6)+'px;height:'+(6+Math.random()*6)+'px;border-radius:2px;pointer-events:none;z-index:600;left:'+Math.random()*100+'vw;top:-10px;background:'+colors[Math.floor(Math.random()*colors.length)]+';animation:cFall '+(1.5+Math.random()*1.5)+'s ease forwards';
+      document.body.appendChild(c);setTimeout(()=>c.remove(),4000);
+    },i*30);
+  }
+}
+
+// ── Opening confetti (once) ──
 setTimeout(()=>{
   if(!sessionStorage.getItem('visited')){
     sessionStorage.setItem('visited','1');
@@ -221,5 +968,6 @@ function handleTap(cx,cy){const rect=gc.getBoundingClientRect();const tx=(cx-rec
 wrap.addEventListener('click',e=>handleTap(e.clientX,e.clientY));
 wrap.addEventListener('touchstart',e=>{e.preventDefault();handleTap(e.touches[0].clientX,e.touches[0].clientY);},{passive:false});
 </script>
+
 </body>
 </html>
