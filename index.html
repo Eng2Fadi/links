@@ -3,14 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fadi AbuSaada | AI Engineer</title>
+
+<title>Fadi AbuSaada</title>
 
 <style>
+:root{
+--bg:#00040f;
+--card:#0c1222;
+--text:#e2eeff;
+--muted:#aaa;
+--accent:#00f5ff;
+}
+
+body.light{
+--bg:#f5f7ff;
+--card:#ffffff;
+--text:#111;
+--muted:#555;
+--accent:#4f46e5;
+}
+
 body{
 margin:0;
 font-family:system-ui;
-background:#00040f;
-color:#fff;
+background:var(--bg);
+color:var(--text);
+transition:0.3s;
 }
 
 .container{
@@ -19,67 +37,118 @@ margin:auto;
 padding:20px;
 }
 
-h1{margin-bottom:5px}
+h1{margin:0}
+
+.subtitle{
+color:var(--muted);
+margin:10px 0 20px;
+}
+
+.top{
+display:flex;
+justify-content:space-between;
+margin-bottom:15px;
+}
+
+.btn{
+background:var(--card);
+padding:6px 12px;
+border-radius:10px;
+cursor:pointer;
+font-size:12px;
+border:1px solid var(--accent);
+}
+
+.cta{
+background:#10b981;
+padding:14px;
+border-radius:16px;
+text-align:center;
+font-weight:bold;
+cursor:pointer;
+margin-bottom:20px;
+}
+
+.links{
+display:flex;
+flex-direction:column;
+gap:10px;
+margin-bottom:20px;
+}
+
+.link{
+background:var(--card);
+padding:12px;
+border-radius:12px;
+text-decoration:none;
+color:var(--accent);
+border:1px solid var(--accent);
+}
 
 .card{
-background:#0c1222;
-border-radius:14px;
+background:var(--card);
 padding:15px;
-margin-bottom:15px;
-border:1px solid #00f5ff22;
+border-radius:16px;
+border:1px solid var(--accent);
 }
 
 .title{
-color:#00f5ff;
+color:var(--accent);
 margin-bottom:10px;
+font-weight:bold;
+}
+
+.chat{
+height:200px;
+overflow:auto;
+display:flex;
+flex-direction:column;
+gap:8px;
+}
+
+.msg{
+padding:10px;
+border-radius:10px;
+max-width:80%;
+font-size:14px;
+}
+
+.user{
+background:#1f2937;
+align-self:flex-end;
+}
+
+.bot{
+background:#111827;
+align-self:flex-start;
+}
+
+.row{
+display:flex;
+gap:5px;
+margin-top:10px;
 }
 
 input{
-width:100%;
+flex:1;
 padding:10px;
-margin-top:8px;
 border-radius:10px;
 border:none;
 background:#111;
 color:#fff;
 }
 
+body.light input{
+background:#eee;
+color:#000;
+}
+
 button{
-margin-top:10px;
 padding:10px;
 border:none;
 border-radius:10px;
-background:#00f5ff;
+background:var(--accent);
 cursor:pointer;
-}
-
-.output{
-margin-top:10px;
-white-space:pre-line;
-font-size:14px;
-}
-
-.cta{
-padding:12px;
-background:#10b981;
-text-align:center;
-border-radius:10px;
-cursor:pointer;
-margin-bottom:15px;
-}
-
-.quick{
-display:flex;
-flex-wrap:wrap;
-gap:5px;
-margin-top:10px;
-}
-
-.quick button{
-background:#222;
-color:#fff;
-padding:6px 10px;
-font-size:12px;
 }
 </style>
 </head>
@@ -88,36 +157,41 @@ font-size:12px;
 
 <div class="container">
 
-<h1>Fadi AbuSaada</h1>
-<p>مهندس AI وخبير أتمتة</p>
+<div class="top">
+<div class="btn" onclick="toggleLang()">🌐</div>
+<div class="btn" onclick="toggleTheme()">🌙</div>
+</div>
 
-<div class="cta" onclick="goWhats()">
+<h1 id="name">Fadi AbuSaada</h1>
+
+<div class="subtitle" id="desc">
+أبني أنظمة AI توفر لك 20+ ساعة أسبوعياً
+</div>
+
+<div class="cta" onclick="goWhats()" id="cta">
 🚀 ابدأ مشروعك الآن
 </div>
 
-<div class="card">
-<div class="title">AI Assistant</div>
-
-<input id="msg" placeholder="اكتب فكرة مشروعك...">
-
-<div class="quick">
-<button onclick="quick('Chatbot')">Chatbot</button>
-<button onclick="quick('Automation')">Automation</button>
-<button onclick="quick('AI Agent')">AI Agent</button>
-<button onclick="quick('SaaS')">SaaS</button>
+<div class="links">
+<a class="link" href="https://eng2fadi.github.io">Portfolio</a>
+<a class="link" href="https://github.com/Eng2Fadi">GitHub</a>
+<a class="link" href="https://linkedin.com">LinkedIn</a>
+<a class="link" href="https://upwork.com">Upwork</a>
+<a class="link" href="https://khamsat.com">Khamsat</a>
+<a class="link" href="https://mostaql.com">Mostaql</a>
+<a class="link" href="https://wa.me/972599930699">WhatsApp</a>
 </div>
 
-<button onclick="send()">إرسال</button>
+<div class="card">
 
-<div id="out" class="output"></div>
+<div class="title">AI Assistant</div>
 
-<button onclick="sendSummary()" style="background:#8b5cf6">
-📩 إرسال لفادي
-</button>
+<div class="chat" id="chat"></div>
 
-<button onclick="estimate()" style="background:#f59e0b">
-💰 احسب تكلفة
-</button>
+<div class="row">
+<input id="input" placeholder="اكتب فكرة مشروعك">
+<button onclick="send()">➤</button>
+</div>
 
 </div>
 
@@ -125,79 +199,87 @@ font-size:12px;
 
 <script>
 
-let history=[]
-let projectData={}
-
-function quick(type){
-document.getElementById("msg").value="أريد مشروع "+type
+// ===== Theme =====
+function toggleTheme(){
+document.body.classList.toggle("light")
 }
 
-function goWhats(){
-window.open("https://wa.me/972599930699")
+// ===== Language =====
+let lang="ar"
+
+const T={
+ar:{
+desc:"أبني أنظمة AI توفر لك 20+ ساعة أسبوعياً",
+cta:"🚀 ابدأ مشروعك الآن",
+placeholder:"اكتب فكرة مشروعك..."
+},
+en:{
+desc:"I build AI systems that save you 20+ hours weekly",
+cta:"🚀 Start your project now",
+placeholder:"Describe your idea..."
+}
+}
+
+function toggleLang(){
+lang = lang==="ar"?"en":"ar"
+document.documentElement.lang=lang
+document.body.dir=lang==="ar"?"rtl":"ltr"
+
+document.getElementById("desc").innerText=T[lang].desc
+document.getElementById("cta").innerText=T[lang].cta
+document.getElementById("input").placeholder=T[lang].placeholder
+}
+
+// ===== Chat =====
+const chat=document.getElementById("chat")
+
+function add(text,type){
+let d=document.createElement("div")
+d.className="msg "+type
+d.innerText=text
+chat.appendChild(d)
+chat.scrollTop=chat.scrollHeight
 }
 
 async function send(){
 
-let input=document.getElementById("msg")
+let input=document.getElementById("input")
 let msg=input.value.trim()
 if(!msg) return
 
+add(msg,"user")
 input.value=""
 
-history.push({role:"user",content:msg})
-
-document.getElementById("out").innerText += "\n👤 "+msg
-
-// smart extraction
-if(msg.includes("Chatbot")) projectData.type="Chatbot"
-if(msg.includes("Automation")) projectData.type="Automation"
-if(msg.includes("Agent")) projectData.type="AI Agent"
+let typing=document.createElement("div")
+typing.className="msg bot"
+typing.innerText="..."
+chat.appendChild(typing)
 
 try{
 
 let res=await fetch("https://noisy-fire-91c3.eng-fadi990.workers.dev",{
 method:"POST",
 headers:{"Content-Type":"application/json"},
-body:JSON.stringify({messages:history})
+body:JSON.stringify({
+messages:[{role:"user",content:msg}]
+})
 })
 
 let data=await res.json()
-let reply=data.choices?.[0]?.message?.content || "..."
+typing.remove()
 
-history.push({role:"assistant",content:reply})
-
-document.getElementById("out").innerText += "\n🤖 "+reply+"\n"
+let reply=data.choices?.[0]?.message?.content || "Error"
+add(reply,"bot")
 
 }catch(e){
-document.getElementById("out").innerText += "\n❌ خطأ\n"
+typing.remove()
+add("Error","bot")
 }
 
 }
 
-// ===== ESTIMATOR =====
-function estimate(){
-
-let price=""
-
-if(projectData.type==="Chatbot") price="$50 - $150"
-else if(projectData.type==="Automation") price="$100 - $300"
-else if(projectData.type==="AI Agent") price="$150 - $500"
-else price="حسب التفاصيل"
-
-document.getElementById("out").innerText += "\n💰 تقدير التكلفة: "+price+"\n"
-}
-
-// ===== SEND SUMMARY =====
-function sendSummary(){
-
-let text="مرحبا فادي، هذا ملخص مشروعي:\n\n"
-
-history.forEach(m=>{
-text+= (m.role==="user"?"👤 ":"🤖 ")+m.content+"\n"
-})
-
-window.open("https://wa.me/972599930699?text="+encodeURIComponent(text))
-
+function goWhats(){
+window.open("https://wa.me/972599930699")
 }
 
 </script>
