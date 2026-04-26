@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>Fadi AbuSaada</title>
 
@@ -16,7 +16,7 @@
 }
 
 body.light{
---bg:#f5f7ff;
+--bg:#f8f9ff;
 --card:#ffffff;
 --text:#111;
 --muted:#555;
@@ -37,6 +37,7 @@ margin:auto;
 padding:20px;
 }
 
+/* TOP BUTTONS */
 .top{
 display:flex;
 justify-content:space-between;
@@ -49,11 +50,14 @@ padding:6px 12px;
 border-radius:10px;
 cursor:pointer;
 border:1px solid var(--accent);
+font-size:12px;
 }
 
+/* HERO */
 h1{
 text-align:center;
 margin-bottom:5px;
+font-size:28px;
 }
 
 .subtitle{
@@ -62,6 +66,7 @@ color:var(--muted);
 margin-bottom:20px;
 }
 
+/* CTA */
 .cta{
 background:#10b981;
 padding:14px;
@@ -72,11 +77,12 @@ margin-bottom:25px;
 font-weight:bold;
 }
 
+/* LINKS */
 .links{
 display:flex;
 flex-direction:column;
 gap:10px;
-margin-bottom:25px;
+margin-bottom:30px;
 }
 
 .link{
@@ -88,11 +94,13 @@ color:var(--accent);
 border:1px solid var(--accent);
 }
 
+/* CARD */
 .card{
 background:var(--card);
 padding:15px;
 border-radius:16px;
 border:1px solid var(--accent);
+margin-bottom:25px;
 }
 
 .title{
@@ -101,6 +109,14 @@ margin-bottom:10px;
 font-weight:bold;
 }
 
+/* PROJECTS */
+.project{
+font-size:13px;
+color:var(--muted);
+margin-bottom:6px;
+}
+
+/* CHAT */
 .chat{
 height:220px;
 overflow:auto;
@@ -154,9 +170,6 @@ background:var(--accent);
 cursor:pointer;
 }
 </style>
-
-
-
 </head>
 <body>
 
@@ -177,8 +190,9 @@ cursor:pointer;
 🚀 ابدأ مشروعك الآن
 </div>
 
-<div class="links">
+<!-- LINKS -->
 
+<div class="links">
 <a class="link" href="https://eng2fadi.github.io">🌐 Portfolio</a>
 <a class="link" href="https://github.com/Eng2Fadi">💻 GitHub</a>
 <a class="link" href="https://linkedin.com">🔗 LinkedIn</a>
@@ -186,12 +200,35 @@ cursor:pointer;
 <a class="link" href="https://khamsat.com">🟠 Khamsat</a>
 <a class="link" href="https://mostaql.com">🔵 Mostaql</a>
 <a class="link" href="https://wa.me/972599930699">📱 WhatsApp</a>
+</div>
+
+<!-- PROJECTS -->
+
+<div class="card">
+<div class="title">📊 Projects</div>
+
+<div class="project">✔ AI Sales Agent — وفر 25 ساعة أسبوعياً</div>
+<div class="project">✔ Chatbot متجر — رضا 98%</div>
+<div class="project">✔ Automation System — أزال العمل اليدوي</div>
 
 </div>
 
+<!-- CERTIFICATIONS -->
+
+<div class="card">
+<div class="title">🎓 Certifications</div>
+
+<div class="project">✔ AI for Everyone — DeepLearning</div>
+<div class="project">✔ Automation Pro — n8n</div>
+<div class="project">✔ Prompt Engineering — Coursera</div>
+
+</div>
+
+<!-- CHATBOT -->
+
 <div class="card">
 
-<div class="title">AI Assistant</div>
+<div class="title">🤖 AI Assistant</div>
 
 <div class="chat" id="chat"></div>
 
@@ -204,16 +241,14 @@ cursor:pointer;
 
 </div>
 
-
-  
 <script>
 
-// ===== Theme =====
+// ===== THEME =====
 function toggleTheme(){
 document.body.classList.toggle("light")
 }
 
-// ===== Language =====
+// ===== LANGUAGE =====
 let lang="ar"
 
 const T={
@@ -240,7 +275,7 @@ document.getElementById("cta").innerText=T[lang].cta
 document.getElementById("input").placeholder=T[lang].placeholder
 }
 
-// ===== Chat =====
+// ===== CHAT =====
 const chat=document.getElementById("chat")
 
 function add(text,type){
@@ -280,7 +315,7 @@ let data=await res.json()
 
 typing.remove()
 
-let reply=data.choices?.[0]?.message?.content || "Error"
+let reply=data.choices?.[0]?.message?.content || "⚠️ لا يوجد رد"
 
 add(reply,"bot")
 
@@ -291,7 +326,7 @@ add("❌ خطأ في الاتصال","bot")
 
 }
 
-// ===== WhatsApp =====
+// ===== WHATSAPP =====
 function goWhats(){
 window.open("https://wa.me/972599930699")
 }
@@ -300,16 +335,5 @@ window.open("https://wa.me/972599930699")
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-  
-
-
 
   
