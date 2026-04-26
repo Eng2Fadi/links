@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" style="background:#00040f;">
+<html lang="ar" dir="rtl" style="background:#020617;">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
@@ -23,2403 +23,424 @@
 <meta name="twitter:image" content="https://eng2fadi.github.io/links/avatar.jpg"/>
 
 <link rel="icon" href="favicon.ico"/>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Tajawal:wght@300;400;500;700&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Fadi AbuSaada",
+  "alternateName": "فادي أبوسعدة",
+  "jobTitle": "AI Engineer and Automation Expert",
+  "url": "https://eng2fadi.github.io/links",
+  "sameAs": [
+    "https://github.com/Eng2Fadi",
+    "https://linkedin.com/in/eng-fadi-abusaada",
+    "https://khamsat.com/user/fadisaada",
+    "https://mostaql.com/u/FadiSaada"
+  ],
+  "knowsAbout": [
+    "AI Agents",
+    "Automation",
+    "Chatbots",
+    "SaaS Development",
+    "n8n",
+    "Make"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "name": "AI Automation and Chatbot Services",
+    "description": "AI agents, workflow automation, chatbots, and SaaS development."
+  }
+}
+</script>
 
 <style>
-*,*::before,*::after{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   color-scheme:dark;
-  --cyan:#00f5ff;
+  --bg:#020617;
+  --text:#eaf2ff;
+  --muted:rgba(234,242,255,0.68);
+  --card:rgba(15,23,42,0.72);
+  --border:rgba(56,189,248,0.22);
+  --cyan:#38d9ff;
   --purple:#8b5cf6;
   --purple2:#a78bfa;
-  --gold:#fbbf24;
+  --green:#22c55e;
+  --gold:#f59e0b;
   --red:#ff4466;
-  --green:#10b981;
-  --text:#e2eeff;
-  --muted:rgba(226,238,255,0.48);
-  --border:rgba(0,245,255,0.15);
-  --card:rgba(0,245,255,0.04);
-  --bg:#00040f;
 }
-
-html{
-  background:#00040f;
-  scroll-behavior:smooth;
-}
-
+html{background:#020617;scroll-behavior:smooth}
 body{
-  background:var(--bg);
+  background:
+    radial-gradient(circle at top left,rgba(56,189,248,0.12),transparent 32%),
+    radial-gradient(circle at bottom right,rgba(139,92,246,0.14),transparent 34%),
+    #020617 !important;
   min-height:100vh;
-  color:var(--text);
-  font-family:'Tajawal',sans-serif;
+  color:var(--text)!important;
+  font-family:'Cairo',sans-serif;
   overflow-x:hidden;
   transition:background .4s,color .4s;
 }
-
-/* LIGHT MODE */
+body.en-mode{font-family:'Inter',sans-serif;direction:ltr}
 body.light{
-  --bg:#f8f9ff;
-  --text:#1a1a2e;
-  --muted:rgba(26,26,46,0.58);
-  --border:rgba(99,102,241,0.18);
-  --card:rgba(255,255,255,0.9);
-  background:#f8f9ff;
-  color:#1a1a2e;
+  --bg:#f7f9ff;
+  --text:#111827;
+  --muted:rgba(17,24,39,0.68);
+  --card:#ffffff;
+  --border:rgba(79,70,229,0.16);
+  --cyan:#2563eb;
+  --purple:#7c3aed;
+  --green:#059669;
+  --gold:#b45309;
+  background:
+    radial-gradient(circle at top left,rgba(79,70,229,0.08),transparent 32%),
+    radial-gradient(circle at bottom right,rgba(14,165,233,0.08),transparent 34%),
+    #f7f9ff !important;
+  color:#111827!important;
 }
-
-body.light .link-card,
-body.light .service-card,
-body.light .project-card,
-body.light .testi-card,
-body.light .how-step,
-body.light .cert-card,
-body.light .about-card,
-body.light .results-bar,
-body.light .faq-item,
-body.light .live-card,
-body.light .stats-bar{
-  background:rgba(255,255,255,0.92) !important;
-  border-color:rgba(99,102,241,0.15) !important;
-  box-shadow:0 2px 12px rgba(99,102,241,0.08) !important;
+.name,.section-title,.service-name,.project-name,.cert-name,.chat-bot-name,.stat-n,.result-num,.live-value,.game-title{
+  font-family:'Inter','Cairo',sans-serif!important;
 }
-
-body.light .link-card:hover,
-body.light .service-card:hover,
-body.light .project-card:hover,
-body.light .cert-card:hover{
-  border-color:rgba(99,102,241,0.4) !important;
-  box-shadow:0 6px 24px rgba(99,102,241,0.15) !important;
-}
-
-body.light .chat-box{
-  background:rgba(255,255,255,0.95) !important;
-  border-color:rgba(99,102,241,0.2) !important;
-}
-
-body.light .game-arena{
-  background:rgba(240,242,255,0.8) !important;
-  border-color:rgba(99,102,241,0.2) !important;
-}
-
-body.light .stat{
-  background:rgba(255,255,255,0.8) !important;
-}
-
-body.light .stat:hover{
-  background:rgba(99,102,241,0.06) !important;
-}
-
-body.light .stat+.stat{
-  border-left-color:rgba(99,102,241,0.15) !important;
-}
-
-body.light .link-title,
-body.light .service-name,
-body.light .project-name,
-body.light .game-title,
-body.light .stat-n,
-body.light .gscore-val,
-body.light .how-num,
-body.light .cert-name,
-body.light .live-value,
-body.light .result-num,
-body.light .about-label,
-body.light .chat-bot-name{
-  color:#4f46e5 !important;
-}
-
-body.light .section-title{
-  color:rgba(26,26,46,0.42) !important;
-}
-
-body.light .link-sub,
-body.light .project-desc,
-body.light .service-desc,
-body.light .testi-text,
-body.light .how-desc,
-body.light .about-text,
-body.light .faq-a-inner{
-  color:rgba(26,26,46,0.64) !important;
-}
-
-body.light .skill-name{
-  color:#1a1a2e !important;
-}
-
-body.light .skill-pct,
-body.light .testi-name{
-  color:#4f46e5 !important;
-}
-
-body.light .skill-bar{
-  background:rgba(99,102,241,0.1) !important;
-}
-
-body.light .footer-text{
-  color:rgba(26,26,46,0.25) !important;
-}
-
-body.light .tagline-cursor{
-  background:#4f46e5;
-}
-
-body.light .name{
-  background:linear-gradient(90deg,#4f46e5,#7c3aed,#4f46e5) !important;
-  background-size:200% !important;
-  -webkit-background-clip:text !important;
-  background-clip:text !important;
-  -webkit-text-fill-color:transparent !important;
-}
-
-body.light .title-badge.tb-ai{
-  color:#4f46e5 !important;
-  border-color:rgba(79,70,229,0.35) !important;
-  background:rgba(79,70,229,0.07) !important;
-}
-
-body.light .title-badge.tb-auto{
-  color:#7c3aed !important;
-  border-color:rgba(124,58,237,0.35) !important;
-  background:rgba(124,58,237,0.07) !important;
-}
-
-body.light .title-badge.tb-free{
-  color:#059669 !important;
-  border-color:rgba(5,150,105,0.35) !important;
-  background:rgba(5,150,105,0.07) !important;
-}
-
-body.light .avail-badge.open{
-  color:#059669 !important;
-  border-color:rgba(5,150,105,0.4) !important;
-  background:rgba(5,150,105,0.08) !important;
-}
-
-body.light .link-arrow{
-  border-color:rgba(99,102,241,0.2) !important;
-  color:rgba(26,26,46,0.4) !important;
-}
-
-body.light .link-card:hover .link-arrow{
-  border-color:#4f46e5 !important;
-  color:#4f46e5 !important;
-}
-
-body.light .copy-btn{
-  background:rgba(79,70,229,0.06) !important;
-  border-color:rgba(79,70,229,0.2) !important;
-}
-
-body.light .top-btn{
-  background:rgba(255,255,255,0.9) !important;
-  border-color:rgba(99,102,241,0.3) !important;
-  color:#4f46e5 !important;
-}
-
-body.light .quick-btn{
-  background:rgba(79,70,229,0.06) !important;
-  border-color:rgba(79,70,229,0.2) !important;
-  color:#4f46e5 !important;
-}
-
-body.light .chat-send{
-  background:linear-gradient(135deg,#4f46e5,#7c3aed) !important;
-  color:#fff !important;
-}
-
-body.light .service-btn{
-  color:#4f46e5 !important;
-  border-color:rgba(79,70,229,0.3) !important;
-  background:rgba(79,70,229,0.06) !important;
-}
-
-body.light .service-price,
-body.light .testi-stars{
-  color:#d97706 !important;
-}
-
-body.light .chat-input{
-  color:#1a1a2e !important;
-  background:rgba(99,102,241,0.05) !important;
-  border-color:rgba(99,102,241,0.2) !important;
-}
-
-body.light .chat-input::placeholder{
-  color:rgba(26,26,46,0.35) !important;
-}
-
-body.light .chat-header{
-  background:rgba(79,70,229,0.04) !important;
-  border-color:rgba(99,102,241,0.15) !important;
-}
-
-body.light .msg.bot{
-  background:rgba(79,70,229,0.07) !important;
-  border-color:rgba(79,70,229,0.18) !important;
-  color:#1a1a2e !important;
-}
-
-body.light .msg.user{
-  color:#1a1a2e !important;
-}
-
-body.light .typing-dots span{
-  background:#4f46e5 !important;
-}
-
-body.light #bgCanvas{
-  opacity:.06;
-}
-
-body.light .orb1{
-  background:radial-gradient(circle,rgba(79,70,229,0.1),transparent 70%);
-}
-
-body.light .orb2{
-  background:radial-gradient(circle,rgba(124,58,237,0.08),transparent 70%);
-}
-
-body.light .grid-overlay{
-  background-image:
-    linear-gradient(rgba(99,102,241,0.04) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(99,102,241,0.04) 1px,transparent 1px) !important;
-}
-
-body.light #scrollBar{
-  background:linear-gradient(90deg,#4f46e5,#7c3aed) !important;
-}
-
-body.light .sep{
-  background:linear-gradient(90deg,transparent,rgba(79,70,229,0.4),transparent) !important;
-}
-
-body.light .avatar-hex2{
-  background:#f8f9ff !important;
-}
-
-body.light .faq-item.open{
-  border-color:rgba(79,70,229,0.4) !important;
-}
-
-body.light .faq-item.open .faq-icon{
-  background:rgba(79,70,229,0.1) !important;
-  border-color:#4f46e5 !important;
-  color:#4f46e5 !important;
-}
-
-body.light .sticky-cta{
-  background:rgba(248,249,255,0.95) !important;
-  border-top-color:rgba(99,102,241,0.2) !important;
-}
-
-body.light .sticky-cta-text strong{
-  color:#4f46e5 !important;
-}
-
-body.light .scroll-top-btn{
-  background:rgba(255,255,255,0.9) !important;
-  border-color:rgba(99,102,241,0.3) !important;
-  color:#4f46e5 !important;
-}
-
-/* NOTIFICATION BAR */
 #notifBar{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:300;
+  position:fixed;top:0;left:0;right:0;z-index:300;
   background:linear-gradient(90deg,#7c3aed,#1877f2,#7c3aed);
   background-size:200%;
   animation:notifShimmer 4s linear infinite;
   padding:8px 16px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  font-size:12px;
-  color:#fff;
-  transition:transform .3s;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  font-size:12px;color:#fff;transition:transform .3s;
+}
+#notifBar.hidden{transform:translateY(-100%)}
+.notif-close{background:none;border:none;color:rgba(255,255,255,.75);cursor:pointer;font-size:16px;line-height:1;padding:0 4px}
+@keyframes notifShimmer{0%{background-position:0% center}100%{background-position:200% center}}
+
+.cursor{position:fixed;width:10px;height:10px;background:var(--cyan);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen}
+.cursor-ring{position:fixed;width:34px;height:34px;border:1.5px solid rgba(56,217,255,.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .2s,height .2s,border-color .2s}
+.cursor-ring.big{width:48px;height:48px;border-color:var(--cyan)}
+.trail{position:fixed;border-radius:50%;pointer-events:none;z-index:9997;transform:translate(-50%,-50%);animation:trailFade .6s ease forwards}
+@keyframes trailFade{0%{opacity:.6;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) scale(0)}}
+
+#bgCanvas,#particleCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+.grid-overlay{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(56,189,248,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.035) 1px,transparent 1px);background-size:80px 80px}
+.orb{position:fixed;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0}
+.orb1{width:700px;height:700px;background:radial-gradient(circle,rgba(139,92,246,.13),transparent 70%);top:-250px;left:-250px;animation:orbF1 20s ease-in-out infinite}
+.orb2{width:600px;height:600px;background:radial-gradient(circle,rgba(56,189,248,.09),transparent 70%);bottom:-150px;right:-150px;animation:orbF2 25s ease-in-out infinite}
+@keyframes orbF1{0%,100%{transform:translate(0,0)}50%{transform:translate(100px,70px)}}
+@keyframes orbF2{0%,100%{transform:translate(0,0)}50%{transform:translate(-70px,-100px)}}
+.scanline{position:fixed;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:.22;animation:scan 9s linear infinite;z-index:5;pointer-events:none}
+@keyframes scan{0%{top:-1px}100%{top:100vh}}
+#scrollBar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--purple),var(--gold));z-index:220;width:0%;pointer-events:none}
+
+.wa-float{position:fixed;bottom:80px;right:20px;z-index:200;width:54px;height:54px;background:linear-gradient(135deg,#25D366,#128C7E);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);animation:waPulse 3s ease infinite;text-decoration:none;transition:transform .2s}
+.wa-float:hover{transform:scale(1.12)}
+.wa-float svg{width:28px;height:28px}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 35px rgba(37,211,102,.7)}}
+
+.scroll-top-btn{position:fixed;bottom:80px;left:20px;z-index:200;width:44px;height:44px;background:rgba(15,23,42,.85);border:1px solid rgba(56,189,248,.3);border-radius:50%;color:var(--cyan);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(10px);opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none}
+.scroll-top-btn.show{opacity:1;transform:translateY(0);pointer-events:all}
+.scroll-top-btn:hover{background:rgba(56,189,248,.15);border-color:var(--cyan)}
+
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:190;padding:10px 20px;background:rgba(2,6,23,.95);border-top:1px solid rgba(56,189,248,.16);backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:space-between;gap:12px;transform:translateY(100%);transition:transform .4s ease;padding-bottom:max(10px,env(safe-area-inset-bottom))}
+.sticky-cta.visible{transform:translateY(0)}
+.sticky-cta-text{font-size:12px;color:var(--text)}
+.sticky-cta-text strong{color:var(--cyan);display:block;font-size:10px;font-family:'JetBrains Mono',monospace}
+.sticky-cta-btn{flex-shrink:0;padding:9px 18px;background:linear-gradient(135deg,#10b981,#059669);border:none;border-radius:25px;color:#fff;font-family:'Inter','Cairo',sans-serif;font-size:10px;font-weight:800;cursor:pointer;text-decoration:none;white-space:nowrap;letter-spacing:.5px}
+
+.top-btns{position:fixed;top:50px;right:16px;z-index:200;display:flex;gap:8px}
+.top-btn{background:rgba(15,23,42,.8);border:1px solid rgba(56,189,248,.3);color:var(--cyan);border-radius:20px;padding:6px 12px;font-family:'JetBrains Mono',monospace;font-size:10px;cursor:pointer;transition:all .2s;backdrop-filter:blur(10px)}
+.top-btn:hover{background:rgba(56,189,248,.15);border-color:var(--cyan)}
+.copy-toast{position:fixed;bottom:90px;right:20px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;padding:8px 16px;border-radius:10px;font-family:'JetBrains Mono',monospace;font-size:11px;z-index:300;opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none}
+.copy-toast.show{opacity:1;transform:translateY(0)}
+
+.progress-indicator{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:6px;pointer-events:none}
+.prog-dot{width:6px;height:6px;border-radius:50%;background:rgba(56,189,248,.22);transition:all .3s}
+.prog-dot.active{background:var(--cyan);transform:scale(1.5);box-shadow:0 0 8px var(--cyan)}
+
+main{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;padding:110px 20px 100px}
+.hero{text-align:center;margin-bottom:52px;animation:fadeDown .9s ease both}
+.avatar-wrap{position:relative;width:120px;height:120px;margin:0 auto 24px}
+.avatar-hex{position:absolute;inset:-8px;background:conic-gradient(var(--cyan),var(--purple),var(--gold),var(--cyan));border-radius:50%;animation:spin 7s linear infinite;opacity:.88}
+.avatar-hex2{position:absolute;inset:-3px;background:#020617;border-radius:50%;transition:background .4s}
+.avatar-inner{position:relative;width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#060d2e,#0d0530);display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:30px;font-weight:900;color:var(--cyan);border:1px solid rgba(56,189,248,.3);z-index:1;overflow:hidden;cursor:pointer;transition:transform .15s}
+.avatar-inner img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%}
+.status-dot{position:absolute;bottom:6px;right:6px;width:14px;height:14px;background:#10b981;border-radius:50%;border:2px solid #020617;z-index:2}
+.status-dot::after{content:'';position:absolute;inset:-3px;border-radius:50%;background:rgba(16,185,129,.4);animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.7);opacity:0}}
+
+.name-row{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:4px;flex-wrap:wrap;overflow:visible;position:relative}
+.name{font-size:clamp(22px,5vw,35px);font-weight:900;letter-spacing:1.4px;background:linear-gradient(90deg,var(--cyan),var(--purple2),var(--cyan));background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s linear infinite;direction:ltr}
+.verified-wrap{position:relative;display:inline-flex;align-items:center;flex-shrink:0;cursor:default}
+.verified{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;flex-shrink:0;position:relative;animation:verifyGlow 3s ease infinite}
+.verified::before{content:'';position:absolute;inset:0;background:linear-gradient(160deg,#1877f2,#0a5dc4);border-radius:50%;box-shadow:0 0 0 2px rgba(24,119,242,.3),0 2px 8px rgba(24,119,242,.5)}
+.verified svg{position:relative;z-index:1;width:16px;height:16px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.3))}
+.verified-tooltip{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(4px);background:linear-gradient(135deg,rgba(10,20,50,.98),rgba(5,10,30,.98));border:1px solid rgba(24,119,242,.6);color:#e2eeff;font-family:'JetBrains Mono',monospace;font-size:11px;padding:7px 14px;border-radius:10px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .25s,transform .25s;z-index:999;box-shadow:0 4px 20px rgba(24,119,242,.3)}
+.verified-tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:rgba(24,119,242,.5)}
+.verified-wrap:hover .verified-tooltip{opacity:1;transform:translateX(-50%) translateY(0)}
+@keyframes verifyGlow{0%,100%{filter:drop-shadow(0 0 4px rgba(24,119,242,.6))}50%{filter:drop-shadow(0 0 10px rgba(24,119,242,1))}}
+.pro-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;background:linear-gradient(135deg,#7c3aed,#a78bfa);border-radius:20px;font-family:'Inter',sans-serif;font-size:9px;font-weight:800;letter-spacing:2px;color:#fff;box-shadow:0 0 12px rgba(139,92,246,.5),inset 0 1px 0 rgba(255,255,255,.2);animation:proBadgeGlow 3s ease infinite;cursor:default;flex-shrink:0}
+.pro-badge::before{content:'✦';font-size:8px;opacity:.8}
+@keyframes proBadgeGlow{0%,100%{box-shadow:0 0 10px rgba(139,92,246,.5)}50%{box-shadow:0 0 20px rgba(167,139,250,.8)}}
+
+.title-line{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:8px;flex-wrap:wrap}
+.title-badge{font-family:'Inter','Cairo',sans-serif;font-size:10px;padding:4px 10px;border:1px solid;border-radius:20px;letter-spacing:.5px;font-weight:800}
+.tb-ai{color:var(--cyan);border-color:rgba(56,189,248,.4);background:rgba(56,189,248,.08)}
+.tb-auto{color:#a78bfa;border-color:rgba(167,139,250,.4);background:rgba(167,139,250,.08)}
+.tb-free{color:#22c55e;border-color:rgba(34,197,94,.4);background:rgba(34,197,94,.08)}
+.avail-badge{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:5px 14px;border-radius:20px;font-size:11px;font-family:'JetBrains Mono',monospace;border:1px solid;cursor:pointer;transition:all .2s}
+.avail-badge.open{color:#22c55e;border-color:rgba(34,197,94,.4);background:rgba(34,197,94,.08)}
+.avail-badge.busy{color:#ff4466;border-color:rgba(255,68,102,.4);background:rgba(255,68,102,.08)}
+.avail-dot{width:7px;height:7px;border-radius:50%;background:currentColor;animation:pulse 2s infinite}
+.tagline{font-size:15px;color:var(--muted)!important;margin-top:12px;max-width:360px;margin-left:auto;margin-right:auto;line-height:1.75;min-height:48px;font-weight:500}
+.tagline-cursor{display:inline-block;width:2px;height:14px;background:var(--cyan);margin-left:2px;animation:blink .7s step-end infinite;vertical-align:middle}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.visitor-bar{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted)}
+.visitor-dot{width:6px;height:6px;border-radius:50%;background:#10b981;animation:pulse 2s infinite;flex-shrink:0}
+.sep{width:200px;height:1px;margin:18px auto 0;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:.45}
+
+.trust-bar{width:100%;max-width:460px;margin:18px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.trust-pill{padding:9px 10px;border:1px solid var(--border);background:var(--card);border-radius:14px;font-size:11px;color:var(--text);text-align:center;font-weight:800}
+
+.about-card,.link-card,.service-card,.project-card,.cert-card,.testi-card,.results-bar,.how-step,.faq-item,.live-card,.chat-box,.stats-bar,.guarantee-card{
+  background:var(--card);border:1px solid var(--border);box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+.about-card{width:100%;max-width:460px;border-radius:16px;padding:20px;margin-bottom:48px;animation:fadeUp .6s ease both;position:relative;overflow:hidden}
+.about-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--purple),var(--gold))}
+.about-inner{display:flex;gap:16px;align-items:flex-start}
+.about-emoji{font-size:36px;flex-shrink:0;line-height:1}
+.about-content{flex:1}
+.about-label{font-size:11px;font-weight:800;color:var(--cyan);letter-spacing:.5px;margin-bottom:8px}
+.about-text{font-size:13px;color:var(--muted);line-height:1.9}
+.about-text strong{color:var(--text);font-weight:800}
+.about-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.about-tag{font-size:10px;padding:4px 10px;border-radius:20px;border:1px solid rgba(56,189,248,.22);color:var(--cyan);font-family:'JetBrains Mono',monospace;background:rgba(56,189,248,.05)}
+
+.stats-bar{display:flex;width:100%;max-width:460px;margin-bottom:36px;animation:fadeUp .6s ease .15s both;border-radius:14px;overflow:hidden}
+.stat{flex:1;padding:14px 8px;text-align:center;transition:background .3s;cursor:default}
+.stat:hover{background:rgba(56,189,248,.08)}
+.stat+.stat{border-left:1px solid var(--border)}
+.stat-n{font-size:18px;font-weight:800;color:var(--cyan)}
+.stat-l{font-size:9px;color:var(--muted);letter-spacing:.5px;margin-top:3px;font-weight:800}
+.section-title{font-size:11px;letter-spacing:.8px;color:var(--muted);margin-top:4px;margin-bottom:16px;text-align:center;direction:ltr;font-weight:800}
+
+.links{width:100%;max-width:460px;display:flex;flex-direction:column;gap:10px;margin-bottom:30px}
+.link-card{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:14px;text-decoration:none;color:var(--text)!important;position:relative;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;animation:fadeUp .5s ease both;direction:ltr}
+.link-card::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(56,189,248,.08),transparent);transform:translateX(-100%);transition:transform .5s}
+.link-card:hover::after{transform:translateX(100%)}
+.link-card:hover,.service-card:hover,.project-card:hover,.cert-card:hover,.testi-card:hover{transform:translateY(-3px);border-color:rgba(56,189,248,.45);box-shadow:0 14px 40px rgba(56,189,248,.12)}
+.link-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px}
+.link-text{flex:1}
+.link-title{font-size:11px;font-weight:800;letter-spacing:1px;color:var(--cyan)!important}
+.link-sub{font-size:11px;color:var(--muted);margin-top:2px;font-family:'JetBrains Mono',monospace}
+.link-right{display:flex;align-items:center;gap:8px}
+.copy-btn{width:24px;height:24px;border-radius:6px;background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.2);color:var(--muted);font-size:11px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+.copy-btn:hover{background:rgba(56,189,248,.2);color:var(--cyan);border-color:var(--cyan)}
+.link-arrow{width:28px;height:28px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;transition:all .2s;flex-shrink:0}
+.link-card:hover .link-arrow{border-color:var(--cyan);color:var(--cyan);transform:scale(1.1)}
+.ic-web{background:rgba(139,92,246,.2)}.ic-github{background:rgba(255,255,255,.07)}.ic-linkedin{background:rgba(0,119,181,.2)}.ic-upwork{background:rgba(20,163,74,.2)}.ic-khamsat{background:rgba(255,165,0,.15)}.ic-mostaql{background:rgba(0,170,220,.15)}.ic-wa{background:rgba(37,211,102,.15)}.ic-email{background:rgba(255,80,80,.15)}
+
+.action-row{width:100%;max-width:460px;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:30px}
+.action-btn{padding:13px 14px;border-radius:16px;border:1px solid var(--border);background:linear-gradient(135deg,rgba(56,189,248,.12),rgba(139,92,246,.12));color:var(--text);font-family:'Cairo','Inter',sans-serif;font-size:13px;font-weight:800;cursor:pointer;text-align:center;transition:all .25s ease}
+.action-btn:hover{transform:translateY(-2px);border-color:rgba(56,189,248,.45);box-shadow:0 10px 30px rgba(56,189,248,.12)}
+.action-btn.primary{background:linear-gradient(135deg,#10b981,#059669);color:#fff;border-color:rgba(16,185,129,.45)}
+
+.services{width:100%;max-width:460px;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:48px}
+.service-card{border-radius:14px;padding:18px 14px;text-align:center;transition:transform .25s,border-color .25s,box-shadow .25s;animation:fadeUp .5s ease both;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(56,189,248,.07),transparent 70%);pointer-events:none}
+.service-icon{font-size:28px;margin-bottom:10px}
+.service-name{font-size:11px;font-weight:800;letter-spacing:.5px;color:var(--cyan);margin-bottom:6px}
+.service-desc{font-size:13px;color:var(--muted);line-height:1.85;margin-bottom:12px;min-height:66px}
+.service-price{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);margin-bottom:12px;font-weight:800}
+.service-btn{display:inline-block;padding:7px 14px;background:linear-gradient(135deg,rgba(56,189,248,.15),rgba(139,92,246,.15));border:1px solid rgba(56,189,248,.3);border-radius:20px;font-size:11px;color:var(--cyan);text-decoration:none;font-weight:800;transition:all .2s;cursor:pointer}
+.service-btn:hover{background:linear-gradient(135deg,rgba(56,189,248,.3),rgba(139,92,246,.3));box-shadow:0 0 15px rgba(56,189,248,.2)}
+
+.how-section{width:100%;max-width:460px;display:flex;flex-direction:column;gap:0;margin-bottom:18px}
+.how-step{display:flex;align-items:flex-start;gap:14px;padding:16px 18px;border-radius:14px;transition:border-color .25s,box-shadow .25s}
+.how-connector{width:2px;height:16px;background:linear-gradient(to bottom,rgba(56,189,248,.3),rgba(139,92,246,.3));margin:0 auto;position:relative;left:26px}
+.how-num{font-size:18px;font-weight:900;color:var(--cyan);flex-shrink:0;width:36px;text-align:center;line-height:1}
+.how-info{flex:1}
+.how-title{font-size:13px;font-weight:800;color:var(--cyan);letter-spacing:.2px;margin-bottom:4px}
+.how-desc{font-size:13px;color:var(--muted);line-height:1.85}
+.how-time{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold);margin-top:4px}
+
+.guarantee-card{width:100%;max-width:460px;border-radius:16px;padding:18px;margin-bottom:48px;display:flex;gap:14px;align-items:flex-start}
+.guarantee-icon{font-size:30px;flex-shrink:0}
+.guarantee-title{font-size:14px;font-weight:800;color:var(--cyan);margin-bottom:6px}
+.guarantee-text{font-size:13px;line-height:1.85;color:var(--muted)}
+
+.results-section{width:100%;max-width:460px;margin-bottom:48px}
+.results-bar{border-radius:14px;padding:16px 18px;margin-bottom:10px;display:flex;align-items:center;gap:14px;transition:border-color .25s}
+.results-bar:hover{border-color:rgba(56,189,248,.35)}
+.result-icon{font-size:24px;flex-shrink:0}
+.result-num{font-size:20px;font-weight:900;color:var(--cyan);margin-top:2px}
+.result-title{font-size:13px;color:var(--text);line-height:1.55}
+
+.projects{width:100%;max-width:460px;display:flex;flex-direction:column;gap:10px;margin-bottom:48px}
+.project-card{border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:14px;transition:transform .25s,border-color .25s;animation:fadeUp .5s ease both}
+.project-emoji{font-size:28px;flex-shrink:0}
+.project-info{flex:1}
+.project-name{font-size:11px;font-weight:800;color:var(--cyan);letter-spacing:.5px}
+.project-desc{font-size:13px;color:var(--muted);margin-top:3px;line-height:1.85}
+.project-result{font-family:'JetBrains Mono',monospace;font-size:10px;color:#22c55e;margin-top:4px}
+.project-tags{display:flex;gap:5px;margin-top:6px;flex-wrap:wrap}
+.ptag{font-size:9px;padding:2px 7px;border-radius:10px;border:1px solid;font-family:'JetBrains Mono',monospace}
+.ptag-cyan{color:var(--cyan);border-color:rgba(56,189,248,.3);background:rgba(56,189,248,.06)}
+.ptag-purple{color:#a78bfa;border-color:rgba(167,139,250,.3);background:rgba(167,139,250,.06)}
+.ptag-green{color:#22c55e;border-color:rgba(34,197,94,.3);background:rgba(34,197,94,.06)}
+
+.certs-section{width:100%;max-width:460px;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:48px}
+.cert-card{border-radius:14px;padding:14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;transition:transform .25s,border-color .25s}
+.cert-icon{font-size:28px}
+.cert-name{font-size:10px;font-weight:800;color:var(--cyan);letter-spacing:.3px;line-height:1.35}
+.cert-org{font-size:10px;color:var(--muted);font-family:'JetBrains Mono',monospace}
+.cert-year{font-size:9px;color:rgba(56,189,248,.55);font-family:'JetBrains Mono',monospace;margin-top:2px}
+
+.testimonials{width:100%;max-width:460px;display:flex;flex-direction:column;gap:10px;margin-bottom:48px}
+.testi-card{border-radius:14px;padding:16px 18px;transition:transform .25s,border-color .25s}
+.testi-stars{color:var(--gold);font-size:13px;margin-bottom:8px}
+.testi-text{color:var(--muted);font-size:13px;line-height:1.85}
+.testi-name{color:var(--cyan);font-family:'JetBrains Mono',monospace;font-size:10px;margin-top:8px}
+
+.skills-section{width:100%;max-width:460px;margin-bottom:48px}
+.skill-item{margin-bottom:14px}
+.skill-header{display:flex;justify-content:space-between;margin-bottom:6px;font-family:'JetBrains Mono',monospace;font-size:11px}
+.skill-name{color:var(--text)}.skill-pct{color:var(--cyan)}
+.skill-bar{height:4px;background:rgba(56,189,248,.1);border-radius:4px;overflow:hidden}
+.skill-fill{height:100%;border-radius:4px;transform:scaleX(0);transform-origin:left;transition:transform 1.4s cubic-bezier(.22,.61,.36,1)}
+.skill-fill.animated{transform:scaleX(1)}
+.fill-cyan{background:linear-gradient(90deg,var(--cyan),var(--purple))}
+.fill-purple{background:linear-gradient(90deg,var(--purple),var(--purple2))}
+.fill-green{background:linear-gradient(90deg,#10b981,var(--cyan))}
+.fill-gold{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+
+.chat-section{width:100%;max-width:460px;margin-bottom:48px}
+.chat-box{border-radius:16px;overflow:hidden;backdrop-filter:blur(20px)}
+.chat-header{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--border);background:rgba(56,189,248,.04)}
+.chat-avatar-bot{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--purple));display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.chat-bot-name{font-size:11px;font-weight:800;color:var(--cyan)}
+.chat-bot-status{font-size:10px;color:#10b981;font-family:'JetBrains Mono',monospace;margin-top:1px}
+.chat-messages{height:240px;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}
+.chat-messages::-webkit-scrollbar{width:3px}
+.chat-messages::-webkit-scrollbar-thumb{background:rgba(56,189,248,.3);border-radius:3px}
+.msg{max-width:85%;padding:9px 13px;border-radius:12px;font-size:13px;line-height:1.65;animation:msgIn .3s ease;white-space:pre-line}
+.msg.bot{background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.16);color:var(--text);border-radius:4px 12px 12px 12px;align-self:flex-start}
+.msg.user{background:linear-gradient(135deg,rgba(139,92,246,.3),rgba(56,189,248,.14));border:1px solid rgba(139,92,246,.32);color:var(--text);border-radius:12px 4px 12px 12px;align-self:flex-end}
+.msg.typing{background:rgba(56,189,248,.05);border:1px solid rgba(56,189,248,.1);align-self:flex-start;border-radius:4px 12px 12px 12px}
+.typing-dots{display:flex;gap:4px;padding:2px 4px}
+.typing-dots span{width:6px;height:6px;background:var(--cyan);border-radius:50%;animation:dot .9s infinite}
+.typing-dots span:nth-child(2){animation-delay:.2s}.typing-dots span:nth-child(3){animation-delay:.4s}
+@keyframes dot{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(-5px);opacity:1}}
+@keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.chat-quick{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px;border-top:1px solid var(--border)}
+.quick-btn{background:rgba(56,189,248,.07);border:1px solid rgba(56,189,248,.22);color:var(--cyan);border-radius:20px;padding:5px 12px;font-size:11px;cursor:pointer;font-family:'Cairo','Inter',sans-serif;transition:all .2s;font-weight:800}
+.quick-btn:hover{background:rgba(56,189,248,.15);border-color:var(--cyan)}
+.chat-input-row{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--border)}
+.chat-input{flex:1;background:rgba(56,189,248,.05);border:1px solid var(--border);border-radius:10px;padding:9px 14px;color:var(--text);font-family:'Cairo','Inter',sans-serif;font-size:14px;outline:none;transition:border-color .2s}
+.chat-input:focus{border-color:rgba(56,189,248,.45)}
+.chat-input::placeholder{color:var(--muted)}
+.chat-send{width:40px;height:40px;background:linear-gradient(135deg,var(--cyan),var(--purple));border:none;border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#000;font-size:16px;font-weight:900;flex-shrink:0;transition:transform .2s,box-shadow .2s}
+.chat-send:hover{transform:scale(1.07);box-shadow:0 0 15px rgba(56,189,248,.4)}
+.bot-mini-action{margin-top:6px;display:inline-block;padding:8px 12px;border-radius:12px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;font-weight:800;cursor:pointer}
+
+.consult-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:460px;margin-bottom:48px;padding:16px 24px;background:linear-gradient(135deg,#10b981,#059669);border:none;border-radius:16px;color:#fff;font-size:13px;font-weight:800;letter-spacing:.3px;cursor:pointer;text-decoration:none;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(16,185,129,.35)}
+.consult-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transform:translateX(-100%);transition:transform .5s}
+.consult-btn:hover::before{transform:translateX(100%)}
+.consult-btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(16,185,129,.5);color:#fff}
+.consult-sub{font-family:'JetBrains Mono',monospace;font-size:10px;opacity:.85;margin-top:2px}
+
+.live-info{width:100%;max-width:460px;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:48px}
+.live-card{border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:12px}
+.live-icon{font-size:22px;flex-shrink:0}
+.live-label{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:1px;margin-bottom:3px;direction:ltr}
+.live-value{font-size:13px;font-weight:800;color:var(--cyan)}
+.live-sub{font-size:10px;color:var(--muted);margin-top:2px}
+.last-project-dot{width:8px;height:8px;border-radius:50%;background:#10b981;flex-shrink:0;animation:pulse 2s ease infinite}
+
+.faq-section{width:100%;max-width:460px;margin-bottom:48px;display:flex;flex-direction:column;gap:8px}
+.faq-item{border-radius:14px;overflow:hidden;transition:border-color .25s}
+.faq-item.open{border-color:rgba(56,189,248,.4)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;cursor:pointer;font-size:13px;font-weight:800;color:var(--text);gap:10px;user-select:none}
+.faq-icon{width:22px;height:22px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;transition:all .3s;flex-shrink:0}
+.faq-item.open .faq-icon{background:rgba(56,189,248,.1);border-color:var(--cyan);color:var(--cyan);transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-item.open .faq-a{max-height:240px;padding-bottom:14px}
+.faq-a-inner{padding:0 18px;font-size:13px;color:var(--muted);line-height:1.85}
+
+.game-section{width:100%;max-width:460px}
+.game-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.game-title{font-size:12px;font-weight:800;color:var(--cyan);letter-spacing:.8px}
+.game-subtitle{font-size:11px;color:var(--muted);margin-top:2px}
+.game-scores{display:flex;gap:16px}
+.gscore-label{font-size:9px;color:var(--muted);letter-spacing:1px;font-family:'JetBrains Mono',monospace}
+.gscore-val{font-size:18px;font-weight:800;color:var(--cyan)}
+.gscore-val.best-val{color:#a78bfa}
+.game-arena{position:relative;width:100%;height:180px;background:rgba(15,23,42,.6);border:1px solid var(--border);border-radius:16px;overflow:hidden;cursor:crosshair}
+.game-arena::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 110%,rgba(139,92,246,.15),transparent 60%);pointer-events:none}
+#gameCanvas{display:block;width:100%;height:100%}
+.game-legend{display:flex;gap:12px;margin-top:10px;justify-content:center;flex-wrap:wrap}
+.legend-item{display:flex;align-items:center;gap:5px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted)}
+.legend-dot{width:8px;height:8px;border-radius:50%}
+.score-pop{position:fixed;font-family:'Inter',sans-serif;font-size:16px;font-weight:900;pointer-events:none;z-index:999;animation:popUp .8s ease forwards}
+@keyframes popUp{0%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-55px) scale(1.3)}}
+
+.easter-overlay{position:fixed;inset:0;z-index:500;background:rgba(2,6,23,.96);display:none;align-items:center;justify-content:center;flex-direction:column;gap:16px;text-align:center;padding:20px}
+.easter-overlay.show{display:flex}
+.easter-msg{font-size:22px;font-weight:900;background:linear-gradient(90deg,var(--cyan),#a78bfa,#fbbf24,var(--cyan));background-size:300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 2s linear infinite}
+.easter-sub{font-size:13px;color:var(--muted);max-width:300px;line-height:1.7}
+.easter-close{margin-top:8px;padding:8px 24px;background:linear-gradient(135deg,var(--cyan),var(--purple));border:none;border-radius:20px;color:#000;font-size:11px;cursor:pointer;font-weight:800}
+
+footer{position:relative;z-index:1;margin-top:60px;text-align:center;padding-bottom:80px}
+.footer-line{width:200px;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:0 auto 16px}
+.footer-text{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(226,238,255,.28);letter-spacing:1.5px;direction:ltr}
+
+body.en-mode .about-card,body.en-mode .how-section,body.en-mode .results-section,body.en-mode .faq-section{direction:ltr}
+body.en-mode .about-inner,body.en-mode .how-step,body.en-mode .results-bar,body.en-mode .project-card,body.en-mode .live-card{text-align:left}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes shimmer{0%{background-position:0% center}100%{background-position:200% center}}
+
+body.light .about-card,body.light .link-card,body.light .service-card,body.light .project-card,body.light .cert-card,body.light .testi-card,body.light .results-bar,body.light .how-step,body.light .faq-item,body.light .live-card,body.light .chat-box,body.light .stats-bar,body.light .guarantee-card,body.light .trust-pill{
+  background:#fff!important;border-color:rgba(79,70,229,.16)!important;box-shadow:0 10px 30px rgba(31,41,55,.06)!important;color:#111827!important;
+}
+body.light .about-text,body.light .link-sub,body.light .service-desc,body.light .project-desc,body.light .testi-text,body.light .how-desc,body.light .faq-a-inner,body.light .live-sub,body.light .stat-l,body.light .guarantee-text{color:rgba(17,24,39,.68)!important}
+body.light .section-title{color:rgba(17,24,39,.45)!important}
+body.light .link-title,body.light .service-name,body.light .project-name,body.light .cert-name,body.light .chat-bot-name,body.light .about-label,body.light .result-num,body.light .stat-n,body.light .live-value,body.light .how-num,body.light .guarantee-title{color:#2563eb!important}
+body.light .msg.bot{background:#eef2ff!important;color:#111827!important;border-color:rgba(79,70,229,.16)!important}
+body.light .msg.user{background:linear-gradient(135deg,#dbeafe,#ede9fe)!important;color:#111827!important;border-color:rgba(37,99,235,.18)!important}
+body.light .chat-input{background:#f3f4f6!important;color:#111827!important;border-color:rgba(79,70,229,.18)!important}
+body.light .chat-input::placeholder{color:rgba(17,24,39,.42)!important}
+body.light .top-btn,body.light .scroll-top-btn{background:#fff!important;color:#2563eb!important;border-color:rgba(37,99,235,.22)!important}
+body.light .sticky-cta{background:rgba(255,255,255,.96)!important;border-top-color:rgba(37,99,235,.18)!important}
+body.light .sticky-cta-text{color:#111827!important}
+body.light .sticky-cta-text strong{color:#2563eb!important}
+body.light .avatar-hex2{background:#f7f9ff!important}
+body.light .name{background:linear-gradient(90deg,#2563eb,#7c3aed,#2563eb)!important;background-size:200%!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important}
+body.light #bgCanvas{opacity:.07}
+body.light .grid-overlay{background-image:linear-gradient(rgba(79,70,229,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(79,70,229,.04) 1px,transparent 1px)!important}
+body.light .action-btn{background:#fff!important;color:#111827!important;border-color:rgba(79,70,229,.16)!important}
+body.light .action-btn.primary{background:linear-gradient(135deg,#059669,#10b981)!important;color:#fff!important}
+
+@media(max-width:640px){
+  .cursor,.cursor-ring,.trail{display:none!important}
+  main{padding-top:96px}
+  .top-btns{top:44px}
+  .name{font-size:24px}
+  .tagline{font-size:14px}
 }
-
-#notifBar.hidden{
-  transform:translateY(-100%);
-}
-
-.notif-close{
-  background:none;
-  border:none;
-  color:rgba(255,255,255,0.7);
-  cursor:pointer;
-  font-size:16px;
-  line-height:1;
-  padding:0 4px;
-  flex-shrink:0;
-}
-
-@keyframes notifShimmer{
-  0%{background-position:0% center}
-  100%{background-position:200% center}
-}
-
-/* CURSOR */
-.cursor{
-  position:fixed;
-  width:10px;
-  height:10px;
-  background:#00f5ff;
-  border-radius:50%;
-  pointer-events:none;
-  z-index:9999;
-  transform:translate(-50%,-50%);
-  mix-blend-mode:screen;
-}
-
-.cursor-ring{
-  position:fixed;
-  width:34px;
-  height:34px;
-  border:1.5px solid rgba(0,245,255,0.5);
-  border-radius:50%;
-  pointer-events:none;
-  z-index:9998;
-  transform:translate(-50%,-50%);
-  transition:width .2s,height .2s,border-color .2s;
-}
-
-.cursor-ring.big{
-  width:48px;
-  height:48px;
-  border-color:#00f5ff;
-}
-
-.trail{
-  position:fixed;
-  border-radius:50%;
-  pointer-events:none;
-  z-index:9997;
-  transform:translate(-50%,-50%);
-  animation:trailFade .6s ease forwards;
-}
-
-@keyframes trailFade{
-  0%{opacity:.6;transform:translate(-50%,-50%) scale(1)}
-  100%{opacity:0;transform:translate(-50%,-50%) scale(0)}
-}
-
-/* BACKGROUND */
-#bgCanvas,
-#particleCanvas{
-  position:fixed;
-  inset:0;
-  z-index:0;
-  pointer-events:none;
-}
-
-.grid-overlay{
-  position:fixed;
-  inset:0;
-  z-index:0;
-  pointer-events:none;
-  background-image:
-    linear-gradient(rgba(0,245,255,0.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,245,255,0.025) 1px,transparent 1px);
-  background-size:80px 80px;
-}
-
-.orb{
-  position:fixed;
-  border-radius:50%;
-  filter:blur(90px);
-  pointer-events:none;
-  z-index:0;
-}
-
-.orb1{
-  width:700px;
-  height:700px;
-  background:radial-gradient(circle,rgba(139,92,246,0.12),transparent 70%);
-  top:-250px;
-  left:-250px;
-  animation:orbF1 20s ease-in-out infinite;
-}
-
-.orb2{
-  width:600px;
-  height:600px;
-  background:radial-gradient(circle,rgba(0,245,255,0.08),transparent 70%);
-  bottom:-150px;
-  right:-150px;
-  animation:orbF2 25s ease-in-out infinite;
-}
-
-@keyframes orbF1{
-  0%,100%{transform:translate(0,0)}
-  50%{transform:translate(100px,70px)}
-}
-
-@keyframes orbF2{
-  0%,100%{transform:translate(0,0)}
-  50%{transform:translate(-70px,-100px)}
-}
-
-.scanline{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  height:1px;
-  background:linear-gradient(90deg,transparent,#00f5ff,transparent);
-  opacity:.25;
-  animation:scan 9s linear infinite;
-  z-index:5;
-  pointer-events:none;
-}
-
-@keyframes scan{
-  0%{top:-1px}
-  100%{top:100vh}
-}
-
-#scrollBar{
-  position:fixed;
-  top:0;
-  left:0;
-  height:2px;
-  background:linear-gradient(90deg,#00f5ff,#8b5cf6,#fbbf24);
-  z-index:200;
-  width:0%;
-  pointer-events:none;
-}
-
-/* FIXED UI */
-.wa-float{
-  position:fixed;
-  bottom:80px;
-  right:20px;
-  z-index:200;
-  width:54px;
-  height:54px;
-  background:linear-gradient(135deg,#25D366,#128C7E);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 4px 20px rgba(37,211,102,0.4);
-  animation:waPulse 3s ease infinite;
-  text-decoration:none;
-  transition:transform .2s;
-}
-
-.wa-float:hover{
-  transform:scale(1.12);
-}
-
-@keyframes waPulse{
-  0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4)}
-  50%{box-shadow:0 4px 35px rgba(37,211,102,0.7)}
-}
-
-.wa-float svg{
-  width:28px;
-  height:28px;
-}
-
-.scroll-top-btn{
-  position:fixed;
-  bottom:80px;
-  left:20px;
-  z-index:200;
-  width:44px;
-  height:44px;
-  background:rgba(0,10,30,0.85);
-  border:1px solid rgba(0,245,255,0.3);
-  border-radius:50%;
-  color:#00f5ff;
-  font-size:18px;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  backdrop-filter:blur(10px);
-  opacity:0;
-  transform:translateY(10px);
-  transition:all .3s;
-  pointer-events:none;
-}
-
-.scroll-top-btn.show{
-  opacity:1;
-  transform:translateY(0);
-  pointer-events:all;
-}
-
-.scroll-top-btn:hover{
-  background:rgba(0,245,255,0.15);
-  border-color:#00f5ff;
-}
-
-/* STICKY CTA */
-.sticky-cta{
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
-  z-index:190;
-  padding:10px 20px;
-  background:rgba(0,4,15,0.95);
-  border-top:1px solid rgba(0,245,255,0.15);
-  backdrop-filter:blur(20px);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  transform:translateY(100%);
-  transition:transform .4s ease;
-  padding-bottom:max(10px,env(safe-area-inset-bottom));
-}
-
-.sticky-cta.visible{
-  transform:translateY(0);
-}
-
-.sticky-cta-text{
-  font-size:12px;
-  color:var(--text);
-}
-
-.sticky-cta-text strong{
-  color:#00f5ff;
-  display:block;
-  font-size:10px;
-  font-family:'JetBrains Mono',monospace;
-}
-
-.sticky-cta-btn{
-  flex-shrink:0;
-  padding:9px 18px;
-  background:linear-gradient(135deg,#10b981,#059669);
-  border:none;
-  border-radius:25px;
-  color:#fff;
-  font-family:'Orbitron',monospace;
-  font-size:10px;
-  font-weight:700;
-  cursor:pointer;
-  text-decoration:none;
-  white-space:nowrap;
-  letter-spacing:.5px;
-}
-
-.top-btns{
-  position:fixed;
-  top:50px;
-  right:16px;
-  z-index:200;
-  display:flex;
-  gap:8px;
-}
-
-.top-btn{
-  background:rgba(0,10,30,0.8);
-  border:1px solid rgba(0,245,255,0.3);
-  color:#00f5ff;
-  border-radius:20px;
-  padding:6px 12px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;
-  cursor:pointer;
-  transition:all .2s;
-  backdrop-filter:blur(10px);
-}
-
-.top-btn:hover{
-  background:rgba(0,245,255,0.15);
-  border-color:#00f5ff;
-}
-
-.copy-toast{
-  position:fixed;
-  bottom:90px;
-  right:20px;
-  background:linear-gradient(135deg,#10b981,#059669);
-  color:#fff;
-  padding:8px 16px;
-  border-radius:10px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;
-  z-index:300;
-  opacity:0;
-  transform:translateY(10px);
-  transition:all .3s;
-  pointer-events:none;
-}
-
-.copy-toast.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* PROGRESS INDICATOR */
-.progress-indicator{
-  position:fixed;
-  right:16px;
-  top:50%;
-  transform:translateY(-50%);
-  z-index:100;
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-  pointer-events:none;
-}
-
-.prog-dot{
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:rgba(0,245,255,0.2);
-  transition:all .3s;
-}
-
-.prog-dot.active{
-  background:#00f5ff;
-  transform:scale(1.5);
-  box-shadow:0 0 8px #00f5ff;
-}
-
-body.light .prog-dot{
-  background:rgba(79,70,229,0.2);
-}
-
-body.light .prog-dot.active{
-  background:#4f46e5;
-  box-shadow:0 0 8px #4f46e5;
-}
-
-main{
-  position:relative;
-  z-index:1;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  padding:110px 20px 100px;
-}
-
-/* HERO */
-.hero{
-  text-align:center;
-  margin-bottom:52px;
-  animation:fadeDown .9s ease both;
-}
-
-.avatar-wrap{
-  position:relative;
-  width:120px;
-  height:120px;
-  margin:0 auto 24px;
-}
-
-.avatar-hex{
-  position:absolute;
-  inset:-8px;
-  background:conic-gradient(#00f5ff,#8b5cf6,#fbbf24,#00f5ff);
-  border-radius:50%;
-  animation:spin 7s linear infinite;
-  opacity:.85;
-}
-
-.avatar-hex2{
-  position:absolute;
-  inset:-3px;
-  background:#00040f;
-  border-radius:50%;
-  transition:background .4s;
-}
-
-.avatar-inner{
-  position:relative;
-  width:100%;
-  height:100%;
-  border-radius:50%;
-  background:linear-gradient(135deg,#060d2e,#0d0530);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-family:'Orbitron',monospace;
-  font-size:30px;
-  font-weight:900;
-  color:#00f5ff;
-  border:1px solid rgba(0,245,255,0.3);
-  z-index:1;
-  overflow:hidden;
-  cursor:pointer;
-  transition:transform .15s;
-}
-
-.avatar-inner img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center top;
-  border-radius:50%;
-}
-
-.status-dot{
-  position:absolute;
-  bottom:6px;
-  right:6px;
-  width:14px;
-  height:14px;
-  background:#10b981;
-  border-radius:50%;
-  border:2px solid #00040f;
-  z-index:2;
-}
-
-.status-dot::after{
-  content:'';
-  position:absolute;
-  inset:-3px;
-  border-radius:50%;
-  background:rgba(16,185,129,0.4);
-  animation:pulse 2s ease infinite;
-}
-
-@keyframes pulse{
-  0%,100%{transform:scale(1);opacity:.8}
-  50%{transform:scale(1.7);opacity:0}
-}
-
-.name-row{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  margin-bottom:4px;
-  flex-wrap:wrap;
-  overflow:visible;
-  position:relative;
-}
-
-.name{
-  font-family:'Orbitron',monospace;
-  font-size:clamp(20px,5vw,34px);
-  font-weight:900;
-  letter-spacing:3px;
-  background:linear-gradient(90deg,#00f5ff,#a78bfa,#00f5ff);
-  background-size:200%;
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-  animation:shimmer 4s linear infinite;
-  direction:ltr;
-}
-
-.verified-wrap{
-  position:relative;
-  display:inline-flex;
-  align-items:center;
-  flex-shrink:0;
-  cursor:default;
-}
-
-.verified{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:28px;
-  height:28px;
-  flex-shrink:0;
-  position:relative;
-  animation:verifyGlow 3s ease infinite;
-}
-
-.verified::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(160deg,#1877f2,#0a5dc4);
-  border-radius:50%;
-  box-shadow:0 0 0 2px rgba(24,119,242,0.3),0 2px 8px rgba(24,119,242,0.5);
-}
-
-.verified svg{
-  position:relative;
-  z-index:1;
-  width:16px;
-  height:16px;
-  filter:drop-shadow(0 1px 2px rgba(0,0,0,0.3));
-}
-
-.verified-tooltip{
-  position:absolute;
-  bottom:calc(100% + 10px);
-  left:50%;
-  transform:translateX(-50%) translateY(4px);
-  background:linear-gradient(135deg,rgba(10,20,50,0.98),rgba(5,10,30,0.98));
-  border:1px solid rgba(24,119,242,0.6);
-  color:#e2eeff;
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;
-  padding:7px 14px;
-  border-radius:10px;
-  white-space:nowrap;
-  pointer-events:none;
-  opacity:0;
-  transition:opacity .25s,transform .25s;
-  z-index:999;
-  box-shadow:0 4px 20px rgba(24,119,242,0.3);
-}
-
-.verified-tooltip::after{
-  content:'';
-  position:absolute;
-  top:100%;
-  left:50%;
-  transform:translateX(-50%);
-  border:5px solid transparent;
-  border-top-color:rgba(24,119,242,0.5);
-}
-
-.verified-wrap:hover .verified-tooltip{
-  opacity:1;
-  transform:translateX(-50%) translateY(0);
-}
-
-@keyframes verifyGlow{
-  0%,100%{filter:drop-shadow(0 0 4px rgba(24,119,242,0.6))}
-  50%{filter:drop-shadow(0 0 10px rgba(24,119,242,1))}
-}
-
-.pro-badge{
-  display:inline-flex;
-  align-items:center;
-  gap:4px;
-  padding:3px 10px;
-  background:linear-gradient(135deg,#7c3aed,#a78bfa);
-  border-radius:20px;
-  font-family:'Orbitron',monospace;
-  font-size:9px;
-  font-weight:700;
-  letter-spacing:2px;
-  color:#fff;
-  box-shadow:0 0 12px rgba(139,92,246,0.5),inset 0 1px 0 rgba(255,255,255,0.2);
-  animation:proBadgeGlow 3s ease infinite;
-  cursor:default;
-  flex-shrink:0;
-}
-
-.pro-badge::before{
-  content:'✦';
-  font-size:8px;
-  opacity:.8;
-}
-
-@keyframes proBadgeGlow{
-  0%,100%{box-shadow:0 0 10px rgba(139,92,246,0.5)}
-  50%{box-shadow:0 0 20px rgba(167,139,250,0.8)}
-}
-
-.title-line{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  margin-top:8px;
-  flex-wrap:wrap;
-}
-
-.title-badge{
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;
-  padding:3px 10px;
-  border:1px solid;
-  border-radius:20px;
-  letter-spacing:1px;
-}
-
-.tb-ai{
-  color:#00f5ff;
-  border-color:rgba(0,245,255,0.4);
-  background:rgba(0,245,255,0.06);
-}
-
-.tb-auto{
-  color:#a78bfa;
-  border-color:rgba(167,139,250,0.4);
-  background:rgba(167,139,250,0.06);
-}
-
-.tb-free{
-  color:#10b981;
-  border-color:rgba(16,185,129,0.4);
-  background:rgba(16,185,129,0.06);
-}
-
-.avail-badge{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  margin-top:12px;
-  padding:5px 14px;
-  border-radius:20px;
-  font-size:11px;
-  font-family:'JetBrains Mono',monospace;
-  border:1px solid;
-  cursor:pointer;
-  transition:all .2s;
-}
-
-.avail-badge.open{
-  color:#10b981;
-  border-color:rgba(16,185,129,0.4);
-  background:rgba(16,185,129,0.08);
-}
-
-.avail-badge.busy{
-  color:#ff4466;
-  border-color:rgba(255,68,102,0.4);
-  background:rgba(255,68,102,0.08);
-}
-
-.avail-dot{
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:currentColor;
-  animation:pulse 2s infinite;
-}
-
-.tagline{
-  font-size:14px;
-  color:var(--muted);
-  margin-top:12px;
-  max-width:340px;
-  margin-left:auto;
-  margin-right:auto;
-  line-height:1.7;
-  min-height:46px;
-}
-
-.tagline-cursor{
-  display:inline-block;
-  width:2px;
-  height:14px;
-  background:#00f5ff;
-  margin-left:2px;
-  animation:blink .7s step-end infinite;
-  vertical-align:middle;
-}
-
-@keyframes blink{
-  0%,100%{opacity:1}
-  50%{opacity:0}
-}
-
-.visitor-bar{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  margin-top:10px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;
-  color:var(--muted);
-}
-
-.visitor-dot{
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:#10b981;
-  animation:pulse 2s infinite;
-  flex-shrink:0;
-}
-
-.sep{
-  width:200px;
-  height:1px;
-  margin:18px auto 0;
-  background:linear-gradient(90deg,transparent,#00f5ff,transparent);
-  opacity:.4;
-}
-
-/* ABOUT */
-.about-card{
-  width:100%;
-  max-width:460px;
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:20px;
-  margin-bottom:48px;
-  animation:fadeUp .6s ease both;
-  position:relative;
-  overflow:hidden;
-}
-
-.about-card::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  height:2px;
-  background:linear-gradient(90deg,#00f5ff,#8b5cf6,#fbbf24);
-}
-
-.about-inner{
-  display:flex;
-  gap:16px;
-  align-items:flex-start;
-}
-
-.about-emoji{
-  font-size:36px;
-  flex-shrink:0;
-  line-height:1;
-}
-
-.about-content{
-  flex:1;
-}
-
-.about-label{
-  font-family:'Orbitron',monospace;
-  font-size:10px;
-  font-weight:700;
-  color:#00f5ff;
-  letter-spacing:2px;
-  margin-bottom:8px;
-}
-
-.about-text{
-  font-size:13px;
-  color:var(--muted);
-  line-height:1.8;
-}
-
-.about-text strong{
-  color:var(--text);
-  font-weight:600;
-}
-
-.about-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-  margin-top:12px;
-}
-
-.about-tag{
-  font-size:10px;
-  padding:3px 10px;
-  border-radius:20px;
-  border:1px solid rgba(0,245,255,0.2);
-  color:rgba(0,245,255,0.7);
-  font-family:'JetBrains Mono',monospace;
-  background:rgba(0,245,255,0.04);
-}
-
-/* STATS */
-.stats-bar{
-  display:flex;
-  width:100%;
-  max-width:460px;
-  margin-bottom:36px;
-  animation:fadeUp .6s ease .15s both;
-  border-radius:14px;
-  overflow:hidden;
-  border:1px solid var(--border);
-}
-
-.stat{
-  flex:1;
-  padding:14px 8px;
-  background:var(--card);
-  text-align:center;
-  transition:background .3s;
-  cursor:default;
-}
-
-.stat:hover{
-  background:rgba(0,245,255,0.09);
-}
-
-.stat+.stat{
-  border-left:1px solid var(--border);
-}
-
-.stat-n{
-  font-family:'Orbitron',monospace;
-  font-size:18px;
-  font-weight:700;
-  color:#00f5ff;
-}
-
-.stat-l{
-  font-size:9px;
-  color:var(--muted);
-  letter-spacing:1px;
-  margin-top:3px;
-}
-
-.section-title{
-  font-family:'Orbitron',monospace;
-  font-size:10px;
-  letter-spacing:3px;
-  color:var(--muted);
-  margin-bottom:14px;
-  text-align:center;
-  direction:ltr;
-}
-
-/* LINKS */
-.links{
-  width:100%;
-  max-width:460px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  margin-bottom:48px;
-}
-
-.link-card{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  padding:14px 18px;
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:14px;
-  text-decoration:none;
-  color:#e2eeff !important;
-  position:relative;
-  overflow:hidden;
-  transition:transform .25s,border-color .25s,box-shadow .25s;
-  animation:fadeUp .5s ease both;
-  direction:ltr;
-}
-
-.link-card::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(90deg,transparent,rgba(0,245,255,0.06),transparent);
-  transform:translateX(-100%);
-  transition:transform .5s;
-}
-
-.link-card:hover::after{
-  transform:translateX(100%);
-}
-
-.link-card:hover{
-  transform:translateY(-2px) scale(1.01);
-  border-color:rgba(0,245,255,0.4);
-  box-shadow:0 4px 30px rgba(0,245,255,0.15);
-}
-
-.link-icon{
-  width:44px;
-  height:44px;
-  border-radius:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
-  font-size:20px;
-}
-
-.link-text{
-  flex:1;
-}
-
-.link-title{
-  font-family:'Orbitron',monospace;
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:1.5px;
-  color:#00f5ff !important;
-}
-
-.link-sub{
-  font-size:11px;
-  color:var(--muted);
-  margin-top:2px;
-  font-family:'JetBrains Mono',monospace;
-}
-
-.link-right{
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-
-.copy-btn{
-  width:24px;
-  height:24px;
-  border-radius:6px;
-  background:rgba(0,245,255,0.08);
-  border:1px solid rgba(0,245,255,0.2);
-  color:var(--muted);
-  font-size:11px;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:all .2s;
-  flex-shrink:0;
-}
-
-.copy-btn:hover{
-  background:rgba(0,245,255,0.2);
-  color:#00f5ff;
-  border-color:#00f5ff;
-}
-
-.link-arrow{
-  width:28px;
-  height:28px;
-  border-radius:50%;
-  border:1px solid var(--border);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--muted);
-  font-size:12px;
-  transition:all .2s;
-  flex-shrink:0;
-}
-
-.link-card:hover .link-arrow{
-  border-color:#00f5ff;
-  color:#00f5ff;
-  transform:scale(1.1);
-}
-
-.ic-web{background:rgba(139,92,246,0.2)}
-.ic-github{background:rgba(255,255,255,0.07)}
-.ic-linkedin{background:rgba(0,119,181,0.2)}
-.ic-upwork{background:rgba(20,163,74,0.2)}
-.ic-khamsat{background:rgba(255,165,0,0.15)}
-.ic-mostaql{background:rgba(0,170,220,0.15)}
-.ic-wa{background:rgba(37,211,102,0.15)}
-.ic-email{background:rgba(255,80,80,0.15)}
-
-
-
-
-/* SERVICES */
-.services{
-  width:100%;
-  max-width:460px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin-bottom:48px;
-}
-
-.service-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:18px 14px;
-  text-align:center;
-  transition:transform .25s,border-color .25s,box-shadow .25s;
-  animation:fadeUp .5s ease both;
-  position:relative;
-  overflow:hidden;
-}
-
-.service-card::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at 50% 0%,rgba(0,245,255,0.06),transparent 70%);
-  pointer-events:none;
-}
-
-.service-card:hover{
-  transform:translateY(-3px);
-  border-color:rgba(0,245,255,0.4);
-  box-shadow:0 6px 30px rgba(0,245,255,0.12);
-}
-
-.service-icon{
-  font-size:28px;
-  margin-bottom:10px;
-}
-
-.service-name{
-  font-family:'Orbitron',monospace;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:1px;
-  color:#00f5ff;
-  margin-bottom:6px;
-}
-
-.service-desc{
-  font-size:11px;
-  color:var(--muted);
-  line-height:1.5;
-  margin-bottom:12px;
-  min-height:50px;
-}
-
-.service-price{
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;
-  color:#fbbf24;
-  margin-bottom:12px;
-}
-
-.service-btn{
-  display:inline-block;
-  padding:6px 14px;
-  background:linear-gradient(135deg,rgba(0,245,255,0.15),rgba(139,92,246,0.15));
-  border:1px solid rgba(0,245,255,0.3);
-  border-radius:20px;
-  font-size:10px;
-  color:#00f5ff;
-  text-decoration:none;
-  font-family:'JetBrains Mono',monospace;
-  transition:all .2s;
-  cursor:pointer;
-}
-
-.service-btn:hover{
-  background:linear-gradient(135deg,rgba(0,245,255,0.3),rgba(139,92,246,0.3));
-  box-shadow:0 0 15px rgba(0,245,255,0.2);
-}
-
-/* HOW I WORK */
-.how-section{
-  width:100%;
-  max-width:460px;
-  display:flex;
-  flex-direction:column;
-  gap:0;
-  margin-bottom:48px;
-}
-
-.how-step{
-  display:flex;
-  align-items:flex-start;
-  gap:14px;
-  padding:16px 18px;
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:14px;
-  transition:border-color .25s,box-shadow .25s;
-}
-
-.how-step:hover{
-  border-color:rgba(0,245,255,0.35);
-  box-shadow:0 4px 20px rgba(0,245,255,0.08);
-}
-
-.how-connector{
-  width:2px;
-  height:16px;
-  background:linear-gradient(to bottom,rgba(0,245,255,0.3),rgba(139,92,246,0.3));
-  margin:0 auto;
-  position:relative;
-  left:26px;
-}
-
-.how-num{
-  font-family:'Orbitron',monospace;
-  font-size:18px;
-  font-weight:900;
-  color:#00f5ff;
-  flex-shrink:0;
-  width:36px;
-  text-align:center;
-  line-height:1;
-}
-
-.how-info{
-  flex:1;
-}
-
-.how-title{
-  font-family:'Orbitron',monospace;
-  font-size:11px;
-  font-weight:700;
-  color:#00f5ff;
-  letter-spacing:1px;
-  margin-bottom:4px;
-}
-
-.how-desc{
-  font-size:12px;
-  color:var(--muted);
-  line-height:1.5;
-}
-
-.how-time{
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;
-  color:#fbbf24;
-  margin-top:4px;
-}
-
-/* RESULTS */
-.results-section{
-  width:100%;
-  max-width:460px;
-  margin-bottom:48px;
-}
-
-.results-bar{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:16px 18px;
-  margin-bottom:10px;
-  display:flex;
-  align-items:center;
-  gap:14px;
-  transition:border-color .25s;
-}
-
-.results-bar:hover{
-  border-color:rgba(0,245,255,0.3);
-}
-
-.result-icon{
-  font-size:24px;
-  flex-shrink:0;
-}
-
-.result-num{
-  font-family:'Orbitron',monospace;
-  font-size:20px;
-  font-weight:900;
-  color:#00f5ff;
-  margin-top:2px;
-}
-
-.result-title{
-  font-size:12px;
-  color:var(--text);
-  line-height:1.4;
-}
-
-/* PROJECTS */
-.projects{
-  width:100%;
-  max-width:460px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  margin-bottom:48px;
-}
-
-.project-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:16px 18px;
-  display:flex;
-  align-items:center;
-  gap:14px;
-  transition:transform .25s,border-color .25s;
-  animation:fadeUp .5s ease both;
-}
-
-.project-card:hover{
-  transform:translateY(-2px);
-  border-color:rgba(0,245,255,0.4);
-  box-shadow:0 4px 25px rgba(0,245,255,0.12);
-}
-
-.project-emoji{
-  font-size:28px;
-  flex-shrink:0;
-}
-
-.project-info{
-  flex:1;
-}
-
-.project-name{
-  font-family:'Orbitron',monospace;
-  font-size:11px;
-  font-weight:700;
-  color:#00f5ff;
-  letter-spacing:1px;
-}
-
-.project-desc{
-  font-size:11px;
-  color:var(--muted);
-  margin-top:3px;
-  line-height:1.4;
-}
-
-.project-result{
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;
-  color:#10b981;
-  margin-top:4px;
-}
-
-.project-tags{
-  display:flex;
-  gap:5px;
-  margin-top:6px;
-  flex-wrap:wrap;
-}
-
-.ptag{
-  font-size:9px;
-  padding:2px 7px;
-  border-radius:10px;
-  border:1px solid;
-  font-family:'JetBrains Mono',monospace;
-}
-
-.ptag-cyan{
-  color:#00f5ff;
-  border-color:rgba(0,245,255,0.3);
-  background:rgba(0,245,255,0.05);
-}
-
-.ptag-purple{
-  color:#a78bfa;
-  border-color:rgba(167,139,250,0.3);
-  background:rgba(167,139,250,0.05);
-}
-
-.ptag-green{
-  color:#10b981;
-  border-color:rgba(16,185,129,0.3);
-  background:rgba(16,185,129,0.05);
-}
-
-/* CERTIFICATIONS */
-.certs-section{
-  width:100%;
-  max-width:460px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin-bottom:48px;
-}
-
-.cert-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:14px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  text-align:center;
-  gap:8px;
-  transition:transform .25s,border-color .25s;
-}
-
-.cert-card:hover{
-  transform:translateY(-2px);
-  border-color:rgba(0,245,255,0.35);
-  box-shadow:0 4px 20px rgba(0,245,255,0.1);
-}
-
-.cert-icon{
-  font-size:28px;
-}
-
-.cert-name{
-  font-family:'Orbitron',monospace;
-  font-size:9px;
-  font-weight:700;
-  color:#00f5ff;
-  letter-spacing:.5px;
-  line-height:1.3;
-}
-
-.cert-org{
-  font-size:10px;
-  color:var(--muted);
-  font-family:'JetBrains Mono',monospace;
-}
-
-.cert-year{
-  font-size:9px;
-  color:rgba(0,245,255,0.4);
-  font-family:'JetBrains Mono',monospace;
-  margin-top:2px;
-}
-
-/* TESTIMONIALS */
-.testimonials{
-  width:100%;
-  max-width:460px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  margin-bottom:48px;
-}
-
-.testi-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:16px 18px;
-  transition:transform .25s,border-color .25s;
-}
-
-.testi-card:hover{
-  transform:translateY(-2px);
-  border-color:rgba(0,245,255,0.35);
-}
-
-.testi-stars{
-  color:#fbbf24;
-  font-size:13px;
-  margin-bottom:8px;
-}
-
-.testi-text{
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.65;
-}
-
-.testi-name{
-  color:#00f5ff;
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;
-  margin-top:8px;
-}
-
-/* SKILLS */
-.skills-section{
-  width:100%;
-  max-width:460px;
-  margin-bottom:48px;
-}
-
-.skill-item{
-  margin-bottom:14px;
-}
-
-.skill-header{
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:6px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;
-}
-
-.skill-name{
-  color:var(--text);
-}
-
-.skill-pct{
-  color:#00f5ff;
-}
-
-.skill-bar{
-  height:4px;
-  background:rgba(0,245,255,0.08);
-  border-radius:4px;
-  overflow:hidden;
-}
-
-.skill-fill{
-  height:100%;
-  border-radius:4px;
-  transform:scaleX(0);
-  transform-origin:left;
-  transition:transform 1.4s cubic-bezier(.22,.61,.36,1);
-}
-
-.skill-fill.animated{
-  transform:scaleX(1);
-}
-
-.fill-cyan{
-  background:linear-gradient(90deg,#00f5ff,#8b5cf6);
-}
-
-.fill-purple{
-  background:linear-gradient(90deg,#8b5cf6,#a78bfa);
-}
-
-.fill-green{
-  background:linear-gradient(90deg,#10b981,#00f5ff);
-}
-
-.fill-gold{
-  background:linear-gradient(90deg,#fbbf24,#f59e0b);
-}
-
-/* CHATBOT */
-.chat-section{
-  width:100%;
-  max-width:460px;
-  margin-bottom:48px;
-}
-
-.chat-box{
-  background:rgba(0,4,15,0.85);
-  border:1px solid var(--border);
-  border-radius:16px;
-  overflow:hidden;
-  backdrop-filter:blur(20px);
-}
-
-.chat-header{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:14px 18px;
-  border-bottom:1px solid var(--border);
-  background:rgba(0,245,255,0.03);
-}
-
-.chat-avatar-bot{
-  width:34px;
-  height:34px;
-  border-radius:50%;
-  background:linear-gradient(135deg,#00f5ff,#8b5cf6);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:16px;
-  flex-shrink:0;
-}
-
-.chat-bot-name{
-  font-family:'Orbitron',monospace;
-  font-size:11px;
-  font-weight:700;
-  color:#00f5ff;
-}
-
-.chat-bot-status{
-  font-size:10px;
-  color:#10b981;
-  font-family:'JetBrains Mono',monospace;
-  margin-top:1px;
-}
-
-.chat-messages{
-  height:240px;
-  overflow-y:auto;
-  padding:14px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  scroll-behavior:smooth;
-}
-
-.chat-messages::-webkit-scrollbar{
-  width:3px;
-}
-
-.chat-messages::-webkit-scrollbar-thumb{
-  background:rgba(0,245,255,0.3);
-  border-radius:3px;
-}
-
-.msg{
-  max-width:85%;
-  padding:9px 13px;
-  border-radius:12px;
-  font-size:13px;
-  line-height:1.55;
-  animation:msgIn .3s ease;
-  white-space:pre-line;
-}
-
-.msg.bot{
-  background:rgba(0,245,255,0.07);
-  border:1px solid rgba(0,245,255,0.15);
-  color:#e2eeff;
-  border-radius:4px 12px 12px 12px;
-  align-self:flex-start;
-}
-
-.msg.user{
-  background:linear-gradient(135deg,rgba(139,92,246,0.3),rgba(0,245,255,0.1));
-  border:1px solid rgba(139,92,246,0.3);
-  color:#e2eeff;
-  border-radius:12px 4px 12px 12px;
-  align-self:flex-end;
-}
-
-.msg.typing{
-  background:rgba(0,245,255,0.05);
-  border:1px solid rgba(0,245,255,0.1);
-  align-self:flex-start;
-  border-radius:4px 12px 12px 12px;
-}
-
-.typing-dots{
-  display:flex;
-  gap:4px;
-  padding:2px 4px;
-}
-
-.typing-dots span{
-  width:6px;
-  height:6px;
-  background:#00f5ff;
-  border-radius:50%;
-  animation:dot .9s infinite;
-}
-
-.typing-dots span:nth-child(2){
-  animation-delay:.2s;
-}
-
-.typing-dots span:nth-child(3){
-  animation-delay:.4s;
-}
-
-@keyframes dot{
-  0%,100%{transform:translateY(0);opacity:.4}
-  50%{transform:translateY(-5px);opacity:1}
-}
-
-@keyframes msgIn{
-  from{opacity:0;transform:translateY(8px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-.chat-quick{
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-  padding:10px 14px;
-  border-top:1px solid var(--border);
-}
-
-.quick-btn{
-  background:rgba(0,245,255,0.06);
-  border:1px solid rgba(0,245,255,0.2);
-  color:#00f5ff;
-  border-radius:20px;
-  padding:5px 12px;
-  font-size:11px;
-  cursor:pointer;
-  font-family:'Tajawal',sans-serif;
-  transition:all .2s;
-}
-
-.quick-btn:hover{
-  background:rgba(0,245,255,0.15);
-  border-color:#00f5ff;
-}
-
-.chat-input-row{
-  display:flex;
-  gap:8px;
-  padding:12px 14px;
-  border-top:1px solid var(--border);
-}
-
-.chat-input{
-  flex:1;
-  background:rgba(0,245,255,0.05);
-  border:1px solid var(--border);
-  border-radius:10px;
-  padding:9px 14px;
-  color:#e2eeff;
-  font-family:'Tajawal',sans-serif;
-  font-size:13px;
-  outline:none;
-  transition:border-color .2s;
-}
-
-.chat-input:focus{
-  border-color:rgba(0,245,255,0.4);
-}
-
-.chat-input::placeholder{
-  color:var(--muted);
-}
-
-.chat-send{
-  width:40px;
-  height:40px;
-  background:linear-gradient(135deg,#00f5ff,#8b5cf6);
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#000;
-  font-size:16px;
-  flex-shrink:0;
-  transition:transform .2s,box-shadow .2s;
-}
-
-.chat-send:hover{
-  transform:scale(1.07);
-  box-shadow:0 0 15px rgba(0,245,255,0.4);
-}
-
-/* CONSULTATION */
-.consult-btn{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  width:100%;
-  max-width:460px;
-  margin-bottom:48px;
-  padding:16px 24px;
-  background:linear-gradient(135deg,#10b981,#059669);
-  border:none;
-  border-radius:16px;
-  color:#fff;
-  font-family:'Orbitron',monospace;
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:1px;
-  cursor:pointer;
-  text-decoration:none;
-  position:relative;
-  overflow:hidden;
-  box-shadow:0 4px 24px rgba(16,185,129,0.35);
-}
-
-.consult-btn::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);
-  transform:translateX(-100%);
-  transition:transform .5s;
-}
-
-.consult-btn:hover::before{
-  transform:translateX(100%);
-}
-
-.consult-btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 8px 32px rgba(16,185,129,0.5);
-  color:#fff;
-}
-
-.consult-sub{
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;
-  opacity:.8;
-  margin-top:2px;
-}
-
-/* LIVE INFO */
-.live-info{
-  width:100%;
-  max-width:460px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin-bottom:48px;
-}
-
-.live-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:14px 16px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.live-icon{
-  font-size:22px;
-  flex-shrink:0;
-}
-
-.live-label{
-  font-family:'JetBrains Mono',monospace;
-  font-size:9px;
-  color:var(--muted);
-  letter-spacing:1px;
-  margin-bottom:3px;
-  direction:ltr;
-}
-
-.live-value{
-  font-family:'Orbitron',monospace;
-  font-size:13px;
-  font-weight:700;
-  color:#00f5ff;
-}
-
-.live-sub{
-  font-size:10px;
-  color:var(--muted);
-  margin-top:2px;
-}
-
-.last-project-dot{
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:#10b981;
-  flex-shrink:0;
-  animation:pulse 2s ease infinite;
-}
-
-/* FAQ */
-.faq-section{
-  width:100%;
-  max-width:460px;
-  margin-bottom:48px;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-}
-
-.faq-item{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:14px;
-  overflow:hidden;
-  transition:border-color .25s;
-}
-
-.faq-item.open{
-  border-color:rgba(0,245,255,0.4);
-}
-
-.faq-q{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:14px 18px;
-  cursor:pointer;
-  font-size:13px;
-  font-weight:500;
-  color:var(--text);
-  gap:10px;
-  user-select:none;
-}
-
-.faq-icon{
-  width:22px;
-  height:22px;
-  border-radius:50%;
-  border:1px solid var(--border);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--muted);
-  font-size:12px;
-  transition:all .3s;
-  flex-shrink:0;
-}
-
-.faq-item.open .faq-icon{
-  background:rgba(0,245,255,0.1);
-  border-color:#00f5ff;
-  color:#00f5ff;
-  transform:rotate(45deg);
-}
-
-.faq-a{
-  max-height:0;
-  overflow:hidden;
-  transition:max-height .4s ease;
-}
-
-.faq-item.open .faq-a{
-  max-height:220px;
-  padding-bottom:14px;
-}
-
-.faq-a-inner{
-  padding:0 18px;
-  font-size:12px;
-  color:var(--muted);
-  line-height:1.7;
-}
-
-/* GAME */
-.game-section{
-  width:100%;
-  max-width:460px;
-}
-
-.game-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:12px;
-}
-
-.game-title{
-  font-family:'Orbitron',monospace;
-  font-size:12px;
-  font-weight:700;
-  color:#00f5ff;
-  letter-spacing:2px;
-}
-
-.game-subtitle{
-  font-size:11px;
-  color:var(--muted);
-  margin-top:2px;
-}
-
-.game-scores{
-  display:flex;
-  gap:16px;
-}
-
-.gscore-label{
-  font-size:9px;
-  color:var(--muted);
-  letter-spacing:1px;
-  font-family:'JetBrains Mono',monospace;
-}
-
-.gscore-val{
-  font-family:'Orbitron',monospace;
-  font-size:18px;
-  font-weight:700;
-  color:#00f5ff;
-}
-
-.gscore-val.best-val{
-  color:#a78bfa;
-}
-
-.game-arena{
-  position:relative;
-  width:100%;
-  height:180px;
-  background:rgba(0,4,15,0.6);
-  border:1px solid var(--border);
-  border-radius:16px;
-  overflow:hidden;
-  cursor:crosshair;
-}
-
-.game-arena::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:radial-gradient(ellipse at 50% 110%,rgba(139,92,246,0.15),transparent 60%);
-  pointer-events:none;
-}
-
-#gameCanvas{
-  display:block;
-  width:100%;
-  height:100%;
-}
-
-.game-legend{
-  display:flex;
-  gap:12px;
-  margin-top:10px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-
-.legend-item{
-  display:flex;
-  align-items:center;
-  gap:5px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;
-  color:var(--muted);
-}
-
-.legend-dot{
-  width:8px;
-  height:8px;
-  border-radius:50%;
-}
-
-.score-pop{
-  position:fixed;
-  font-family:'Orbitron',monospace;
-  font-size:16px;
-  font-weight:900;
-  pointer-events:none;
-  z-index:999;
-  animation:popUp .8s ease forwards;
-}
-
-@keyframes popUp{
-  0%{opacity:1;transform:translateY(0) scale(1)}
-  100%{opacity:0;transform:translateY(-55px) scale(1.3)}
-}
-
-/* EASTER EGG */
-.easter-overlay{
-  position:fixed;
-  inset:0;
-  z-index:500;
-  background:rgba(0,4,15,0.96);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  gap:16px;
-  text-align:center;
-  padding:20px;
-}
-
-.easter-overlay.show{
-  display:flex;
-}
-
-.easter-msg{
-  font-family:'Orbitron',monospace;
-  font-size:22px;
-  font-weight:900;
-  background:linear-gradient(90deg,#00f5ff,#a78bfa,#fbbf24,#00f5ff);
-  background-size:300%;
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-  animation:shimmer 2s linear infinite;
-}
-
-.easter-sub{
-  font-size:13px;
-  color:var(--muted);
-  max-width:300px;
-  line-height:1.6;
-}
-
-.easter-close{
-  margin-top:8px;
-  padding:8px 24px;
-  background:linear-gradient(135deg,#00f5ff,#8b5cf6);
-  border:none;
-  border-radius:20px;
-  color:#000;
-  font-family:'Orbitron',monospace;
-  font-size:11px;
-  cursor:pointer;
-  font-weight:700;
-}
-
-footer{
-  position:relative;
-  z-index:1;
-  margin-top:60px;
-  text-align:center;
-  padding-bottom:80px;
-}
-
-.footer-line{
-  width:200px;
-  height:1px;
-  background:linear-gradient(90deg,transparent,var(--border),transparent);
-  margin:0 auto 16px;
-}
-
-.footer-text{
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;
-  color:rgba(226,238,255,0.2);
-  letter-spacing:2px;
-  direction:ltr;
-}
-
-body.en-mode{
-  direction:ltr;
-}
-
-body.en-mode .hero{
-  text-align:center;
-}
-
-body.en-mode .about-card,
-body.en-mode .how-section,
-body.en-mode .results-section,
-body.en-mode .faq-section{
-  direction:ltr;
-}
-
-body.en-mode .about-inner,
-body.en-mode .how-step,
-body.en-mode .results-bar,
-body.en-mode .project-card,
-body.en-mode .live-card{
-  text-align:left;
-}
-
-@keyframes fadeDown{
-  from{opacity:0;transform:translateY(-24px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(20px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-@keyframes spin{
-  to{transform:rotate(360deg)}
-}
-
-@keyframes shimmer{
-  0%{background-position:0% center}
-  100%{background-position:200% center}
-}
-
 @media(max-width:420px){
-  main{
-    padding-left:14px;
-    padding-right:14px;
-  }
-
-  .services,
-  .certs-section,
-  .live-info{
-    grid-template-columns:1fr;
-  }
-
-  .stats-bar{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-  }
-
-  .stat+.stat{
-    border-left:none;
-  }
-
-  .about-inner{
-    gap:12px;
-  }
-
-  .name{
-    font-size:23px;
-  }
+  .services,.certs-section,.live-info,.trust-bar,.action-row{grid-template-columns:1fr}
+  .stats-bar{display:grid;grid-template-columns:1fr 1fr}
+  .stat+.stat{border-left:none}
+  .about-inner{gap:12px}
 }
 </style>
 </head>
 
-
-
 <body>
-
 <div id="notifBar">
-  <span data-i18n="notice">🎉 خصم 20% على أول مشروع — اذكر كود <strong>FIRST20</strong> عند التواصل</span>
+  <span data-i18n="notice">🎉 خصم 20% على أول مشروع — اذكر كود FIRST20 عند التواصل</span>
   <button class="notif-close" onclick="document.getElementById('notifBar').classList.add('hidden')">✕</button>
 </div>
 
@@ -2432,15 +453,12 @@ body.en-mode .live-card{
 <div class="grid-overlay"></div>
 <div class="orb orb1"></div>
 <div class="orb orb2"></div>
-
 <div class="progress-indicator" id="progressDots"></div>
 
 <button class="scroll-top-btn" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <a class="wa-float" href="https://wa.me/972599930699?text=مرحبا فادي، أريد استشارة مجانية 🚀" target="_blank" rel="noopener" onclick="trackEvent('whatsapp_float_click')">
-  <svg viewBox="0 0 24 24" fill="white">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <div class="sticky-cta" id="stickyCta">
@@ -2461,7 +479,7 @@ body.en-mode .live-card{
 <div class="easter-overlay" id="easterEgg">
   <div style="font-size:52px">🚀</div>
   <div class="easter-msg">SECRET UNLOCKED!</div>
-  <div class="easter-sub" data-i18n="secretText">أنت من الـ 1% اللي اكتشفوا هاد السر 🎉<br>تواصل وقل <strong style="color:#00f5ff">FIRST20</strong> للحصول على خصم 20%!</div>
+  <div class="easter-sub" data-i18n="secretText">أنت من الـ 1% اللي اكتشفوا هاد السر 🎉 تواصل وقل FIRST20 للحصول على خصم 20%!</div>
   <button class="easter-close" onclick="document.getElementById('easterEgg').classList.remove('show')">CLOSE ✕</button>
 </div>
 
@@ -2479,23 +497,19 @@ body.en-mode .live-card{
 
     <div class="name-row">
       <h1 class="name">FADI ABUSAADA</h1>
-
       <div class="verified-wrap">
         <div class="verified">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <div class="verified-tooltip" data-i18n="verifiedText">✓ تم التحقق من الهوية</div>
       </div>
-
       <div class="pro-badge">PRO</div>
     </div>
 
     <div class="title-line">
-      <span class="title-badge tb-ai">AI ENGINEER</span>
-      <span class="title-badge tb-auto">AUTOMATION</span>
-      <span class="title-badge tb-free">FREELANCER</span>
+      <span class="title-badge tb-ai">مهندس ذكاء اصطناعي</span>
+      <span class="title-badge tb-auto">أتمتة</span>
+      <span class="title-badge tb-free">مستقل</span>
     </div>
 
     <div class="avail-badge open" id="availBadge" onclick="toggleAvail()">
@@ -2507,1216 +521,354 @@ body.en-mode .live-card{
 
     <div class="visitor-bar">
       <span class="visitor-dot"></span>
-      <span id="visitorCount">يتصفح الصفحة الآن <strong style="color:#00f5ff">---</strong> زائر</span>
+      <span id="visitorCount">يتصفح الصفحة الآن <strong style="color:#38d9ff">---</strong> زائر</span>
     </div>
 
     <div class="sep"></div>
+
+    <div class="trust-bar">
+      <div class="trust-pill" data-i18n="trust1">30+ مشروع منجز</div>
+      <div class="trust-pill" data-i18n="trust2">دعم مجاني 14 يوماً</div>
+      <div class="trust-pill" data-i18n="trust3">استشارة مجانية</div>
+      <div class="trust-pill" data-i18n="trust4">تسليم سريع وواضح</div>
+    </div>
   </header>
 
   <p class="section-title" data-section="about" data-i18n="aboutTitle">— من أنا —</p>
-
   <div class="about-card">
     <div class="about-inner">
       <div class="about-emoji">👨‍💻</div>
       <div class="about-content">
-        <div class="about-label">WHO AM I</div>
-        <p class="about-text" data-i18n="aboutText">
-          أنا <strong>فادي أبوسعدة</strong>، مهندس AI وخبير أتمتة من <strong>فلسطين 🇵🇸</strong>.
-          أساعد أصحاب الأعمال على توفير الوقت وزيادة الإنتاجية عبر أنظمة AI Agents، Chatbots، وAutomation تعمل بدلاً عنهم.
-        </p>
-
+        <div class="about-label">نبذة عني</div>
+        <p class="about-text" data-i18n="aboutText">أنا فادي أبوسعدة، مهندس ذكاء اصطناعي وخبير أتمتة من فلسطين 🇵🇸. أساعد أصحاب الأعمال على توفير الوقت وزيادة الإنتاجية عبر أنظمة وكلاء ذكاء اصطناعي، شات بوت، وأتمتة تعمل بدلاً عنهم.</p>
         <div class="about-tags">
           <span class="about-tag" data-i18n="tagPalestine">🇵🇸 فلسطين</span>
-          <span class="about-tag" data-i18n="tagFast">⚡ متجاوب 24h</span>
+          <span class="about-tag" data-i18n="tagFast">⚡ متجاوب خلال 24 ساعة</span>
           <span class="about-tag" data-i18n="tagLang">🌍 عربي وإنجليزي</span>
-          <span class="about-tag">🤝 30+ Projects</span>
+          <span class="about-tag" data-i18n="tagProjects">🤝 أكثر من 30 مشروع</span>
         </div>
       </div>
     </div>
   </div>
 
   <div class="stats-bar" data-section="stats">
-    <div class="stat"><div class="stat-n" id="cProjects">0</div><div class="stat-l">PROJECTS</div></div>
-    <div class="stat"><div class="stat-n" id="cClients">0</div><div class="stat-l">CLIENTS</div></div>
-    <div class="stat"><div class="stat-n" id="cYears">0</div><div class="stat-l">YEARS</div></div>
-    <div class="stat"><div class="stat-n">⭐</div><div class="stat-l">TOP RATED</div></div>
+    <div class="stat"><div class="stat-n" id="cProjects">0</div><div class="stat-l">مشاريع</div></div>
+    <div class="stat"><div class="stat-n" id="cClients">0</div><div class="stat-l">عملاء</div></div>
+    <div class="stat"><div class="stat-n" id="cYears">0</div><div class="stat-l">سنوات</div></div>
+    <div class="stat"><div class="stat-n">⭐</div><div class="stat-l">تقييم عالٍ</div></div>
   </div>
 
-  <p class="section-title" data-section="links" data-i18n="connectTitle">— تواصل معي —</p>
-
+  <p class="section-title" data-section="links" data-i18n="connectTitle">— روابط التواصل —</p>
   <div class="links">
     <a class="link-card" href="https://eng2fadi.github.io" target="_blank" rel="noopener" onclick="trackEvent('portfolio_click')">
-      <div class="link-icon ic-web">🌐</div>
-      <div class="link-text"><div class="link-title">PORTFOLIO</div><div class="link-sub">eng2fadi.github.io</div></div>
-      <div class="link-right"><div class="link-arrow">↗</div></div>
+      <div class="link-icon ic-web">🌐</div><div class="link-text"><div class="link-title">PORTFOLIO</div><div class="link-sub">الموقع الشخصي</div></div><div class="link-right"><div class="link-arrow">↗</div></div>
     </a>
-
     <a class="link-card" href="https://github.com/Eng2Fadi" target="_blank" rel="noopener" onclick="trackEvent('github_click')">
-      <div class="link-icon ic-github">💻</div>
-      <div class="link-text"><div class="link-title">GITHUB</div><div class="link-sub">Eng2Fadi</div></div>
-      <div class="link-right"><div class="link-arrow">↗</div></div>
+      <div class="link-icon ic-github">💻</div><div class="link-text"><div class="link-title">GITHUB</div><div class="link-sub">مشاريع وأكواد</div></div><div class="link-right"><div class="link-arrow">↗</div></div>
     </a>
-
     <a class="link-card" href="https://linkedin.com/in/eng-fadi-abusaada" target="_blank" rel="noopener" onclick="trackEvent('linkedin_click')">
-      <div class="link-icon ic-linkedin">🔗</div>
-      <div class="link-text"><div class="link-title">LINKEDIN</div><div class="link-sub">eng-fadi-abusaada</div></div>
-      <div class="link-right"><div class="link-arrow">↗</div></div>
+      <div class="link-icon ic-linkedin">🔗</div><div class="link-text"><div class="link-title">LINKEDIN</div><div class="link-sub">الملف المهني</div></div><div class="link-right"><div class="link-arrow">↗</div></div>
     </a>
-
     <a class="link-card" href="https://www.upwork.com/freelancers/~01f088b792f305e12a?mp_source=share" target="_blank" rel="noopener" onclick="trackEvent('upwork_click')">
-      <div class="link-icon ic-upwork">🟢</div>
-      <div class="link-text"><div class="link-title">UPWORK</div><div class="link-sub">Hire me on Upwork</div></div>
-      <div class="link-right"><div class="link-arrow">↗</div></div>
+      <div class="link-icon ic-upwork">🟢</div><div class="link-text"><div class="link-title">UPWORK</div><div class="link-sub">وظفني عبر Upwork</div></div><div class="link-right"><div class="link-arrow">↗</div></div>
     </a>
-
     <a class="link-card" href="https://khamsat.com/user/fadisaada" target="_blank" rel="noopener" onclick="trackEvent('khamsat_click')">
-      <div class="link-icon ic-khamsat">🟠</div>
-      <div class="link-text"><div class="link-title">KHAMSAT</div><div class="link-sub" data-i18n="khamsatSub">خدماتي على خمسات</div></div>
-      <div class="link-right"><div class="link-arrow">↗</div></div>
+      <div class="link-icon ic-khamsat">🟠</div><div class="link-text"><div class="link-title">KHAMSAT</div><div class="link-sub" data-i18n="khamsatSub">خدماتي على خمسات</div></div><div class="link-right"><div class="link-arrow">↗</div></div>
     </a>
-
     <a class="link-card" href="https://mostaql.com/u/FadiSaada" target="_blank" rel="noopener" onclick="trackEvent('mostaql_click')">
-      <div class="link-icon ic-mostaql">🔵</div>
-      <div class="link-text"><div class="link-title">MOSTAQL</div><div class="link-sub" data-i18n="mostaqlSub">ملفي على مستقل</div></div>
-      <div class="link-right"><div class="link-arrow">↗</div></div>
+      <div class="link-icon ic-mostaql">🔵</div><div class="link-text"><div class="link-title">MOSTAQL</div><div class="link-sub" data-i18n="mostaqlSub">ملفي على مستقل</div></div><div class="link-right"><div class="link-arrow">↗</div></div>
     </a>
-
     <a class="link-card" href="https://wa.me/972599930699" target="_blank" rel="noopener" onclick="trackEvent('whatsapp_link_click')">
-      <div class="link-icon ic-wa">💬</div>
-      <div class="link-text"><div class="link-title">WHATSAPP</div><div class="link-sub">+972 599 930 699</div></div>
-      <div class="link-right">
-        <button class="copy-btn" onclick="copyText(event,'972599930699','WhatsApp')">📋</button>
-        <div class="link-arrow">↗</div>
-      </div>
+      <div class="link-icon ic-wa">💬</div><div class="link-text"><div class="link-title">WHATSAPP</div><div class="link-sub">+972 599 930 699</div></div>
+      <div class="link-right"><button class="copy-btn" onclick="copyText(event,'972599930699','WhatsApp')">📋</button><div class="link-arrow">↗</div></div>
     </a>
-
     <a class="link-card" href="mailto:Eng.Fadi990@gmail.com" onclick="trackEvent('email_click')">
-      <div class="link-icon ic-email">📧</div>
-      <div class="link-text"><div class="link-title">EMAIL</div><div class="link-sub">Eng.Fadi990@gmail.com</div></div>
-      <div class="link-right">
-        <button class="copy-btn" onclick="copyText(event,'Eng.Fadi990@gmail.com','Email')">📋</button>
-        <div class="link-arrow">↗</div>
-      </div>
+      <div class="link-icon ic-email">📧</div><div class="link-text"><div class="link-title">EMAIL</div><div class="link-sub">Eng.Fadi990@gmail.com</div></div>
+      <div class="link-right"><button class="copy-btn" onclick="copyText(event,'Eng.Fadi990@gmail.com','Email')">📋</button><div class="link-arrow">↗</div></div>
     </a>
   </div>
 
-  <p class="section-title" data-section="services" data-i18n="servicesTitle">— خدماتي —</p>
-
-  <div class="services">
-    <div class="service-card">
-      <div class="service-icon">🤖</div>
-      <div class="service-name">AI AGENTS</div>
-      <div class="service-desc" data-i18n="s1d">وكلاء AI ذكية تنفذ مهامك تلقائياً بدون تدخل</div>
-      <div class="service-price" data-i18n="price1">من $150</div>
-      <a class="service-btn" href="https://wa.me/972599930699?text=مرحبا فادي، أريد AI Agents" target="_blank" data-i18n="bookNow" onclick="trackEvent('service_ai_agents_click')">احجز الآن</a>
-    </div>
-
-    <div class="service-card">
-      <div class="service-icon">⚡</div>
-      <div class="service-name">AUTOMATION</div>
-      <div class="service-desc" data-i18n="s2d">أتمتة كاملة لعملك توفر وقتك وجهدك</div>
-      <div class="service-price" data-i18n="price2">من $100</div>
-      <a class="service-btn" href="https://wa.me/972599930699?text=مرحبا فادي، أريد Automation" target="_blank" data-i18n="bookNow" onclick="trackEvent('service_automation_click')">احجز الآن</a>
-    </div>
-
-    <div class="service-card">
-      <div class="service-icon">💬</div>
-      <div class="service-name">CHATBOTS</div>
-      <div class="service-desc" data-i18n="s3d">شات بوت احترافي يخدم عملاءك 24/7</div>
-      <div class="service-price" data-i18n="price3">من $50</div>
-      <a class="service-btn" href="https://wa.me/972599930699?text=مرحبا فادي، أريد Chatbot" target="_blank" data-i18n="bookNow" onclick="trackEvent('service_chatbot_click')">احجز الآن</a>
-    </div>
-
-    <div class="service-card">
-      <div class="service-icon">🌐</div>
-      <div class="service-name">SAAS DEV</div>
-      <div class="service-desc" data-i18n="s4d">بناء منصات SaaS كاملة جاهزة للإطلاق</div>
-      <div class="service-price" data-i18n="price4">حسب الطلب</div>
-      <a class="service-btn" href="https://wa.me/972599930699?text=مرحبا فادي، أريد SaaS" target="_blank" data-i18n="bookNow" onclick="trackEvent('service_saas_click')">احجز الآن</a>
-    </div>
+  <div class="action-row">
+    <button class="action-btn primary" onclick="quickEstimate()" data-i18n="quickEstimateBtn">💰 اعرض عليّ سعر سريع</button>
+    <button class="action-btn" onclick="copyPageLink()" data-i18n="copyPageBtn">🔗 نسخ رابط الصفحة</button>
   </div>
 
-
-
+  <p class="section-title" data-section="services" data-i18n="servicesTitle">— الخدمات —</p>
+  <div class="services">
+    <div class="service-card"><div class="service-icon">🤖</div><div class="service-name">AI AGENTS</div><div class="service-desc" data-i18n="s1d">وكلاء ذكاء اصطناعي ينفذون مهامك تلقائياً بأقل تدخل</div><div class="service-price" data-i18n="price1">من $150</div><a class="service-btn" href="https://wa.me/972599930699?text=مرحبا فادي، أريد وكيل ذكاء اصطناعي" target="_blank" data-i18n="bookNow">احجز الآن</a></div>
+    <div class="service-card"><div class="service-icon">⚡</div><div class="service-name">AUTOMATION</div><div class="service-desc" data-i18n="s2d">أتمتة كاملة لسير العمل توفر وقتك وجهدك</div><div class="service-price" data-i18n="price2">من $100</div><a class="service-btn" href="https://wa.me/972599930699?text=مرحبا فادي، أريد أتمتة" target="_blank" data-i18n="bookNow">احجز الآن</a></div>
+    <div class="service-card"><div class="service-icon">💬</div><div class="service-name">CHATBOTS</div><div class="service-desc" data-i18n="s3d">شات بوت احترافي يخدم عملاءك طوال اليوم</div><div class="service-price" data-i18n="price3">من $50</div><a class="service-btn" href="https://wa.me/972599930699?text=مرحبا فادي، أريد شات بوت" target="_blank" data-i18n="bookNow">احجز الآن</a></div>
+    <div class="service-card"><div class="service-icon">🌐</div><div class="service-name">SAAS DEV</div><div class="service-desc" data-i18n="s4d">بناء منصات SaaS كاملة وجاهزة للإطلاق</div><div class="service-price" data-i18n="price4">حسب الطلب</div><a class="service-btn" href="https://wa.me/972599930699?text=مرحبا فادي، أريد منصة SaaS" target="_blank" data-i18n="bookNow">احجز الآن</a></div>
+  </div>
 
   <p class="section-title" data-section="how" data-i18n="howTitle">— طريقة العمل —</p>
-
   <div class="how-section">
-    <div class="how-step">
-      <div class="how-num">①</div>
-      <div class="how-info">
-        <div class="how-title" data-i18n="how1Title">تواصل معي</div>
-        <div class="how-desc" data-i18n="how1Desc">أخبرني بمشكلتك التجارية — بدون خبرة تقنية مطلوبة</div>
-        <div class="how-time" data-i18n="how1Time">⏱ استشارة مجانية 15 دقيقة</div>
-      </div>
-    </div>
-
+    <div class="how-step"><div class="how-num">①</div><div class="how-info"><div class="how-title" data-i18n="how1Title">تواصل معي</div><div class="how-desc" data-i18n="how1Desc">أخبرني بالمشكلة التجارية، ولا تحتاج أي خبرة تقنية</div><div class="how-time" data-i18n="how1Time">⏱ استشارة مجانية لمدة 15 دقيقة</div></div></div>
     <div class="how-connector"></div>
-
-    <div class="how-step">
-      <div class="how-num">②</div>
-      <div class="how-info">
-        <div class="how-title" data-i18n="how2Title">نحلل ونخطط</div>
-        <div class="how-desc" data-i18n="how2Desc">خطة واضحة مع جدول زمني وسعر ثابت قبل البدء</div>
-        <div class="how-time" data-i18n="how2Time">⏱ خلال 24 ساعة</div>
-      </div>
-    </div>
-
+    <div class="how-step"><div class="how-num">②</div><div class="how-info"><div class="how-title" data-i18n="how2Title">نحلل ونخطط</div><div class="how-desc" data-i18n="how2Desc">خطة واضحة مع جدول زمني وسعر محدد قبل البدء</div><div class="how-time" data-i18n="how2Time">⏱ خلال 24 ساعة</div></div></div>
     <div class="how-connector"></div>
+    <div class="how-step"><div class="how-num">③</div><div class="how-info"><div class="how-title" data-i18n="how3Title">ننفذ ونسلم</div><div class="how-desc" data-i18n="how3Desc">تسليم مع شرح كامل ودعم مجاني بعد التسليم</div><div class="how-time" data-i18n="how3Time">⏱ من 3 إلى 14 يوم حسب المشروع</div></div></div>
+  </div>
 
-    <div class="how-step">
-      <div class="how-num">③</div>
-      <div class="how-info">
-        <div class="how-title" data-i18n="how3Title">ننفذ ونسلم</div>
-        <div class="how-desc" data-i18n="how3Desc">تسليم مع شرح كامل ودعم مجاني 14 يوماً</div>
-        <div class="how-time" data-i18n="how3Time">⏱ 3-14 يوم حسب المشروع</div>
-      </div>
-    </div>
+  <div class="guarantee-card">
+    <div class="guarantee-icon">🛡️</div>
+    <div><div class="guarantee-title" data-i18n="guaranteeTitle">ضمان وراحة بعد التسليم</div><div class="guarantee-text" data-i18n="guaranteeText">تحصل على شرح كامل للنظام مع دعم مجاني لمدة 14 يوماً بعد التسليم للتأكد أن كل شيء يعمل بشكل ممتاز.</div></div>
   </div>
 
   <p class="section-title" data-section="results" data-i18n="resultsTitle">— النتائج —</p>
-
   <div class="results-section">
-    <div class="results-bar">
-      <div class="result-icon">⏰</div>
-      <div>
-        <div class="result-title" data-i18n="result1Title">متوسط الوقت الذي أوفره للعملاء أسبوعياً</div>
-        <div class="result-num" data-i18n="result1Num">20+ ساعة</div>
-      </div>
-    </div>
-
-    <div class="results-bar">
-      <div class="result-icon">🤖</div>
-      <div>
-        <div class="result-title" data-i18n="result2Title">مشاريع AI وأتمتة منجزة بنجاح</div>
-        <div class="result-num" data-i18n="result2Num">30+ مشروع</div>
-      </div>
-    </div>
-
-    <div class="results-bar">
-      <div class="result-icon">⚡</div>
-      <div>
-        <div class="result-title" data-i18n="result3Title">متوسط سرعة تسليم المشاريع البسيطة</div>
-        <div class="result-num" data-i18n="result3Num">3-5 أيام</div>
-      </div>
-    </div>
+    <div class="results-bar"><div class="result-icon">⏰</div><div><div class="result-title" data-i18n="result1Title">متوسط الوقت الذي أوفره للعملاء أسبوعياً</div><div class="result-num" data-i18n="result1Num">20+ ساعة</div></div></div>
+    <div class="results-bar"><div class="result-icon">🤖</div><div><div class="result-title" data-i18n="result2Title">مشاريع ذكاء اصطناعي وأتمتة تم تسليمها</div><div class="result-num" data-i18n="result2Num">30+ مشروع</div></div></div>
+    <div class="results-bar"><div class="result-icon">⚡</div><div><div class="result-title" data-i18n="result3Title">متوسط تسليم المشاريع البسيطة</div><div class="result-num" data-i18n="result3Num">3-5 أيام</div></div></div>
   </div>
 
-  <p class="section-title" data-section="projects" data-i18n="projectsTitle">— أحدث المشاريع —</p>
-
+  <p class="section-title" data-section="projects" data-i18n="projectsTitle">— نماذج مشاريع —</p>
   <div class="projects">
-    <div class="project-card">
-      <div class="project-emoji">🧠</div>
-      <div class="project-info">
-        <div class="project-name">AI SALES AGENT</div>
-        <div class="project-desc" data-i18n="project1Desc">وكيل مبيعات ذكي يرد على العملاء ويقودهم للتواصل عبر واتساب</div>
-        <div class="project-result" data-i18n="project1Result">✅ وفر 25 ساعة أسبوعياً</div>
-        <div class="project-tags">
-          <span class="ptag ptag-cyan">DeepSeek</span>
-          <span class="ptag ptag-purple">Cloudflare</span>
-          <span class="ptag ptag-green">WhatsApp</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-emoji">📊</div>
-      <div class="project-info">
-        <div class="project-name">DATA AUTOMATION</div>
-        <div class="project-desc" data-i18n="project2Desc">نظام يجمع البيانات ويولد تقارير تلقائية لتقليل العمل اليدوي</div>
-        <div class="project-result" data-i18n="project2Result">✅ أزال معظم العمل اليدوي</div>
-        <div class="project-tags">
-          <span class="ptag ptag-cyan">Make</span>
-          <span class="ptag ptag-purple">Sheets</span>
-          <span class="ptag ptag-green">AI</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-emoji">🛒</div>
-      <div class="project-info">
-        <div class="project-name">E-COMMERCE BOT</div>
-        <div class="project-desc" data-i18n="project3Desc">شات بوت متجر إلكتروني يرد على العملاء ويساعدهم في اختيار المنتجات</div>
-        <div class="project-result" data-i18n="project3Result">✅ تجربة عملاء أسرع وأسهل</div>
-        <div class="project-tags">
-          <span class="ptag ptag-cyan">Chatbot</span>
-          <span class="ptag ptag-purple">API</span>
-          <span class="ptag ptag-green">CRM</span>
-        </div>
-      </div>
-    </div>
+    <div class="project-card"><div class="project-emoji">🧠</div><div class="project-info"><div class="project-name">AI SALES AGENT</div><div class="project-desc" data-i18n="project1Desc">وكيل مبيعات ذكي يرد على العملاء ويقودهم للتواصل عبر واتساب</div><div class="project-result" data-i18n="project1Result">✅ وفر 25 ساعة أسبوعياً</div><div class="project-tags"><span class="ptag ptag-cyan">DeepSeek</span><span class="ptag ptag-purple">Cloudflare</span><span class="ptag ptag-green">WhatsApp</span></div></div></div>
+    <div class="project-card"><div class="project-emoji">📊</div><div class="project-info"><div class="project-name">DATA AUTOMATION</div><div class="project-desc" data-i18n="project2Desc">نظام يجمع البيانات ويولد تقارير تلقائية لتقليل العمل اليدوي</div><div class="project-result" data-i18n="project2Result">✅ قلل معظم العمل اليدوي</div><div class="project-tags"><span class="ptag ptag-cyan">Make</span><span class="ptag ptag-purple">Sheets</span><span class="ptag ptag-green">AI</span></div></div></div>
+    <div class="project-card"><div class="project-emoji">🛒</div><div class="project-info"><div class="project-name">E-COMMERCE BOT</div><div class="project-desc" data-i18n="project3Desc">شات بوت متجر إلكتروني يرد على العملاء ويساعدهم في اختيار المنتجات</div><div class="project-result" data-i18n="project3Result">✅ تجربة عملاء أسرع وأسهل</div><div class="project-tags"><span class="ptag ptag-cyan">Chatbot</span><span class="ptag ptag-purple">API</span><span class="ptag ptag-green">CRM</span></div></div></div>
   </div>
 
   <p class="section-title" data-section="certs" data-i18n="certsTitle">— الشهادات والتدريب —</p>
-
   <div class="certs-section">
-    <div class="cert-card">
-      <div class="cert-icon">🎓</div>
-      <div class="cert-name">AI FOR EVERYONE</div>
-      <div class="cert-org">DeepLearning.AI</div>
-      <div class="cert-year">2024</div>
-    </div>
-
-    <div class="cert-card">
-      <div class="cert-icon">⚡</div>
-      <div class="cert-name">AUTOMATION PRO</div>
-      <div class="cert-org">n8n / Make</div>
-      <div class="cert-year">2024</div>
-    </div>
-
-    <div class="cert-card">
-      <div class="cert-icon">🤖</div>
-      <div class="cert-name">PROMPT ENGINEERING</div>
-      <div class="cert-org">AI Workflow</div>
-      <div class="cert-year">2024</div>
-    </div>
-
-    <div class="cert-card">
-      <div class="cert-icon">🌐</div>
-      <div class="cert-name">WEB / SAAS DEV</div>
-      <div class="cert-org">Next.js / React</div>
-      <div class="cert-year">2023</div>
-    </div>
+    <div class="cert-card"><div class="cert-icon">🎓</div><div class="cert-name">AI FOR EVERYONE</div><div class="cert-org">DeepLearning.AI</div><div class="cert-year">2024</div></div>
+    <div class="cert-card"><div class="cert-icon">⚡</div><div class="cert-name">AUTOMATION PRO</div><div class="cert-org">n8n / Make</div><div class="cert-year">2024</div></div>
+    <div class="cert-card"><div class="cert-icon">🤖</div><div class="cert-name">PROMPT ENGINEERING</div><div class="cert-org">AI Workflow</div><div class="cert-year">2024</div></div>
+    <div class="cert-card"><div class="cert-icon">🌐</div><div class="cert-name">WEB / SAAS DEV</div><div class="cert-org">Next.js / React</div><div class="cert-year">2023</div></div>
   </div>
 
   <p class="section-title" data-section="testimonials" data-i18n="testimonialsTitle">— آراء العملاء —</p>
-
   <div class="testimonials">
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <div class="testi-text" data-i18n="testi1Text">فادي حوّل الفكرة إلى نظام عملي بسرعة وشرح كل شيء بطريقة بسيطة وواضحة.</div>
-      <div class="testi-name" data-i18n="testi1Name">— عميل مشروع أتمتة</div>
-    </div>
-
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <div class="testi-text" data-i18n="testi2Text">الأتمتة قللت العمل اليدوي وخلت المتابعة اليومية أسهل بكثير.</div>
-      <div class="testi-name" data-i18n="testi2Name">— صاحب متجر إلكتروني</div>
-    </div>
+    <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" data-i18n="testi1Text">فادي حوّل الفكرة إلى نظام عملي بسرعة وشرح كل شيء بطريقة بسيطة وواضحة.</div><div class="testi-name" data-i18n="testi1Name">— عميل مشروع أتمتة</div></div>
+    <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" data-i18n="testi2Text">الأتمتة قللت العمل اليدوي وخلت المتابعة اليومية أسهل بكثير.</div><div class="testi-name" data-i18n="testi2Name">— صاحب متجر إلكتروني</div></div>
   </div>
 
   <p class="section-title" data-section="skills" data-i18n="skillsTitle">— المهارات التقنية —</p>
-
   <div class="skills-section">
-    <div class="skill-item">
-      <div class="skill-header"><span class="skill-name">AI Agents & Chatbots</span><span class="skill-pct">95%</span></div>
-      <div class="skill-bar"><div class="skill-fill fill-cyan" style="width:95%"></div></div>
-    </div>
-
-    <div class="skill-item">
-      <div class="skill-header"><span class="skill-name">n8n / Make Automation</span><span class="skill-pct">90%</span></div>
-      <div class="skill-bar"><div class="skill-fill fill-purple" style="width:90%"></div></div>
-    </div>
-
-    <div class="skill-item">
-      <div class="skill-header"><span class="skill-name">Next.js / React</span><span class="skill-pct">85%</span></div>
-      <div class="skill-bar"><div class="skill-fill fill-green" style="width:85%"></div></div>
-    </div>
-
-    <div class="skill-item">
-      <div class="skill-header"><span class="skill-name">Prompt Engineering</span><span class="skill-pct">98%</span></div>
-      <div class="skill-bar"><div class="skill-fill fill-gold" style="width:98%"></div></div>
-    </div>
+    <div class="skill-item"><div class="skill-header"><span class="skill-name">AI Agents & Chatbots</span><span class="skill-pct">95%</span></div><div class="skill-bar"><div class="skill-fill fill-cyan" style="width:95%"></div></div></div>
+    <div class="skill-item"><div class="skill-header"><span class="skill-name">n8n / Make Automation</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill fill-purple" style="width:90%"></div></div></div>
+    <div class="skill-item"><div class="skill-header"><span class="skill-name">Next.js / React</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill fill-green" style="width:85%"></div></div></div>
+    <div class="skill-item"><div class="skill-header"><span class="skill-name">Prompt Engineering</span><span class="skill-pct">98%</span></div><div class="skill-bar"><div class="skill-fill fill-gold" style="width:98%"></div></div></div>
   </div>
 
   <p class="section-title" data-section="chat" data-i18n="chatTitle">— مساعد فادي الذكي —</p>
-
   <div class="chat-section">
     <div class="chat-box">
-      <div class="chat-header">
-        <div class="chat-avatar-bot">🤖</div>
-        <div>
-          <div class="chat-bot-name">FADI AI SALES ASSISTANT</div>
-          <div class="chat-bot-status" data-i18n="chatStatus">● متصل — جاهز لتحليل مشروعك</div>
-        </div>
-      </div>
-
+      <div class="chat-header"><div class="chat-avatar-bot">🤖</div><div><div class="chat-bot-name">FADI AI SALES ASSISTANT</div><div class="chat-bot-status" data-i18n="chatStatus">● متصل — جاهز لتحليل مشروعك</div></div></div>
       <div class="chat-messages" id="chatMessages"></div>
-
       <div class="chat-quick" id="quickReplies">
-        <button class="quick-btn" onclick="sendQuick(this)" data-project="Chatbot" data-i18n="quickChatbot">أريد Chatbot</button>
-        <button class="quick-btn" onclick="sendQuick(this)" data-project="Automation" data-i18n="quickAutomation">أريد Automation</button>
-        <button class="quick-btn" onclick="sendQuick(this)" data-project="AI Agent" data-i18n="quickAgent">أريد AI Agent</button>
-        <button class="quick-btn" onclick="sendQuick(this)" data-project="SaaS" data-i18n="quickSaas">أريد SaaS</button>
+        <button class="quick-btn" onclick="sendQuick(this)" data-project="شات بوت" data-i18n="quickChatbot">أريد شات بوت</button>
+        <button class="quick-btn" onclick="sendQuick(this)" data-project="أتمتة" data-i18n="quickAutomation">أريد أتمتة</button>
+        <button class="quick-btn" onclick="sendQuick(this)" data-project="وكيل ذكاء اصطناعي" data-i18n="quickAgent">أريد وكيل ذكاء اصطناعي</button>
+        <button class="quick-btn" onclick="sendQuick(this)" data-project="منصة SaaS" data-i18n="quickSaas">أريد منصة SaaS</button>
       </div>
-
-      <div class="chat-input-row">
-        <input class="chat-input" id="chatInput" type="text" data-i18n-placeholder="chatPlaceholder" placeholder="اكتب فكرة مشروعك..." autocomplete="off"/>
-        <button class="chat-send" onclick="sendMsg()">➤</button>
-      </div>
+      <div class="chat-input-row"><input class="chat-input" id="chatInput" type="text" data-i18n-placeholder="chatPlaceholder" placeholder="اكتب فكرة مشروعك هنا..." autocomplete="off"/><button class="chat-send" onclick="sendMsg()">➤</button></div>
     </div>
   </div>
 
   <p class="section-title" data-section="consult" data-i18n="consultTitle">— استشارة مجانية —</p>
-
   <a class="consult-btn" href="https://wa.me/972599930699?text=مرحبا فادي، أريد حجز استشارة مجانية 15 دقيقة 🚀" target="_blank" rel="noopener" onclick="trackEvent('consultation_click')">
-    <span style="font-size:20px">📅</span>
-    <div>
-      <div data-i18n="consultBtn">احجز استشارة مجانية — 15 دقيقة</div>
-      <div class="consult-sub">Book a Free 15-min Consultation</div>
-    </div>
-    <span style="margin-left:auto;font-size:18px">→</span>
+    <span style="font-size:20px">📅</span><div><div data-i18n="consultBtn">احجز استشارة مجانية — 15 دقيقة</div><div class="consult-sub">استشارة مجانية لمدة 15 دقيقة</div></div><span style="margin-left:auto;font-size:18px">→</span>
   </a>
 
   <p class="section-title" data-section="live" data-i18n="liveTitle">— معلومات مباشرة —</p>
-
   <div class="live-info">
-    <div class="live-card">
-      <div class="live-icon">🕐</div>
-      <div>
-        <div class="live-label">LOCAL TIME</div>
-        <div class="live-value" id="liveClock">--:--</div>
-        <div class="live-sub" id="liveDate">Gaza, Palestine</div>
-      </div>
-    </div>
-
-    <div class="live-card">
-      <div class="last-project-dot"></div>
-      <div>
-        <div class="live-label">LAST PROJECT</div>
-        <div class="live-value" id="lastProjectTime">---</div>
-        <div class="live-sub" data-i18n="recentDone">✅ أُنجز مؤخراً</div>
-      </div>
-    </div>
+    <div class="live-card"><div class="live-icon">🕐</div><div><div class="live-label">الوقت المحلي</div><div class="live-value" id="liveClock">--:--</div><div class="live-sub" id="liveDate">فلسطين</div></div></div>
+    <div class="live-card"><div class="last-project-dot"></div><div><div class="live-label">آخر مشروع</div><div class="live-value" id="lastProjectTime">---</div><div class="live-sub" data-i18n="recentDone">✅ أُنجز مؤخراً</div></div></div>
   </div>
 
   <p class="section-title" data-section="faq" data-i18n="faqTitle">— الأسئلة الشائعة —</p>
-
   <div class="faq-section">
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q"><span data-i18n="faq1Q">كم يستغرق تنفيذ مشروع AI Agent؟</span><div class="faq-icon">+</div></div>
-      <div class="faq-a"><div class="faq-a-inner" data-i18n="faq1A">المشاريع البسيطة 3-5 أيام، والمتوسطة 1-2 أسبوع. أبدأ دائماً بجلسة تحليل مجانية لتحديد الجدول الدقيق.</div></div>
-    </div>
-
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q"><span data-i18n="faq2Q">هل تدعم المشاريع بعد التسليم؟</span><div class="faq-icon">+</div></div>
-      <div class="faq-a"><div class="faq-a-inner" data-i18n="faq2A">نعم، دعم مجاني 14 يوماً بعد التسليم لضمان عمل المشروع بشكل مثالي.</div></div>
-    </div>
-
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q"><span data-i18n="faq3Q">ما طرق الدفع المتاحة؟</span><div class="faq-icon">+</div></div>
-      <div class="faq-a"><div class="faq-a-inner" data-i18n="faq3A">Payoneer, Wise, Binance Pay — وعبر خمسات ومستقل وUpwork للحماية الإضافية.</div></div>
-    </div>
-
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q"><span data-i18n="faq4Q">هل أحتاج خبرة تقنية؟</span><div class="faq-icon">+</div></div>
-      <div class="faq-a"><div class="faq-a-inner" data-i18n="faq4A">لا. فقط أخبرني بمشكلتك التجارية وأنا أترجمها إلى حل تقني عملي.</div></div>
-    </div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span data-i18n="faq1Q">كم يستغرق تنفيذ مشروع وكيل ذكاء اصطناعي؟</span><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner" data-i18n="faq1A">المشاريع البسيطة تستغرق عادة من 3 إلى 5 أيام، والمتوسطة من أسبوع إلى أسبوعين.</div></div></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span data-i18n="faq2Q">هل تدعم المشاريع بعد التسليم؟</span><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner" data-i18n="faq2A">نعم، أقدم دعماً مجانياً لمدة 14 يوماً بعد التسليم للتأكد أن كل شيء يعمل بشكل ممتاز.</div></div></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span data-i18n="faq3Q">ما طرق الدفع المتاحة؟</span><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner" data-i18n="faq3A">يمكن الدفع عبر Payoneer وWise وBinance Pay، أو عبر منصات العمل الحر للحماية الإضافية.</div></div></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span data-i18n="faq4Q">هل أحتاج خبرة تقنية؟</span><div class="faq-icon">+</div></div><div class="faq-a"><div class="faq-a-inner" data-i18n="faq4A">لا. فقط اشرح لي المشكلة التجارية، وسأحولها إلى حل تقني عملي.</div></div></div>
   </div>
 
   <p class="section-title" data-section="game">— STAR HUNTER MINI GAME —</p>
-
   <div class="game-section">
-    <div class="game-header">
-      <div>
-        <div class="game-title">⚡ STAR HUNTER</div>
-        <div class="game-subtitle" data-i18n="gameSubtitle">اصطد النجوم — تجنب الأحمر</div>
-      </div>
-
-      <div class="game-scores">
-        <div style="text-align:center">
-          <div class="gscore-label">SCORE</div>
-          <div class="gscore-val" id="scoreDisplay">0</div>
-        </div>
-
-        <div style="text-align:center">
-          <div class="gscore-label">BEST</div>
-          <div class="gscore-val best-val" id="bestDisplay">0</div>
-        </div>
-      </div>
-    </div>
-
+    <div class="game-header"><div><div class="game-title">⚡ STAR HUNTER</div><div class="game-subtitle" data-i18n="gameSubtitle">اجمع النجوم وتجنب اللون الأحمر</div></div><div class="game-scores"><div style="text-align:center"><div class="gscore-label">النقاط</div><div class="gscore-val" id="scoreDisplay">0</div></div><div style="text-align:center"><div class="gscore-label">الأفضل</div><div class="gscore-val best-val" id="bestDisplay">0</div></div></div></div>
     <div class="game-arena" id="gameWrapper"><canvas id="gameCanvas"></canvas></div>
-
-    <div class="game-legend">
-      <div class="legend-item"><div class="legend-dot" style="background:#00f5ff"></div>+1</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#a78bfa"></div>+3</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#fbbf24"></div>+10</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#ff4466"></div><span data-i18n="avoidRed">-3 تجنبه</span></div>
-    </div>
+    <div class="game-legend"><div class="legend-item"><div class="legend-dot" style="background:#38d9ff"></div>+1</div><div class="legend-item"><div class="legend-dot" style="background:#a78bfa"></div>+3</div><div class="legend-item"><div class="legend-dot" style="background:#fbbf24"></div>+10</div><div class="legend-item"><div class="legend-dot" style="background:#ff4466"></div><span data-i18n="avoidRed">-3 تجنبه</span></div></div>
   </div>
 
-  <footer>
-    <div class="footer-line"></div>
-    <p class="footer-text">© 2026 FADI ABUSAADA · BUILT WITH AI & PASSION</p>
-  </footer>
+  <footer><div class="footer-line"></div><p class="footer-text">© 2026 FADI ABUSAADA · BUILT WITH AI & PASSION</p></footer>
 </main>
 
+<script>
+const WORKER_URL="https://noisy-fire-91c3.eng-fadi990.workers.dev";
+const WHATSAPP_URL="https://wa.me/972599930699";
+function trackEvent(name,params={}){try{if(typeof gtag==="function"){gtag("event",name,params)}}catch(e){}}
 
-
-
-
-
-
-
-  <script>
-const WORKER_URL = "https://noisy-fire-91c3.eng-fadi990.workers.dev";
-const WHATSAPP_URL = "https://wa.me/972599930699";
-
-function trackEvent(name, params = {}) {
-  try {
-    if (typeof gtag === "function") {
-      gtag("event", name, params);
-    }
-  } catch (e) {}
+let isEn=false;
+const I18N={
+ar:{
+notice:"🎉 خصم 20% على أول مشروع — اذكر كود FIRST20 عند التواصل",stickyStrong:"🟢 متاح الآن للمشاريع",stickyText:"ابدأ مشروعك اليوم",startNow:"ابدأ الآن ←",secretText:"أنت من الـ 1% الذين اكتشفوا هذا السر 🎉 تواصل وقل FIRST20 للحصول على خصم 20%!",verifiedText:"✓ تم التحقق من الهوية",
+phrases:["أبني أنظمة ذكاء اصطناعي توفر لك 20+ ساعة أسبوعياً ⚡","أحوّل مشكلتك التجارية إلى حل ذكي يعمل طوال اليوم 🤖","وكلاء ذكية + أتمتة = عمل أقل ونتائج أكثر 🚀","منصات SaaS · وكلاء ذكاء اصطناعي · أتمتة — في مكان واحد 💡"],
+available:"متاح للمشاريع الجديدة",busy:"مشغول حالياً 🔴",visitorText:"يتصفح الصفحة الآن",visitorSuffix:"زائر",
+trust1:"30+ مشروع منجز",trust2:"دعم مجاني 14 يوماً",trust3:"استشارة مجانية",trust4:"تسليم سريع وواضح",
+aboutTitle:"— من أنا —",aboutText:"أنا فادي أبوسعدة، مهندس ذكاء اصطناعي وخبير أتمتة من فلسطين 🇵🇸. أساعد أصحاب الأعمال على توفير الوقت وزيادة الإنتاجية عبر أنظمة وكلاء ذكاء اصطناعي، شات بوت، وأتمتة تعمل بدلاً عنهم.",tagPalestine:"🇵🇸 فلسطين",tagFast:"⚡ متجاوب خلال 24 ساعة",tagLang:"🌍 عربي وإنجليزي",tagProjects:"🤝 أكثر من 30 مشروع",
+connectTitle:"— روابط التواصل —",khamsatSub:"خدماتي على خمسات",mostaqlSub:"ملفي على مستقل",
+quickEstimateBtn:"💰 اعرض عليّ سعر سريع",copyPageBtn:"🔗 نسخ رابط الصفحة",
+servicesTitle:"— الخدمات —",s1d:"وكلاء ذكاء اصطناعي ينفذون مهامك تلقائياً بأقل تدخل",s2d:"أتمتة كاملة لسير العمل توفر وقتك وجهدك",s3d:"شات بوت احترافي يخدم عملاءك طوال اليوم",s4d:"بناء منصات SaaS كاملة وجاهزة للإطلاق",price1:"من $150",price2:"من $100",price3:"من $50",price4:"حسب الطلب",bookNow:"احجز الآن",
+howTitle:"— طريقة العمل —",how1Title:"تواصل معي",how1Desc:"أخبرني بالمشكلة التجارية، ولا تحتاج أي خبرة تقنية",how1Time:"⏱ استشارة مجانية لمدة 15 دقيقة",how2Title:"نحلل ونخطط",how2Desc:"خطة واضحة مع جدول زمني وسعر محدد قبل البدء",how2Time:"⏱ خلال 24 ساعة",how3Title:"ننفذ ونسلم",how3Desc:"تسليم مع شرح كامل ودعم مجاني بعد التسليم",how3Time:"⏱ من 3 إلى 14 يوم حسب المشروع",
+guaranteeTitle:"ضمان وراحة بعد التسليم",guaranteeText:"تحصل على شرح كامل للنظام مع دعم مجاني لمدة 14 يوماً بعد التسليم للتأكد أن كل شيء يعمل بشكل ممتاز.",
+resultsTitle:"— النتائج —",result1Title:"متوسط الوقت الذي أوفره للعملاء أسبوعياً",result1Num:"20+ ساعة",result2Title:"مشاريع ذكاء اصطناعي وأتمتة تم تسليمها",result2Num:"30+ مشروع",result3Title:"متوسط تسليم المشاريع البسيطة",result3Num:"3-5 أيام",
+projectsTitle:"— نماذج مشاريع —",project1Desc:"وكيل مبيعات ذكي يرد على العملاء ويقودهم للتواصل عبر واتساب",project1Result:"✅ وفر 25 ساعة أسبوعياً",project2Desc:"نظام يجمع البيانات ويولد تقارير تلقائية لتقليل العمل اليدوي",project2Result:"✅ قلل معظم العمل اليدوي",project3Desc:"شات بوت متجر إلكتروني يرد على العملاء ويساعدهم في اختيار المنتجات",project3Result:"✅ تجربة عملاء أسرع وأسهل",
+certsTitle:"— الشهادات والتدريب —",testimonialsTitle:"— آراء العملاء —",testi1Text:"فادي حوّل الفكرة إلى نظام عملي بسرعة وشرح كل شيء بطريقة بسيطة وواضحة.",testi1Name:"— عميل مشروع أتمتة",testi2Text:"الأتمتة قللت العمل اليدوي وخلت المتابعة اليومية أسهل بكثير.",testi2Name:"— صاحب متجر إلكتروني",skillsTitle:"— المهارات التقنية —",
+chatTitle:"— مساعد فادي الذكي —",chatStatus:"● متصل — جاهز لتحليل مشروعك",chatPlaceholder:"اكتب فكرة مشروعك هنا...",quickChatbot:"أريد شات بوت",quickAutomation:"أريد أتمتة",quickAgent:"أريد وكيل ذكاء اصطناعي",quickSaas:"أريد منصة SaaS",
+botStart:"👋 أهلاً! أخبرني بنوع المشروع الذي تحتاجه، وسأساعدك في تقدير الحل والسعر.",botBudget:"💰 ما الميزانية التقريبية المتاحة للمشروع؟",botDetails:"📋 اشرح تفاصيل المشروع باختصار: ما المشكلة؟ وما النتيجة المطلوبة؟",botThinking:"🤖 جاري تحليل المشروع وتقدير السعر...",botError:"❌ حدث خطأ مؤقت. حاول مرة أخرى أو تواصل معي عبر واتساب.",botCta:"🚀 إذا كان العرض مناسباً لك، يمكننا البدء عبر واتساب.",botWhatsapp:"📱 افتح واتساب",botReturn:"👀 رجعت! هل ترغب في إكمال مشروعك؟",botProjectWas:"📌 مشروعك كان: ",
+consultTitle:"— استشارة مجانية —",consultBtn:"احجز استشارة مجانية — 15 دقيقة",liveTitle:"— معلومات مباشرة —",recentDone:"✅ أُنجز مؤخراً",
+faqTitle:"— الأسئلة الشائعة —",faq1Q:"كم يستغرق تنفيذ مشروع وكيل ذكاء اصطناعي؟",faq1A:"المشاريع البسيطة تستغرق عادة من 3 إلى 5 أيام، والمتوسطة من أسبوع إلى أسبوعين.",faq2Q:"هل تدعم المشاريع بعد التسليم؟",faq2A:"نعم، أقدم دعماً مجانياً لمدة 14 يوماً بعد التسليم للتأكد أن كل شيء يعمل بشكل ممتاز.",faq3Q:"ما طرق الدفع المتاحة؟",faq3A:"يمكن الدفع عبر Payoneer وWise وBinance Pay، أو عبر منصات العمل الحر للحماية الإضافية.",faq4Q:"هل أحتاج خبرة تقنية؟",faq4A:"لا. فقط اشرح لي المشكلة التجارية، وسأحولها إلى حل تقني عملي.",
+gameSubtitle:"اجمع النجوم وتجنب اللون الأحمر",avoidRed:"-3 تجنبه"
+},
+en:{
+notice:"🎉 20% off your first project — mention code FIRST20",stickyStrong:"🟢 Available for projects",stickyText:"Start your project today",startNow:"Start now ←",secretText:"You found the secret 🎉 Contact me and mention FIRST20 to get 20% off!",verifiedText:"✓ Identity verified",
+phrases:["I build AI systems that save you 20+ hours weekly ⚡","I turn business problems into 24/7 AI solutions 🤖","Smart agents + automation = less work, more results 🚀","SaaS · AI Agents · Automation — all in one 💡"],
+available:"Available for new projects",busy:"Currently busy 🔴",visitorText:"Visitors online now",visitorSuffix:"",
+trust1:"30+ delivered projects",trust2:"14 days free support",trust3:"Free consultation",trust4:"Fast clear delivery",
+aboutTitle:"— ABOUT ME —",aboutText:"I’m Fadi AbuSaada, an AI Engineer and Automation Expert from Palestine 🇵🇸. I help business owners save time and increase productivity using AI agents, chatbots, and automation systems that work for them.",tagPalestine:"🇵🇸 Palestine",tagFast:"⚡ Fast response",tagLang:"🌍 Arabic & English",tagProjects:"🤝 30+ projects",
+connectTitle:"— CONTACT LINKS —",khamsatSub:"My services on Khamsat",mostaqlSub:"My profile on Mostaql",
+quickEstimateBtn:"💰 Get a quick quote",copyPageBtn:"🔗 Copy page link",
+servicesTitle:"— SERVICES —",s1d:"Smart AI agents that automate tasks with minimal supervision",s2d:"Complete workflow automation that saves your time and effort",s3d:"Professional chatbot serving your customers all day",s4d:"Complete SaaS platforms ready to launch",price1:"From $150",price2:"From $100",price3:"From $50",price4:"Custom quote",bookNow:"Book now",
+howTitle:"— HOW I WORK —",how1Title:"Contact me",how1Desc:"Tell me your business problem. No technical experience needed.",how1Time:"⏱ Free 15-minute consultation",how2Title:"Analyze and plan",how2Desc:"Clear plan with timeline and fixed price before we start",how2Time:"⏱ Within 24 hours",how3Title:"Build and deliver",how3Desc:"Delivery with full walkthrough and free support after delivery",how3Time:"⏱ 3 to 14 days depending on scope",
+guaranteeTitle:"Delivery guarantee and support",guaranteeText:"You get a full system walkthrough plus 14 days of free support after delivery to make sure everything works properly.",
+resultsTitle:"— RESULTS —",result1Title:"Average weekly time saved for clients",result1Num:"20+ Hours",result2Title:"AI and automation projects delivered",result2Num:"30+ Projects",result3Title:"Typical delivery for simple projects",result3Num:"3-5 Days",
+projectsTitle:"— PROJECT SAMPLES —",project1Desc:"A smart sales agent that answers customers and drives WhatsApp conversations",project1Result:"✅ Saved 25 hours weekly",project2Desc:"A system that collects data and generates automatic reports to reduce manual work",project2Result:"✅ Reduced most manual work",project3Desc:"An e-commerce chatbot that answers customers and helps them choose products",project3Result:"✅ Faster and easier customer experience",
+certsTitle:"— CERTIFICATIONS & TRAINING —",testimonialsTitle:"— CLIENT FEEDBACK —",testi1Text:"Fadi turned the idea into a working system quickly and explained everything clearly.",testi1Name:"— Automation project client",testi2Text:"The automation reduced manual work and made daily follow-up much easier.",testi2Name:"— E-commerce store owner",skillsTitle:"— TECH SKILLS —",
+chatTitle:"— FADI AI ASSISTANT —",chatStatus:"● Online — ready to analyze your project",chatPlaceholder:"Describe your project idea here...",quickChatbot:"I need a chatbot",quickAutomation:"I need automation",quickAgent:"I need an AI agent",quickSaas:"I need a SaaS platform",
+botStart:"👋 Hi! Tell me what type of project you need, and I’ll help estimate the solution and price.",botBudget:"💰 What is your estimated project budget?",botDetails:"📋 Briefly describe the project: what problem should it solve, and what result do you want?",botThinking:"🤖 Analyzing the project and estimating the price...",botError:"❌ Temporary error. Try again or contact me on WhatsApp.",botCta:"🚀 If this looks good, we can start through WhatsApp.",botWhatsapp:"📱 Open WhatsApp",botReturn:"👀 Welcome back! Want to continue your project?",botProjectWas:"📌 Your project was: ",
+consultTitle:"— FREE CONSULTATION —",consultBtn:"Book a free 15-minute consultation",liveTitle:"— LIVE INFO —",recentDone:"✅ Recently delivered",
+faqTitle:"— FAQ —",faq1Q:"How long does an AI agent project take?",faq1A:"Simple projects usually take 3 to 5 days, while medium projects take 1 to 2 weeks.",faq2Q:"Do you provide support after delivery?",faq2A:"Yes. I provide 14 days of free support after delivery to make sure everything works properly.",faq3Q:"What payment methods are available?",faq3A:"Payoneer, Wise, Binance Pay, or freelance platforms for extra protection.",faq4Q:"Do I need technical experience?",faq4A:"No. Just describe your business problem, and I will turn it into a practical technical solution.",
+gameSubtitle:"Collect stars and avoid red",avoidRed:"-3 avoid it"
 }
-
-/* =========================
-   TRANSLATION
-========================= */
-let isEn = false;
-
-const I18N = {
-  ar: {
-    notice: "🎉 خصم 20% على أول مشروع — اذكر كود FIRST20 عند التواصل",
-    stickyStrong: "🟢 متاح الآن للمشاريع",
-    stickyText: "ابدأ مشروعك اليوم",
-    startNow: "ابدأ الآن ←",
-    secretText: "أنت من الـ 1% اللي اكتشفوا هاد السر 🎉\nتواصل وقل FIRST20 للحصول على خصم 20%!",
-    verifiedText: "✓ تم التحقق من الهوية",
-
-    phrases: [
-      "أبني أنظمة AI توفر لك 20+ ساعة أسبوعياً ⚡",
-      "أحوّل مشكلتك التجارية إلى حل AI يعمل 24/7 🤖",
-      "وكلاء ذكية + أتمتة = عمل أقل ونتائج أكثر 🚀",
-      "SaaS · AI Agents · Automation — all in one 💡"
-    ],
-
-    available: "متاح للمشاريع الجديدة",
-    busy: "مشغول حالياً 🔴",
-    visitorText: "يتصفح الصفحة الآن",
-    visitorSuffix: "زائر",
-
-    aboutTitle: "— من أنا —",
-    aboutText: "أنا فادي أبوسعدة، مهندس AI وخبير أتمتة من فلسطين 🇵🇸. أساعد أصحاب الأعمال على توفير الوقت وزيادة الإنتاجية عبر أنظمة AI Agents، Chatbots، وAutomation تعمل بدلاً عنهم.",
-    tagPalestine: "🇵🇸 فلسطين",
-    tagFast: "⚡ متجاوب 24h",
-    tagLang: "🌍 عربي وإنجليزي",
-
-    connectTitle: "— تواصل معي —",
-    khamsatSub: "خدماتي على خمسات",
-    mostaqlSub: "ملفي على مستقل",
-
-    servicesTitle: "— خدماتي —",
-    s1d: "وكلاء AI ذكية تنفذ مهامك تلقائياً بدون تدخل",
-    s2d: "أتمتة كاملة لعملك توفر وقتك وجهدك",
-    s3d: "شات بوت احترافي يخدم عملاءك 24/7",
-    s4d: "بناء منصات SaaS كاملة جاهزة للإطلاق",
-    price1: "من $150",
-    price2: "من $100",
-    price3: "من $50",
-    price4: "حسب الطلب",
-    bookNow: "احجز الآن",
-
-    howTitle: "— طريقة العمل —",
-    how1Title: "تواصل معي",
-    how1Desc: "أخبرني بمشكلتك التجارية — بدون خبرة تقنية مطلوبة",
-    how1Time: "⏱ استشارة مجانية 15 دقيقة",
-    how2Title: "نحلل ونخطط",
-    how2Desc: "خطة واضحة مع جدول زمني وسعر ثابت قبل البدء",
-    how2Time: "⏱ خلال 24 ساعة",
-    how3Title: "ننفذ ونسلم",
-    how3Desc: "تسليم مع شرح كامل ودعم مجاني 14 يوماً",
-    how3Time: "⏱ 3-14 يوم حسب المشروع",
-
-    resultsTitle: "— النتائج —",
-    result1Title: "متوسط الوقت الذي أوفره للعملاء أسبوعياً",
-    result1Num: "20+ ساعة",
-    result2Title: "مشاريع AI وأتمتة منجزة بنجاح",
-    result2Num: "30+ مشروع",
-    result3Title: "متوسط سرعة تسليم المشاريع البسيطة",
-    result3Num: "3-5 أيام",
-
-    projectsTitle: "— أحدث المشاريع —",
-    project1Desc: "وكيل مبيعات ذكي يرد على العملاء ويقودهم للتواصل عبر واتساب",
-    project1Result: "✅ وفر 25 ساعة أسبوعياً",
-    project2Desc: "نظام يجمع البيانات ويولد تقارير تلقائية لتقليل العمل اليدوي",
-    project2Result: "✅ أزال معظم العمل اليدوي",
-    project3Desc: "شات بوت متجر إلكتروني يرد على العملاء ويساعدهم في اختيار المنتجات",
-    project3Result: "✅ تجربة عملاء أسرع وأسهل",
-
-    certsTitle: "— الشهادات والتدريب —",
-    testimonialsTitle: "— آراء العملاء —",
-    testi1Text: "فادي حوّل الفكرة إلى نظام عملي بسرعة وشرح كل شيء بطريقة بسيطة وواضحة.",
-    testi1Name: "— عميل مشروع أتمتة",
-    testi2Text: "الأتمتة قللت العمل اليدوي وخلت المتابعة اليومية أسهل بكثير.",
-    testi2Name: "— صاحب متجر إلكتروني",
-
-    skillsTitle: "— المهارات التقنية —",
-
-    chatTitle: "— مساعد فادي الذكي —",
-    chatStatus: "● متصل — جاهز لتحليل مشروعك",
-    chatPlaceholder: "اكتب فكرة مشروعك...",
-    quickChatbot: "أريد Chatbot",
-    quickAutomation: "أريد Automation",
-    quickAgent: "أريد AI Agent",
-    quickSaas: "أريد SaaS",
-
-    botStart: "👋 أهلاً! احكيلي عن مشروعك عشان أعطيك عرض مناسب 🚀\n\nشو نوع المشروع؟",
-    botBudget: "💰 كم ميزانيتك التقريبية؟",
-    botDetails: "📋 اشرح مشروعك بشكل مختصر",
-    botThinking: "🤖 جاري تحليل مشروعك...",
-    botError: "❌ حدث خطأ مؤقت. حاول مرة أخرى أو تواصل معي عبر واتساب.",
-    botCta: "🚀 جاهز نبدأ؟ تواصل معي مباشرة 👇",
-    botWhatsapp: "📱 اضغط للواتساب",
-    botReturn: "👀 رجعت! حاب نكمل مشروعك؟",
-    botProjectWas: "📌 مشروعك كان: ",
-
-    consultTitle: "— استشارة مجانية —",
-    consultBtn: "احجز استشارة مجانية — 15 دقيقة",
-
-    liveTitle: "— معلومات مباشرة —",
-    recentDone: "✅ أُنجز مؤخراً",
-
-    faqTitle: "— الأسئلة الشائعة —",
-    faq1Q: "كم يستغرق تنفيذ مشروع AI Agent؟",
-    faq1A: "المشاريع البسيطة 3-5 أيام، والمتوسطة 1-2 أسبوع. أبدأ دائماً بجلسة تحليل مجانية لتحديد الجدول الدقيق.",
-    faq2Q: "هل تدعم المشاريع بعد التسليم؟",
-    faq2A: "نعم، دعم مجاني 14 يوماً بعد التسليم لضمان عمل المشروع بشكل مثالي.",
-    faq3Q: "ما طرق الدفع المتاحة؟",
-    faq3A: "Payoneer, Wise, Binance Pay — وعبر خمسات ومستقل وUpwork للحماية الإضافية.",
-    faq4Q: "هل أحتاج خبرة تقنية؟",
-    faq4A: "لا. فقط أخبرني بمشكلتك التجارية وأنا أترجمها إلى حل تقني عملي.",
-
-    gameSubtitle: "اصطد النجوم — تجنب الأحمر",
-    avoidRed: "-3 تجنبه"
-  },
-
-  en: {
-    notice: "🎉 20% off your first project — mention code FIRST20",
-    stickyStrong: "🟢 Available for projects",
-    stickyText: "Start your project today",
-    startNow: "Start now ←",
-    secretText: "You found the secret 🎉\nContact me and mention FIRST20 to get 20% off!",
-    verifiedText: "✓ Identity verified",
-
-    phrases: [
-      "I build AI systems that save you 20+ hours weekly ⚡",
-      "I turn business problems into 24/7 AI solutions 🤖",
-      "Smart agents + automation = less work, more results 🚀",
-      "SaaS · AI Agents · Automation — all in one 💡"
-    ],
-
-    available: "Available for new projects",
-    busy: "Currently busy 🔴",
-    visitorText: "Visitors online now",
-    visitorSuffix: "",
-
-    aboutTitle: "— ABOUT ME —",
-    aboutText: "I’m Fadi AbuSaada, an AI Engineer and Automation Expert from Palestine 🇵🇸. I help business owners save time and increase productivity using AI Agents, Chatbots, and Automation systems that work for them.",
-    tagPalestine: "🇵🇸 Palestine",
-    tagFast: "⚡ Fast response",
-    tagLang: "🌍 Arabic & English",
-
-    connectTitle: "— CONNECT WITH ME —",
-    khamsatSub: "My services on Khamsat",
-    mostaqlSub: "My profile on Mostaql",
-
-    servicesTitle: "— MY SERVICES —",
-    s1d: "Smart AI agents that automate tasks with minimal supervision",
-    s2d: "Full workflow automation that saves your time and effort",
-    s3d: "Professional chatbot serving your customers 24/7",
-    s4d: "Complete SaaS platforms ready to launch",
-    price1: "From $150",
-    price2: "From $100",
-    price3: "From $50",
-    price4: "Custom quote",
-    bookNow: "Book now",
-
-    howTitle: "— HOW I WORK —",
-    how1Title: "Contact me",
-    how1Desc: "Tell me your business problem — no technical experience needed",
-    how1Time: "⏱ Free 15-minute consultation",
-    how2Title: "Analyze and plan",
-    how2Desc: "Clear plan with timeline and fixed pricing before we start",
-    how2Time: "⏱ Within 24 hours",
-    how3Title: "Build and deliver",
-    how3Desc: "Delivery with full walkthrough and 14 days free support",
-    how3Time: "⏱ 3-14 days depending on scope",
-
-    resultsTitle: "— RESULTS —",
-    result1Title: "Average weekly time saved for clients",
-    result1Num: "20+ Hours",
-    result2Title: "AI and automation projects delivered",
-    result2Num: "30+ Projects",
-    result3Title: "Typical delivery for simple projects",
-    result3Num: "3-5 Days",
-
-    projectsTitle: "— LATEST PROJECTS —",
-    project1Desc: "A smart sales agent that answers customers and drives WhatsApp conversations",
-    project1Result: "✅ Saved 25 hours weekly",
-    project2Desc: "A system that collects data and generates automatic reports to reduce manual work",
-    project2Result: "✅ Reduced most manual work",
-    project3Desc: "An e-commerce chatbot that answers customers and helps them choose products",
-    project3Result: "✅ Faster and easier customer experience",
-
-    certsTitle: "— CERTIFICATIONS & TRAINING —",
-    testimonialsTitle: "— TESTIMONIALS —",
-    testi1Text: "Fadi turned the idea into a working system quickly and explained everything clearly.",
-    testi1Name: "— Automation project client",
-    testi2Text: "The automation reduced manual work and made daily follow-up much easier.",
-    testi2Name: "— E-commerce store owner",
-
-    skillsTitle: "— TECH STACK —",
-
-    chatTitle: "— FADI AI ASSISTANT —",
-    chatStatus: "● Online — ready to analyze your project",
-    chatPlaceholder: "Describe your project idea...",
-    quickChatbot: "I want a Chatbot",
-    quickAutomation: "I want Automation",
-    quickAgent: "I want an AI Agent",
-    quickSaas: "I want SaaS",
-
-    botStart: "👋 Hi! Tell me about your project so I can give you a useful quote 🚀\n\nWhat type of project do you need?",
-    botBudget: "💰 What is your estimated budget?",
-    botDetails: "📋 Briefly describe the project",
-    botThinking: "🤖 Analyzing your project...",
-    botError: "❌ Temporary error. Try again or contact me on WhatsApp.",
-    botCta: "🚀 Ready to start? Contact me directly 👇",
-    botWhatsapp: "📱 Open WhatsApp",
-    botReturn: "👀 Welcome back! Want to continue your project?",
-    botProjectWas: "📌 Your project was: ",
-
-    consultTitle: "— FREE CONSULTATION —",
-    consultBtn: "Book a free 15-minute consultation",
-
-    liveTitle: "— LIVE INFO —",
-    recentDone: "✅ Recently delivered",
-
-    faqTitle: "— FAQ —",
-    faq1Q: "How long does an AI Agent project take?",
-    faq1A: "Simple projects usually take 3-5 days, while medium projects take 1-2 weeks. I always start with a free analysis session to define the exact timeline.",
-    faq2Q: "Do you provide support after delivery?",
-    faq2A: "Yes, I provide 14 days of free support after delivery to make sure everything works properly.",
-    faq3Q: "What payment methods are available?",
-    faq3A: "Payoneer, Wise, Binance Pay — and platforms like Khamsat, Mostaql, and Upwork for extra protection.",
-    faq4Q: "Do I need technical experience?",
-    faq4A: "No. Just describe your business problem, and I will translate it into a practical AI solution.",
-
-    gameSubtitle: "Catch stars — avoid red",
-    avoidRed: "-3 avoid it"
-  }
 };
 
-function currentLang() {
-  return isEn ? I18N.en : I18N.ar;
-}
-
-function applyTranslations() {
-  const lang = currentLang();
-
-  document.documentElement.lang = isEn ? "en" : "ar";
-  document.documentElement.dir = isEn ? "ltr" : "rtl";
-  document.body.classList.toggle("en-mode", isEn);
-
-  document.getElementById("langBtn").textContent = isEn ? "AR" : "EN";
-
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.dataset.i18n;
-    if (lang[key]) el.textContent = lang[key];
+function currentLang(){return isEn?I18N.en:I18N.ar}
+function applyTranslations(){
+  const lang=currentLang();
+  document.documentElement.lang=isEn?"en":"ar";
+  document.documentElement.dir=isEn?"ltr":"rtl";
+  document.body.classList.toggle("en-mode",isEn);
+  document.getElementById("langBtn").textContent=isEn?"AR":"EN";
+  document.querySelectorAll("[data-i18n]").forEach(el=>{const key=el.dataset.i18n;if(lang[key])el.textContent=lang[key]});
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{const key=el.dataset.i18nPlaceholder;if(lang[key])el.placeholder=lang[key]});
+  document.getElementById("availText").textContent=isAvail?lang.available:lang.busy;
+  const badges=document.querySelectorAll(".title-badge");
+  if(badges[0])badges[0].textContent=isEn?"AI ENGINEER":"مهندس ذكاء اصطناعي";
+  if(badges[1])badges[1].textContent=isEn?"AUTOMATION":"أتمتة";
+  if(badges[2])badges[2].textContent=isEn?"FREELANCER":"مستقل";
+  const aboutLabel=document.querySelector(".about-label");if(aboutLabel)aboutLabel.textContent=isEn?"WHO AM I":"نبذة عني";
+  const statLabels=document.querySelectorAll(".stat-l");
+  if(statLabels[0])statLabels[0].textContent=isEn?"PROJECTS":"مشاريع";
+  if(statLabels[1])statLabels[1].textContent=isEn?"CLIENTS":"عملاء";
+  if(statLabels[2])statLabels[2].textContent=isEn?"YEARS":"سنوات";
+  if(statLabels[3])statLabels[3].textContent=isEn?"TOP RATED":"تقييم عالٍ";
+  const subMap=[
+    ['.link-card[href="https://eng2fadi.github.io"] .link-sub',isEn?"Personal portfolio":"الموقع الشخصي"],
+    ['.link-card[href="https://github.com/Eng2Fadi"] .link-sub',isEn?"Projects and code":"مشاريع وأكواد"],
+    ['.link-card[href="https://linkedin.com/in/eng-fadi-abusaada"] .link-sub',isEn?"Professional profile":"الملف المهني"],
+    ['.link-card[href*="upwork"] .link-sub',isEn?"Hire me on Upwork":"وظفني عبر Upwork"]
+  ];
+  subMap.forEach(([sel,text])=>{const el=document.querySelector(sel);if(el)el.textContent=text});
+  document.querySelectorAll(".service-btn").forEach(btn=>btn.textContent=isEn?"Book now":"احجز الآن");
+  const consultSub=document.querySelector(".consult-sub");if(consultSub)consultSub.textContent=isEn?"Free 15-minute consultation":"استشارة مجانية لمدة 15 دقيقة";
+  const liveLabels=document.querySelectorAll(".live-label");
+  if(liveLabels[0])liveLabels[0].textContent=isEn?"LOCAL TIME":"الوقت المحلي";
+  if(liveLabels[1])liveLabels[1].textContent=isEn?"LAST PROJECT":"آخر مشروع";
+  const scoreLabels=document.querySelectorAll(".gscore-label");
+  if(scoreLabels[0])scoreLabels[0].textContent=isEn?"SCORE":"النقاط";
+  if(scoreLabels[1])scoreLabels[1].textContent=isEn?"BEST":"الأفضل";
+  document.querySelectorAll(".quick-btn").forEach(btn=>{
+    if(btn.dataset.i18n==="quickChatbot")btn.dataset.project=isEn?"Chatbot":"شات بوت";
+    if(btn.dataset.i18n==="quickAutomation")btn.dataset.project=isEn?"Automation":"أتمتة";
+    if(btn.dataset.i18n==="quickAgent")btn.dataset.project=isEn?"AI Agent":"وكيل ذكاء اصطناعي";
+    if(btn.dataset.i18n==="quickSaas")btn.dataset.project=isEn?"SaaS platform":"منصة SaaS";
   });
-
-  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
-    const key = el.dataset.i18nPlaceholder;
-    if (lang[key]) el.placeholder = lang[key];
-  });
-
-  document.getElementById("availText").textContent = isAvail ? lang.available : lang.busy;
-
-  updateVisitors();
-  resetTyping();
+  updateVisitors();resetTyping();updateClock();
 }
 
-/* =========================
-   AUDIO
-========================= */
-let audioCtx = null;
-
-function initAudio() {
-  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-}
-
-function playSound(freq, dur, type = "sine", vol = 0.15) {
-  try {
-    if (!audioCtx) return;
-    const o = audioCtx.createOscillator();
-    const g = audioCtx.createGain();
-    o.connect(g);
-    g.connect(audioCtx.destination);
-    o.type = type;
-    o.frequency.setValueAtTime(freq, audioCtx.currentTime);
-    g.gain.setValueAtTime(vol, audioCtx.currentTime);
-    g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + dur);
-    o.start();
-    o.stop(audioCtx.currentTime + dur);
-  } catch (e) {}
-}
-
-function playClick() {
-  playSound(800, 0.08, "sine", 0.1);
-}
-
-function playSuccess() {
-  playSound(523, 0.1, "sine", 0.12);
-  setTimeout(() => playSound(659, 0.1, "sine", 0.12), 100);
-  setTimeout(() => playSound(784, 0.15, "sine", 0.12), 200);
-}
-
-function playError() {
-  playSound(200, 0.2, "sawtooth", 0.08);
-}
-
-function playGameHit() {
-  playSound(440 + Math.random() * 200, 0.08, "sine", 0.1);
-}
-
-function playGameMiss() {
-  playSound(150, 0.15, "sawtooth", 0.06);
-}
-
-document.addEventListener("click", initAudio, { once: true });
-document.addEventListener("touchstart", initAudio, { once: true });
-
-/* =========================
-   CURSOR
-========================= */
-const cur = document.getElementById("cursor");
-const curR = document.getElementById("cursorRing");
-
-let mx = 0;
-let my = 0;
-let rx = 0;
-let ry = 0;
-let lastTrail = 0;
-
-document.addEventListener("mousemove", e => {
-  mx = e.clientX;
-  my = e.clientY;
-
-  cur.style.left = mx + "px";
-  cur.style.top = my + "px";
-
-  if (Date.now() - lastTrail > 35) {
-    lastTrail = Date.now();
-    const t = document.createElement("div");
-    t.className = "trail";
-    t.style.cssText = "left:" + mx + "px;top:" + my + "px;width:5px;height:5px;background:rgba(0,245,255,0.5)";
-    document.body.appendChild(t);
-    setTimeout(() => t.remove(), 600);
-  }
-});
-
-(function animCur() {
-  rx += (mx - rx) * .13;
-  ry += (my - ry) * .13;
-  curR.style.left = rx + "px";
-  curR.style.top = ry + "px";
-  requestAnimationFrame(animCur);
-})();
-
-document.querySelectorAll("a,.service-btn,.quick-btn,.chat-send,.game-arena,.avail-badge,.copy-btn,.top-btn,.sticky-cta-btn,.faq-q").forEach(el => {
-  el.addEventListener("mouseenter", () => curR.classList.add("big"));
-  el.addEventListener("mouseleave", () => curR.classList.remove("big"));
-  el.addEventListener("click", playClick);
-});
-
-/* =========================
-   SCROLL + PROGRESS
-========================= */
-const stickyCta = document.getElementById("stickyCta");
-const scrollTopBtn = document.getElementById("scrollTopBtn");
-
-let ctaShown = false;
-
-window.addEventListener("scroll", () => {
-  const max = document.body.scrollHeight - window.innerHeight;
-  const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
-
-  document.getElementById("scrollBar").style.width = pct + "%";
-
-  if (window.scrollY > 400 && !ctaShown) {
-    ctaShown = true;
-    stickyCta.classList.add("visible");
-  }
-
-  if (window.scrollY < 100 && ctaShown) {
-    ctaShown = false;
-    stickyCta.classList.remove("visible");
-  }
-
-  scrollTopBtn.classList.toggle("show", window.scrollY > 600);
-  updateProgressDots();
-});
-
-const sections = [];
-document.querySelectorAll("[data-section]").forEach(s => sections.push(s));
-
-const dotsContainer = document.getElementById("progressDots");
-
-sections.forEach((_, i) => {
-  const d = document.createElement("div");
-  d.className = "prog-dot";
-  d.id = "dot-" + i;
-  dotsContainer.appendChild(d);
-});
-
-function updateProgressDots() {
-  const mid = window.scrollY + window.innerHeight / 2;
-  let closest = 0;
-  let minDist = Infinity;
-
-  sections.forEach((s, i) => {
-    const dist = Math.abs(s.getBoundingClientRect().top + window.scrollY - mid);
-    if (dist < minDist) {
-      minDist = dist;
-      closest = i;
-    }
-  });
-
-  document.querySelectorAll(".prog-dot").forEach((d, i) => d.classList.toggle("active", i === closest));
-}
-
-/* =========================
-   BACKGROUND STARS
-========================= */
-const bgC = document.getElementById("bgCanvas");
-const bgX = bgC.getContext("2d");
-let bgS = [];
-
-function resizeBg() {
-  bgC.width = window.innerWidth;
-  bgC.height = window.innerHeight;
-}
-
-function initBg() {
-  bgS = [];
-  for (let i = 0; i < 220; i++) {
-    bgS.push({
-      x: Math.random() * bgC.width,
-      y: Math.random() * bgC.height,
-      r: Math.random() * 1.4 + 0.1,
-      a: Math.random() * .8 + .1,
-      sp: Math.random() * .4 + .03
-    });
-  }
-}
-
-function drawBg() {
-  bgX.clearRect(0, 0, bgC.width, bgC.height);
-
-  bgS.forEach(s => {
-    bgX.beginPath();
-    bgX.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-    bgX.fillStyle = "rgba(180,230,255," + s.a + ")";
-    bgX.fill();
-
-    s.a += s.sp * .008;
-    if (s.a > .9) s.sp = -Math.abs(s.sp);
-    if (s.a < .1) s.sp = Math.abs(s.sp);
-  });
-
-  requestAnimationFrame(drawBg);
-}
-
-resizeBg();
-initBg();
-drawBg();
-
-window.addEventListener("resize", () => {
-  resizeBg();
-  initBg();
-});
-
-/* =========================
-   COUNTERS + SKILLS
-========================= */
-function animCount(el, target, suffix) {
-  let c = 0;
-  const step = Math.ceil(target / 40);
-
-  const t = setInterval(() => {
-    c = Math.min(c + step, target);
-    el.textContent = c + suffix;
-    if (c >= target) clearInterval(t);
-  }, 40);
-}
-
-setTimeout(() => {
-  animCount(document.getElementById("cProjects"), 30, "+");
-  animCount(document.getElementById("cClients"), 25, "+");
-  animCount(document.getElementById("cYears"), 3, "+");
-}, 600);
-
-const obs = new IntersectionObserver(e => {
-  e.forEach(x => {
-    if (x.isIntersecting) {
-      x.target.classList.add("animated");
-      playSuccess();
-    }
-  });
-}, { threshold: .3 });
-
-document.querySelectorAll(".skill-fill").forEach(f => obs.observe(f));
-
-/* =========================
-   TYPING TAGLINE
-========================= */
-let pIdx = 0;
-let cIdx = 0;
-let deleting = false;
-let typingTimer = null;
-
-const typingEl = document.getElementById("typingText");
-
-function resetTyping() {
-  clearTimeout(typingTimer);
-  pIdx = 0;
-  cIdx = 0;
-  deleting = false;
-  typingEl.textContent = "";
-  typeLoop();
-}
-
-function typeLoop() {
-  const phrases = currentLang().phrases;
-  const phrase = phrases[pIdx];
-
-  if (!deleting) {
-    typingEl.textContent = phrase.slice(0, ++cIdx);
-    if (cIdx === phrase.length) {
-      deleting = true;
-      typingTimer = setTimeout(typeLoop, 2200);
-      return;
-    }
-  } else {
-    typingEl.textContent = phrase.slice(0, --cIdx);
-    if (cIdx === 0) {
-      deleting = false;
-      pIdx = (pIdx + 1) % phrases.length;
-    }
-  }
-
-  typingTimer = setTimeout(typeLoop, deleting ? 35 : 75);
-}
-
-/* =========================
-   VISITORS
-========================= */
-function updateVisitors() {
-  const n = Math.max(35, 42 + Math.floor(Math.random() * 8) - 3);
-  const lang = currentLang();
-
-  if (isEn) {
-    document.getElementById("visitorCount").innerHTML = lang.visitorText + ' <strong style="color:#00f5ff">' + n + "</strong>";
-  } else {
-    document.getElementById("visitorCount").innerHTML = lang.visitorText + ' <strong style="color:#00f5ff">' + n + "</strong> " + lang.visitorSuffix;
-  }
-}
-
-setInterval(updateVisitors, 8000);
-
-/* =========================
-   COPY + AVAILABILITY + THEME + LANGUAGE
-========================= */
-function copyText(e, text, label) {
-  e.preventDefault();
-  e.stopPropagation();
-
-  navigator.clipboard.writeText(text).then(() => {
-    const t = document.getElementById("copyToast");
-    t.textContent = isEn ? "✓ Copied " + label : "✓ تم نسخ " + label + "!";
-    t.classList.add("show");
-    setTimeout(() => t.classList.remove("show"), 2500);
-    playSuccess();
-  });
-}
-
-let isAvail = true;
-
-function toggleAvail() {
-  isAvail = !isAvail;
-
-  const b = document.getElementById("availBadge");
-  const t = document.getElementById("availText");
-
-  b.className = "avail-badge " + (isAvail ? "open" : "busy");
-  t.textContent = isAvail ? currentLang().available : currentLang().busy;
-
-  playClick();
-}
-
-let isLight = false;
-
-function toggleTheme() {
-  isLight = !isLight;
-
-  document.body.classList.toggle("light", isLight);
-  document.getElementById("themeBtn").textContent = isLight ? "🌙" : "☀️";
-
-  const hex = document.querySelector(".avatar-hex2");
-  if (hex) hex.style.background = isLight ? "#f8f9ff" : "#00040f";
-
-  localStorage.setItem("fadi_theme", isLight ? "light" : "dark");
-  playClick();
-}
-
-function toggleLang() {
-  isEn = !isEn;
-  localStorage.setItem("fadi_lang", isEn ? "en" : "ar");
-  applyTranslations();
-  playClick();
-}
-
-/* =========================
-   EASTER EGG
-========================= */
-let eClicks = 0;
-let eTimer = 0;
-
-function easterClick() {
-  if (Date.now() - eTimer > 2000) eClicks = 0;
-  eTimer = Date.now();
-
-  if (++eClicks >= 5) {
-    eClicks = 0;
-    document.getElementById("easterEgg").classList.add("show");
-    launchConfetti();
-    playSuccess();
-  }
-}
-
-function launchConfetti() {
-  const colors = ["#00f5ff", "#a78bfa", "#fbbf24", "#10b981", "#ff4466"];
-
-  const s = document.createElement("style");
-  s.textContent = "@keyframes cFall{0%{opacity:1;transform:translateY(0) rotate(0)}100%{opacity:0;transform:translateY(110vh) rotate(720deg)}}";
-  document.head.appendChild(s);
-
-  for (let i = 0; i < 80; i++) {
-    setTimeout(() => {
-      const c = document.createElement("div");
-      c.style.cssText =
-        "position:fixed;width:" + (6 + Math.random() * 6) +
-        "px;height:" + (6 + Math.random() * 6) +
-        "px;border-radius:2px;pointer-events:none;z-index:600;left:" +
-        Math.random() * 100 +
-        "vw;top:-10px;background:" +
-        colors[Math.floor(Math.random() * colors.length)] +
-        ";animation:cFall " +
-        (1.5 + Math.random() * 1.5) +
-        "s ease forwards";
-      document.body.appendChild(c);
-      setTimeout(() => c.remove(), 4000);
-    }, i * 30);
-  }
-}
-
-setTimeout(() => {
-  if (!sessionStorage.getItem("visited")) {
-    sessionStorage.setItem("visited", "1");
-    launchConfetti();
-  }
-}, 1500);
-
-/* =========================
-   AVATAR TILT
-========================= */
-const avatarEl = document.getElementById("avatarEl");
-
-document.addEventListener("mousemove", e => {
-  if (!avatarEl) return;
-
-  const r = avatarEl.getBoundingClientRect();
-  const dx = (e.clientX - r.left - r.width / 2) / window.innerWidth * 20;
-  const dy = (e.clientY - r.top - r.height / 2) / window.innerHeight * 20;
-
-  avatarEl.style.transform = "perspective(400px) rotateY(" + dx + "deg) rotateX(" + (-dy) + "deg)";
-});
-
-/* =========================
-   AI SALES BOT + RETARGETING
-========================= */
-const msgs = document.getElementById("chatMessages");
-
-let chatStep = 0;
-let lead = {
-  type: "",
-  budget: "",
-  details: ""
-};
-
-function addMsg(text, type) {
-  const d = document.createElement("div");
-  d.className = "msg " + type;
-  d.textContent = text;
-  msgs.appendChild(d);
-  msgs.scrollTop = msgs.scrollHeight;
-  return d;
-}
-
-function addTyping() {
-  const d = document.createElement("div");
-  d.className = "msg typing";
-  d.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div>';
-  msgs.appendChild(d);
-  msgs.scrollTop = msgs.scrollHeight;
-  return d;
-}
-
-function saveLead() {
-  localStorage.setItem("fadi_lead", JSON.stringify(lead));
-}
-
-function loadLead() {
-  const data = localStorage.getItem("fadi_lead");
-  if (!data) return;
-
-  try {
-    const oldLead = JSON.parse(data);
-
-    if (oldLead && oldLead.type) {
-      setTimeout(() => {
-        addMsg(currentLang().botReturn, "bot");
-        addMsg(currentLang().botProjectWas + oldLead.type, "bot");
-      }, 1800);
-    }
-  } catch (e) {}
-}
-
-function buildWhatsAppLeadText() {
-  const lang = isEn ? "English" : "Arabic";
-
-  return [
-    isEn ? "Hi Fadi, I want to start a project." : "مرحبا فادي، أريد البدء بمشروع.",
-    "",
-    "Language: " + lang,
-    "Project type: " + (lead.type || "-"),
-    "Budget: " + (lead.budget || "-"),
-    "Details: " + (lead.details || "-")
-  ].join("\n");
-}
-
-function addWhatsAppButton() {
-  const btn = document.createElement("div");
-  btn.className = "msg bot";
-  btn.textContent = currentLang().botWhatsapp;
-  btn.style.cursor = "pointer";
-  btn.style.fontWeight = "700";
-  btn.onclick = () => {
-    trackEvent("bot_whatsapp_click", { project_type: lead.type || "" });
-    window.open(WHATSAPP_URL + "?text=" + encodeURIComponent(buildWhatsAppLeadText()), "_blank");
-  };
-
-  msgs.appendChild(btn);
-  msgs.scrollTop = msgs.scrollHeight;
-}
-
-async function analyzeLeadWithAI() {
-  const langName = isEn ? "English" : "Arabic";
-
-  const prompt = `
+let audioCtx=null;
+function initAudio(){if(!audioCtx)audioCtx=new(window.AudioContext||window.webkitAudioContext)()}
+function playSound(freq,dur,type="sine",vol=.15){try{if(!audioCtx)return;const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.connect(g);g.connect(audioCtx.destination);o.type=type;o.frequency.setValueAtTime(freq,audioCtx.currentTime);g.gain.setValueAtTime(vol,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+dur);o.start();o.stop(audioCtx.currentTime+dur)}catch(e){}}
+function playClick(){playSound(800,.08,"sine",.1)}
+function playSuccess(){playSound(523,.1,"sine",.12);setTimeout(()=>playSound(659,.1,"sine",.12),100);setTimeout(()=>playSound(784,.15,"sine",.12),200)}
+function playError(){playSound(200,.2,"sawtooth",.08)}
+function playGameHit(){playSound(440+Math.random()*200,.08,"sine",.1)}
+function playGameMiss(){playSound(150,.15,"sawtooth",.06)}
+document.addEventListener("click",initAudio,{once:true});
+document.addEventListener("touchstart",initAudio,{once:true});
+
+const cur=document.getElementById("cursor"),curR=document.getElementById("cursorRing");
+let mx=0,my=0,rx=0,ry=0,lastTrail=0;
+document.addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+"px";cur.style.top=my+"px";if(Date.now()-lastTrail>35){lastTrail=Date.now();const t=document.createElement("div");t.className="trail";t.style.cssText="left:"+mx+"px;top:"+my+"px;width:5px;height:5px;background:rgba(56,189,248,.5)";document.body.appendChild(t);setTimeout(()=>t.remove(),600)}});
+(function animCur(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;curR.style.left=rx+"px";curR.style.top=ry+"px";requestAnimationFrame(animCur)})();
+document.querySelectorAll("a,.service-btn,.quick-btn,.chat-send,.game-arena,.avail-badge,.copy-btn,.top-btn,.sticky-cta-btn,.faq-q,.action-btn").forEach(el=>{el.addEventListener("mouseenter",()=>curR.classList.add("big"));el.addEventListener("mouseleave",()=>curR.classList.remove("big"));el.addEventListener("click",playClick)});
+
+const stickyCta=document.getElementById("stickyCta"),scrollTopBtn=document.getElementById("scrollTopBtn");
+let ctaShown=false;
+window.addEventListener("scroll",()=>{const max=document.body.scrollHeight-window.innerHeight,pct=max>0?window.scrollY/max*100:0;document.getElementById("scrollBar").style.width=pct+"%";if(window.scrollY>400&&!ctaShown){ctaShown=true;stickyCta.classList.add("visible")}if(window.scrollY<100&&ctaShown){ctaShown=false;stickyCta.classList.remove("visible")}scrollTopBtn.classList.toggle("show",window.scrollY>600);updateProgressDots()});
+const sections=[];document.querySelectorAll("[data-section]").forEach(s=>sections.push(s));
+const dotsContainer=document.getElementById("progressDots");
+sections.forEach((_,i)=>{const d=document.createElement("div");d.className="prog-dot";d.id="dot-"+i;dotsContainer.appendChild(d)});
+function updateProgressDots(){const mid=window.scrollY+window.innerHeight/2;let closest=0,minDist=Infinity;sections.forEach((s,i)=>{const dist=Math.abs(s.getBoundingClientRect().top+window.scrollY-mid);if(dist<minDist){minDist=dist;closest=i}});document.querySelectorAll(".prog-dot").forEach((d,i)=>d.classList.toggle("active",i===closest))}
+
+const bgC=document.getElementById("bgCanvas"),bgX=bgC.getContext("2d");let bgS=[];
+function resizeBg(){bgC.width=window.innerWidth;bgC.height=window.innerHeight}
+function initBg(){bgS=[];for(let i=0;i<220;i++)bgS.push({x:Math.random()*bgC.width,y:Math.random()*bgC.height,r:Math.random()*1.4+.1,a:Math.random()*.8+.1,sp:Math.random()*.4+.03})}
+function drawBg(){bgX.clearRect(0,0,bgC.width,bgC.height);bgS.forEach(s=>{bgX.beginPath();bgX.arc(s.x,s.y,s.r,0,Math.PI*2);bgX.fillStyle="rgba(180,230,255,"+s.a+")";bgX.fill();s.a+=s.sp*.008;if(s.a>.9)s.sp=-Math.abs(s.sp);if(s.a<.1)s.sp=Math.abs(s.sp)});requestAnimationFrame(drawBg)}
+resizeBg();initBg();drawBg();window.addEventListener("resize",()=>{resizeBg();initBg()});
+
+function animCount(el,target,suffix){let c=0,step=Math.ceil(target/40);const t=setInterval(()=>{c=Math.min(c+step,target);el.textContent=c+suffix;if(c>=target)clearInterval(t)},40)}
+setTimeout(()=>{animCount(document.getElementById("cProjects"),30,"+");animCount(document.getElementById("cClients"),25,"+");animCount(document.getElementById("cYears"),3,"+")},600);
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("animated");playSuccess()}})},{threshold:.3});
+document.querySelectorAll(".skill-fill").forEach(f=>obs.observe(f));
+
+let pIdx=0,cIdx=0,deleting=false,typingTimer=null;
+const typingEl=document.getElementById("typingText");
+function resetTyping(){clearTimeout(typingTimer);pIdx=0;cIdx=0;deleting=false;typingEl.textContent="";typeLoop()}
+function typeLoop(){const phrases=currentLang().phrases,phrase=phrases[pIdx];if(!deleting){typingEl.textContent=phrase.slice(0,++cIdx);if(cIdx===phrase.length){deleting=true;typingTimer=setTimeout(typeLoop,2200);return}}else{typingEl.textContent=phrase.slice(0,--cIdx);if(cIdx===0){deleting=false;pIdx=(pIdx+1)%phrases.length}}typingTimer=setTimeout(typeLoop,deleting?35:75)}
+function updateVisitors(){const n=Math.max(35,42+Math.floor(Math.random()*8)-3),lang=currentLang();document.getElementById("visitorCount").innerHTML=isEn?lang.visitorText+' <strong style="color:#38d9ff">'+n+"</strong>":lang.visitorText+' <strong style="color:#38d9ff">'+n+"</strong> "+lang.visitorSuffix}
+setInterval(updateVisitors,8000);
+
+function copyText(e,text,label){e.preventDefault();e.stopPropagation();navigator.clipboard.writeText(text).then(()=>{const t=document.getElementById("copyToast");t.textContent=isEn?"✓ Copied "+label:"✓ تم نسخ "+label+"!";t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2500);playSuccess()})}
+let isAvail=true;
+function toggleAvail(){isAvail=!isAvail;const b=document.getElementById("availBadge"),t=document.getElementById("availText");b.className="avail-badge "+(isAvail?"open":"busy");t.textContent=isAvail?currentLang().available:currentLang().busy;playClick()}
+let isLight=false;
+function toggleTheme(){isLight=!isLight;document.body.classList.toggle("light",isLight);document.getElementById("themeBtn").textContent=isLight?"🌙":"☀️";const hex=document.querySelector(".avatar-hex2");if(hex)hex.style.background=isLight?"#f7f9ff":"#020617";localStorage.setItem("fadi_theme",isLight?"light":"dark");playClick()}
+function toggleLang(){isEn=!isEn;localStorage.setItem("fadi_lang",isEn?"en":"ar");applyTranslations();playClick()}
+
+function quickEstimate(){const input=document.getElementById("chatInput"),chatSection=document.querySelector(".chat-section");if(chatSection)chatSection.scrollIntoView({behavior:"smooth",block:"center"});setTimeout(()=>{input.value=isEn?"I want a quick price estimate":"أريد تقدير سعر سريع لمشروع ذكاء اصطناعي";sendMsg()},500);trackEvent("quick_estimate_click")}
+function copyPageLink(){navigator.clipboard.writeText(window.location.href).then(()=>{const t=document.getElementById("copyToast");t.textContent=isEn?"✓ Page link copied!":"✓ تم نسخ رابط الصفحة!";t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2500);playSuccess()});trackEvent("copy_page_link")}
+
+let eClicks=0,eTimer=0;
+function easterClick(){if(Date.now()-eTimer>2000)eClicks=0;eTimer=Date.now();if(++eClicks>=5){eClicks=0;document.getElementById("easterEgg").classList.add("show");launchConfetti();playSuccess()}}
+function launchConfetti(){const colors=["#38d9ff","#a78bfa","#fbbf24","#10b981","#ff4466"];const s=document.createElement("style");s.textContent="@keyframes cFall{0%{opacity:1;transform:translateY(0) rotate(0)}100%{opacity:0;transform:translateY(110vh) rotate(720deg)}}";document.head.appendChild(s);for(let i=0;i<80;i++)setTimeout(()=>{const c=document.createElement("div");c.style.cssText="position:fixed;width:"+(6+Math.random()*6)+"px;height:"+(6+Math.random()*6)+"px;border-radius:2px;pointer-events:none;z-index:600;left:"+Math.random()*100+"vw;top:-10px;background:"+colors[Math.floor(Math.random()*colors.length)]+";animation:cFall "+(1.5+Math.random()*1.5)+"s ease forwards";document.body.appendChild(c);setTimeout(()=>c.remove(),4000)},i*30)}
+setTimeout(()=>{if(!sessionStorage.getItem("visited")){sessionStorage.setItem("visited","1");launchConfetti()}},1500);
+
+const avatarEl=document.getElementById("avatarEl");
+document.addEventListener("mousemove",e=>{if(!avatarEl)return;const r=avatarEl.getBoundingClientRect(),dx=(e.clientX-r.left-r.width/2)/window.innerWidth*20,dy=(e.clientY-r.top-r.height/2)/window.innerHeight*20;avatarEl.style.transform="perspective(400px) rotateY("+dx+"deg) rotateX("+(-dy)+"deg)"});
+
+const msgs=document.getElementById("chatMessages");
+let chatStep=0,lead={type:"",budget:"",details:""};
+function addMsg(text,type){const d=document.createElement("div");d.className="msg "+type;d.textContent=text;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;return d}
+function addTyping(){const d=document.createElement("div");d.className="msg typing";d.innerHTML='<div class="typing-dots"><span></span><span></span><span></span></div>';msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;return d}
+function saveLead(){localStorage.setItem("fadi_lead",JSON.stringify(lead))}
+function loadLead(){const data=localStorage.getItem("fadi_lead");if(!data)return;try{const oldLead=JSON.parse(data);if(oldLead&&oldLead.type)setTimeout(()=>{addMsg(currentLang().botReturn,"bot");addMsg(currentLang().botProjectWas+oldLead.type,"bot")},1800)}catch(e){}}
+function buildWhatsAppLeadText(){return[(isEn?"Hi Fadi, I want to start a project.":"مرحبا فادي، أريد البدء بمشروع."),"",isEn?"Language: English":"اللغة: العربية",(isEn?"Project type: ":"نوع المشروع: ")+(lead.type||"-"),(isEn?"Budget: ":"الميزانية: ")+(lead.budget||"-"),(isEn?"Details: ":"التفاصيل: ")+(lead.details||"-")].join("\n")}
+function addWhatsAppButton(){const btn=document.createElement("div");btn.className="msg bot";btn.textContent=currentLang().botWhatsapp;btn.style.cursor="pointer";btn.style.fontWeight="800";btn.onclick=()=>{trackEvent("bot_whatsapp_click",{project_type:lead.type||""});window.open(WHATSAPP_URL+"?text="+encodeURIComponent(buildWhatsAppLeadText()),"_blank")};msgs.appendChild(btn);msgs.scrollTop=msgs.scrollHeight}
+function addMiniWhatsappButton(){const btn=document.createElement("div");btn.className="bot-mini-action";btn.textContent=isEn?"Continue on WhatsApp":"تابع على واتساب";btn.onclick=()=>{window.open(WHATSAPP_URL+"?text="+encodeURIComponent(buildWhatsAppLeadText()),"_blank");trackEvent("early_whatsapp_click")};const wrap=document.createElement("div");wrap.className="msg bot";wrap.appendChild(btn);msgs.appendChild(wrap);msgs.scrollTop=msgs.scrollHeight}
+async function analyzeLeadWithAI(){
+  const langName=isEn?"English":"Arabic";
+  const prompt=`
 You are an expert AI freelancer and sales consultant.
+
+Important rules:
+- Reply ONLY in ${isEn?"English":"Arabic"}.
+- Do not mix Arabic and English except brand names or technical terms such as AI, API, WhatsApp, SaaS, CRM.
+- Maximum 8 short lines.
+- Be clear, practical, and persuasive.
+- Do not write long introductions.
 
 Client language: ${langName}
 
@@ -3724,515 +876,70 @@ Project type: ${lead.type}
 Budget: ${lead.budget}
 Details: ${lead.details}
 
-Analyze this project like a professional AI freelancer in the Arabic/Gulf market.
-
 Return:
-- Project complexity: simple / medium / advanced
-- Recommended solution
-- Realistic market price range
-- Timeline
-- Why the price is reasonable
-- If the budget is too low, suggest a smaller alternative
-- End with a clear CTA to contact Fadi on WhatsApp
-
-Keep the answer concise, persuasive, and practical.
+1. Complexity level
+2. Recommended solution
+3. Realistic market price range
+4. Estimated timeline
+5. Short reason why this price is fair
+6. If budget is low, suggest a smaller alternative
+7. End with a clear WhatsApp CTA
 `;
-
-  const res = await fetch(WORKER_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      messages: [
-        {
-          role: "user",
-          content: prompt
-        }
-      ]
-    })
-  });
-
-  const data = await res.json();
-  return data.choices?.[0]?.message?.content || currentLang().botError;
+  const res=await fetch(WORKER_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({messages:[{role:"user",content:prompt}]})});
+  const data=await res.json();
+  return data.choices?.[0]?.message?.content||currentLang().botError;
 }
-
-async function sendMsg() {
-  const input = document.getElementById("chatInput");
-  const msg = input.value.trim();
-
-  if (!msg) return;
-
-  addMsg(msg, "user");
-  input.value = "";
-
-  const quickReplies = document.getElementById("quickReplies");
-  if (quickReplies) quickReplies.style.display = "none";
-
-  const lang = currentLang();
-
-  if (chatStep === 0) {
-    lead.type = msg;
-    addMsg(lang.botBudget, "bot");
-    chatStep = 1;
-    return;
-  }
-
-  if (chatStep === 1) {
-    lead.budget = msg;
-    addMsg(lang.botDetails, "bot");
-    chatStep = 2;
-    return;
-  }
-
-  if (chatStep === 2) {
-    lead.details = msg;
-    saveLead();
-
-    const typing = addTyping();
-    trackEvent("lead_submitted", { project_type: lead.type });
-
-    try {
-      const reply = await analyzeLeadWithAI();
-      typing.remove();
-
-      addMsg(reply, "bot");
-
-      setTimeout(() => {
-        addMsg(currentLang().botCta, "bot");
-        addWhatsAppButton();
-      }, 700);
-
-      playSuccess();
-    } catch (e) {
-      typing.remove();
-      addMsg(currentLang().botError, "bot");
-      playError();
-    }
-
-    chatStep = 0;
-  }
+async function sendMsg(){
+  const input=document.getElementById("chatInput"),msg=input.value.trim();
+  if(!msg)return;
+  addMsg(msg,"user");input.value="";
+  const quickReplies=document.getElementById("quickReplies");if(quickReplies)quickReplies.style.display="none";
+  const lang=currentLang();
+  if(chatStep===0){lead.type=msg;addMsg(lang.botBudget,"bot");setTimeout(()=>addMiniWhatsappButton(),500);chatStep=1;return}
+  if(chatStep===1){lead.budget=msg;addMsg(lang.botDetails,"bot");chatStep=2;return}
+  if(chatStep===2){lead.details=msg;saveLead();const typing=addTyping();trackEvent("lead_submitted",{project_type:lead.type});try{const reply=await analyzeLeadWithAI();typing.remove();addMsg(reply,"bot");setTimeout(()=>{addMsg(currentLang().botCta,"bot");addWhatsAppButton()},700);playSuccess()}catch(e){typing.remove();addMsg(currentLang().botError,"bot");playError()}chatStep=0}
 }
+function sendQuick(btn){document.getElementById("chatInput").value=btn.dataset.project||btn.textContent;sendMsg()}
+document.getElementById("chatInput").addEventListener("keydown",e=>{if(e.key==="Enter")sendMsg()});
 
-function sendQuick(btn) {
-  const project = btn.dataset.project || btn.textContent;
-  document.getElementById("chatInput").value = project;
-  sendMsg();
-}
+function updateClock(){const gz=new Date(new Date().toLocaleString("en-US",{timeZone:"Asia/Gaza"}));document.getElementById("liveClock").textContent=String(gz.getHours()).padStart(2,"0")+":"+String(gz.getMinutes()).padStart(2,"0")+":"+String(gz.getSeconds()).padStart(2,"0");const daysAr=["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"],daysEn=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],days=isEn?daysEn:daysAr,hr=gz.getHours();let period=isEn?(hr<6?"Night":hr<12?"Morning":hr<17?"Day":hr<21?"Evening":"Night"):(hr<6?"🌙 ليل":hr<12?"🌅 صباح":hr<17?"☀️ نهار":hr<21?"🌆 مساء":"🌙 ليل");document.getElementById("liveDate").textContent=days[gz.getDay()]+" — "+period}
+setInterval(updateClock,1000);
+function toggleFaq(item){const isOpen=item.classList.contains("open");document.querySelectorAll(".faq-item").forEach(i=>i.classList.remove("open"));if(!isOpen){item.classList.add("open");playClick()}}
 
-document.getElementById("chatInput").addEventListener("keydown", e => {
-  if (e.key === "Enter") sendMsg();
-});
-
-/* =========================
-   LIVE CLOCK
-========================= */
-function updateClock() {
-  const gz = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Gaza" }));
-
-  document.getElementById("liveClock").textContent =
-    String(gz.getHours()).padStart(2, "0") +
-    ":" +
-    String(gz.getMinutes()).padStart(2, "0") +
-    ":" +
-    String(gz.getSeconds()).padStart(2, "0");
-
-  const daysAr = ["الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
-  const daysEn = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-  const days = isEn ? daysEn : daysAr;
-  const hr = gz.getHours();
-
-  let period;
-  if (isEn) {
-    period = hr < 6 ? "Night" : hr < 12 ? "Morning" : hr < 17 ? "Day" : hr < 21 ? "Evening" : "Night";
-  } else {
-    period = hr < 6 ? "🌙 ليل" : hr < 12 ? "🌅 صباح" : hr < 17 ? "☀️ نهار" : hr < 21 ? "🌆 مساء" : "🌙 ليل";
-  }
-
-  document.getElementById("liveDate").textContent = days[gz.getDay()] + " — " + period;
-}
-
-setInterval(updateClock, 1000);
-
-/* =========================
-   FAQ
-========================= */
-function toggleFaq(item) {
-  const isOpen = item.classList.contains("open");
-
-  document.querySelectorAll(".faq-item").forEach(i => i.classList.remove("open"));
-
-  if (!isOpen) {
-    item.classList.add("open");
-    playClick();
-  }
-}
-
-/* =========================
-   PARTICLES
-========================= */
-const pc = document.getElementById("particleCanvas");
-const px = pc.getContext("2d");
-
-let particles = [];
-let mX = 0;
-let mY = 0;
-let hasMouse = false;
-
-function resizePC() {
-  pc.width = window.innerWidth;
-  pc.height = window.innerHeight;
-}
-
-resizePC();
-window.addEventListener("resize", resizePC);
-
-document.addEventListener("mousemove", e => {
-  mX = e.clientX;
-  mY = e.clientY;
-  hasMouse = true;
-});
-
-document.addEventListener("touchmove", e => {
-  mX = e.touches[0].clientX;
-  mY = e.touches[0].clientY;
-  hasMouse = true;
-}, { passive: true });
-
-setInterval(() => {
-  if (!hasMouse) return;
-
-  const colors = ["rgba(0,245,255,", "rgba(167,139,250,", "rgba(251,191,36,"];
-  const c = colors[Math.floor(Math.random() * colors.length)];
-
-  particles.push({
-    x: mX + (Math.random() - .5) * 30,
-    y: mY + (Math.random() - .5) * 30,
-    vx: (Math.random() - .5) * 1.2,
-    vy: (Math.random() - .5) * 1.2 - .5,
-    r: Math.random() * 3 + 1,
-    life: 1,
-    color: c
-  });
-
-  if (particles.length > 80) particles.shift();
-}, 50);
-
-function drawParticles() {
-  px.clearRect(0, 0, pc.width, pc.height);
-
-  particles = particles.filter(p => {
-    p.x += p.vx;
-    p.y += p.vy;
-    p.vy -= .02;
-    p.life -= .018;
-    p.r *= .97;
-
-    if (p.life <= 0) return false;
-
-    px.beginPath();
-    px.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    px.fillStyle = p.color + p.life + ")";
-    px.fill();
-
-    return true;
-  });
-
-  requestAnimationFrame(drawParticles);
-}
-
+const pc=document.getElementById("particleCanvas"),px=pc.getContext("2d");let particles=[],mX=0,mY=0,hasMouse=false;
+function resizePC(){pc.width=window.innerWidth;pc.height=window.innerHeight}
+resizePC();window.addEventListener("resize",resizePC);
+document.addEventListener("mousemove",e=>{mX=e.clientX;mY=e.clientY;hasMouse=true});
+document.addEventListener("touchmove",e=>{mX=e.touches[0].clientX;mY=e.touches[0].clientY;hasMouse=true},{passive:true});
+setInterval(()=>{if(!hasMouse)return;const colors=["rgba(56,189,248,","rgba(167,139,250,","rgba(251,191,36,"],c=colors[Math.floor(Math.random()*colors.length)];particles.push({x:mX+(Math.random()-.5)*30,y:mY+(Math.random()-.5)*30,vx:(Math.random()-.5)*1.2,vy:(Math.random()-.5)*1.2-.5,r:Math.random()*3+1,life:1,color:c});if(particles.length>80)particles.shift()},50);
+function drawParticles(){px.clearRect(0,0,pc.width,pc.height);particles=particles.filter(p=>{p.x+=p.vx;p.y+=p.vy;p.vy-=.02;p.life-=.018;p.r*=.97;if(p.life<=0)return false;px.beginPath();px.arc(p.x,p.y,p.r,0,Math.PI*2);px.fillStyle=p.color+p.life+")";px.fill();return true});requestAnimationFrame(drawParticles)}
 drawParticles();
 
-/* =========================
-   MINI GAME
-========================= */
-const wrap = document.getElementById("gameWrapper");
-const gc = document.getElementById("gameCanvas");
-const gx = gc.getContext("2d");
-
-const scoreEl = document.getElementById("scoreDisplay");
-const bestEl = document.getElementById("bestDisplay");
-
-let W;
-let H;
-let score = 0;
-let best = 0;
-let gStars = [];
-let parts = [];
-let lastSpawn = 0;
-let spd = 1;
-let combo = 0;
-let lastHit = 0;
-
-function resizeGame() {
-  const r = wrap.getBoundingClientRect();
-  W = gc.width = r.width;
-  H = gc.height = r.height;
-}
-
-resizeGame();
-window.addEventListener("resize", resizeGame);
-
-const TYPES = [
-  { color: "#00f5ff", glow: "rgba(0,245,255,0.5)", pts: 1, r: 13, freq: .62 },
-  { color: "#a78bfa", glow: "rgba(167,139,250,0.5)", pts: 3, r: 9, freq: .18 },
-  { color: "#fbbf24", glow: "rgba(251,191,36,0.6)", pts: 10, r: 7, freq: .06 },
-  { color: "#ff4466", glow: "rgba(255,68,102,0.5)", pts: -3, r: 12, freq: .14 }
-];
-
-function pickType() {
-  let r = Math.random();
-  let a = 0;
-
-  for (const t of TYPES) {
-    a += t.freq;
-    if (r < a) return t;
-  }
-
-  return TYPES[0];
-}
-
-function spawnStar() {
-  const t = pickType();
-
-  gStars.push({
-    x: t.r + Math.random() * (W - t.r * 2),
-    y: -t.r,
-    r: t.r,
-    type: t,
-    vy: (.7 + Math.random() * .9) * spd,
-    pulse: Math.random() * Math.PI * 2,
-    wobble: Math.random() * Math.PI * 2,
-    ws: (Math.random() - .5) * .03
-  });
-}
-
-function spawnParts(x, y, color, n) {
-  for (let i = 0; i < n; i++) {
-    const a = (Math.PI * 2 / n) * i + Math.random() * .5;
-    const s = 2 + Math.random() * 3;
-
-    parts.push({
-      x,
-      y,
-      vx: Math.cos(a) * s,
-      vy: Math.sin(a) * s,
-      r: 2 + Math.random() * 2,
-      color,
-      life: 1
-    });
-  }
-}
-
-function drawStar(x, y, r, color, glow, pulse) {
-  const g = gx.createRadialGradient(x, y, 0, x, y, r * 2.5);
-  g.addColorStop(0, glow);
-  g.addColorStop(1, "transparent");
-
-  gx.beginPath();
-  gx.arc(x, y, r * 2.5, 0, Math.PI * 2);
-  gx.fillStyle = g;
-  gx.fill();
-
-  gx.save();
-  gx.translate(x, y);
-  gx.rotate(pulse);
-  gx.beginPath();
-
-  for (let i = 0; i < 5; i++) {
-    const a1 = (i * Math.PI * 2 / 5) - Math.PI / 2;
-    const a2 = a1 + Math.PI / 5;
-    gx.lineTo(Math.cos(a1) * r, Math.sin(a1) * r);
-    gx.lineTo(Math.cos(a2) * (r * .44), Math.sin(a2) * (r * .44));
-  }
-
-  gx.closePath();
-  gx.fillStyle = color;
-  gx.shadowColor = color;
-  gx.shadowBlur = 12;
-  gx.fill();
-  gx.restore();
-}
-
-function gameLoop(now) {
-  requestAnimationFrame(gameLoop);
-
-  gx.clearRect(0, 0, W, H);
-
-  spd = 1 + score * .01;
-
-  const interval = Math.max(300, 850 - score * 9);
-
-  if (now - lastSpawn > interval) {
-    spawnStar();
-    lastSpawn = now;
-  }
-
-  gStars = gStars.filter(s => {
-    s.y += s.vy;
-    s.pulse += .05;
-    s.wobble += s.ws;
-    s.x += Math.sin(s.wobble) * .4;
-
-    if (s.y > H + s.r) return false;
-
-    drawStar(s.x, s.y, s.r, s.type.color, s.type.glow, s.pulse);
-
-    if (s.type.pts < 0) {
-      gx.save();
-      gx.translate(s.x, s.y);
-      gx.strokeStyle = "rgba(255,255,255,0.7)";
-      gx.lineWidth = 2;
-      gx.beginPath();
-      gx.moveTo(-5, -5);
-      gx.lineTo(5, 5);
-      gx.moveTo(5, -5);
-      gx.lineTo(-5, 5);
-      gx.stroke();
-      gx.restore();
-    }
-
-    return true;
-  });
-
-  parts = parts.filter(p => {
-    p.x += p.vx;
-    p.y += p.vy;
-    p.vy += .12;
-    p.life -= .04;
-    p.r *= .93;
-
-    if (p.life <= 0) return false;
-
-    gx.beginPath();
-    gx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    gx.fillStyle = p.color + Math.floor(p.life * 255).toString(16).padStart(2, "0");
-    gx.fill();
-
-    return true;
-  });
-
-  if (combo >= 3) {
-    gx.save();
-    gx.font = "bold 11px monospace";
-    gx.fillStyle = "#fbbf24";
-    gx.globalAlpha = .85;
-    gx.fillText("COMBO x" + combo + "!", 8, 18);
-    gx.restore();
-  }
-}
-
+const wrap=document.getElementById("gameWrapper"),gc=document.getElementById("gameCanvas"),gx=gc.getContext("2d"),scoreEl=document.getElementById("scoreDisplay"),bestEl=document.getElementById("bestDisplay");
+let W,H,score=0,best=0,gStars=[],parts=[],lastSpawn=0,spd=1,combo=0,lastHit=0;
+function resizeGame(){const r=wrap.getBoundingClientRect();W=gc.width=r.width;H=gc.height=r.height}
+resizeGame();window.addEventListener("resize",resizeGame);
+const TYPES=[{color:"#38d9ff",glow:"rgba(56,189,248,.5)",pts:1,r:13,freq:.62},{color:"#a78bfa",glow:"rgba(167,139,250,.5)",pts:3,r:9,freq:.18},{color:"#fbbf24",glow:"rgba(251,191,36,.6)",pts:10,r:7,freq:.06},{color:"#ff4466",glow:"rgba(255,68,102,.5)",pts:-3,r:12,freq:.14}];
+function pickType(){let r=Math.random(),a=0;for(const t of TYPES){a+=t.freq;if(r<a)return t}return TYPES[0]}
+function spawnStar(){const t=pickType();gStars.push({x:t.r+Math.random()*(W-t.r*2),y:-t.r,r:t.r,type:t,vy:(.7+Math.random()*.9)*spd,pulse:Math.random()*Math.PI*2,wobble:Math.random()*Math.PI*2,ws:(Math.random()-.5)*.03})}
+function spawnParts(x,y,color,n){for(let i=0;i<n;i++){const a=Math.PI*2/n*i+Math.random()*.5,s=2+Math.random()*3;parts.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,r:2+Math.random()*2,color,life:1})}}
+function drawStar(x,y,r,color,glow,pulse){const g=gx.createRadialGradient(x,y,0,x,y,r*2.5);g.addColorStop(0,glow);g.addColorStop(1,"transparent");gx.beginPath();gx.arc(x,y,r*2.5,0,Math.PI*2);gx.fillStyle=g;gx.fill();gx.save();gx.translate(x,y);gx.rotate(pulse);gx.beginPath();for(let i=0;i<5;i++){const a1=i*Math.PI*2/5-Math.PI/2,a2=a1+Math.PI/5;gx.lineTo(Math.cos(a1)*r,Math.sin(a1)*r);gx.lineTo(Math.cos(a2)*(r*.44),Math.sin(a2)*(r*.44))}gx.closePath();gx.fillStyle=color;gx.shadowColor=color;gx.shadowBlur=12;gx.fill();gx.restore()}
+function gameLoop(now){requestAnimationFrame(gameLoop);gx.clearRect(0,0,W,H);spd=1+score*.01;const interval=Math.max(300,850-score*9);if(now-lastSpawn>interval){spawnStar();lastSpawn=now}gStars=gStars.filter(s=>{s.y+=s.vy;s.pulse+=.05;s.wobble+=s.ws;s.x+=Math.sin(s.wobble)*.4;if(s.y>H+s.r)return false;drawStar(s.x,s.y,s.r,s.type.color,s.type.glow,s.pulse);if(s.type.pts<0){gx.save();gx.translate(s.x,s.y);gx.strokeStyle="rgba(255,255,255,.7)";gx.lineWidth=2;gx.beginPath();gx.moveTo(-5,-5);gx.lineTo(5,5);gx.moveTo(5,-5);gx.lineTo(-5,5);gx.stroke();gx.restore()}return true});parts=parts.filter(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.12;p.life-=.04;p.r*=.93;if(p.life<=0)return false;gx.beginPath();gx.arc(p.x,p.y,p.r,0,Math.PI*2);gx.fillStyle=p.color+Math.floor(p.life*255).toString(16).padStart(2,"0");gx.fill();return true});if(combo>=3){gx.save();gx.font="bold 11px monospace";gx.fillStyle="#fbbf24";gx.globalAlpha=.85;gx.fillText("COMBO x"+combo+"!",8,18);gx.restore()}}
 requestAnimationFrame(gameLoop);
+function handleTap(cx,cy){const rect=gc.getBoundingClientRect(),tx=(cx-rect.left)*(W/rect.width),ty=(cy-rect.top)*(H/rect.height);for(let i=gStars.length-1;i>=0;i--){const s=gStars[i];if(Math.hypot(tx-s.x,ty-s.y)<s.r*1.6){gStars.splice(i,1);const now=Date.now();if(s.type.pts>0){combo=now-lastHit<1200?combo+1:1;playGameHit()}else{combo=0;playGameMiss()}lastHit=now;const pts=s.type.pts>0?s.type.pts*(combo>=3?2:1):s.type.pts;score=Math.max(0,score+pts);if(score>best){best=score;bestEl.textContent=best}scoreEl.textContent=score;spawnParts(tx,ty,s.type.color,s.type.pts>0?8:5);const pop=document.createElement("div");pop.className="score-pop";pop.textContent=(combo>=3&&s.type.pts>0?"x2 ":"")+(pts>0?"+":"")+pts;pop.style.cssText="color:"+(s.type.pts>0?s.type.color:"#ff4466")+";left:"+(cx-15)+"px;top:"+(cy-25)+"px;text-shadow:0 0 10px "+(s.type.pts>0?s.type.color:"#ff4466");document.body.appendChild(pop);setTimeout(()=>pop.remove(),800);break}}}
+wrap.addEventListener("click",e=>handleTap(e.clientX,e.clientY));
+wrap.addEventListener("touchstart",e=>{e.preventDefault();handleTap(e.touches[0].clientX,e.touches[0].clientY)},{passive:false});
 
-function handleTap(cx, cy) {
-  const rect = gc.getBoundingClientRect();
-  const tx = (cx - rect.left) * (W / rect.width);
-  const ty = (cy - rect.top) * (H / rect.height);
-
-  for (let i = gStars.length - 1; i >= 0; i--) {
-    const s = gStars[i];
-
-    if (Math.hypot(tx - s.x, ty - s.y) < s.r * 1.6) {
-      gStars.splice(i, 1);
-
-      const now = Date.now();
-
-      if (s.type.pts > 0) {
-        combo = (now - lastHit < 1200) ? combo + 1 : 1;
-        playGameHit();
-      } else {
-        combo = 0;
-        playGameMiss();
-      }
-
-      lastHit = now;
-
-      const pts = s.type.pts > 0 ? s.type.pts * (combo >= 3 ? 2 : 1) : s.type.pts;
-
-      score = Math.max(0, score + pts);
-
-      if (score > best) {
-        best = score;
-        bestEl.textContent = best;
-      }
-
-      scoreEl.textContent = score;
-
-      spawnParts(tx, ty, s.type.color, s.type.pts > 0 ? 8 : 5);
-
-      const pop = document.createElement("div");
-      pop.className = "score-pop";
-      pop.textContent = (combo >= 3 && s.type.pts > 0 ? "x2 " : "") + (pts > 0 ? "+" : "") + pts;
-      pop.style.cssText =
-        "color:" +
-        (s.type.pts > 0 ? s.type.color : "#ff4466") +
-        ";left:" +
-        (cx - 15) +
-        "px;top:" +
-        (cy - 25) +
-        "px;text-shadow:0 0 10px " +
-        (s.type.pts > 0 ? s.type.color : "#ff4466");
-
-      document.body.appendChild(pop);
-      setTimeout(() => pop.remove(), 800);
-
-      break;
-    }
-  }
-}
-
-wrap.addEventListener("click", e => handleTap(e.clientX, e.clientY));
-
-wrap.addEventListener("touchstart", e => {
-  e.preventDefault();
-  handleTap(e.touches[0].clientX, e.touches[0].clientY);
-}, { passive: false });
-
-/* =========================
-   INIT
-========================= */
-(function init() {
-  const savedTheme = localStorage.getItem("fadi_theme");
-  const savedLang = localStorage.getItem("fadi_lang");
-
-  if (savedTheme === "light") {
-    isLight = true;
-    document.body.classList.add("light");
-    document.getElementById("themeBtn").textContent = "🌙";
-    const hex = document.querySelector(".avatar-hex2");
-    if (hex) hex.style.background = "#f8f9ff";
-  }
-
-  if (savedLang === "en") {
-    isEn = true;
-  }
-
-  applyTranslations();
-  updateProgressDots();
-  updateClock();
-
-  const lastProjects = isEn ? ["3 days", "5 days", "1 week", "2 days"] : ["3 أيام", "5 أيام", "أسبوع", "يومين"];
-  document.getElementById("lastProjectTime").textContent = lastProjects[Math.floor(Math.random() * lastProjects.length)];
-
+(function init(){
+  const savedTheme=localStorage.getItem("fadi_theme"),savedLang=localStorage.getItem("fadi_lang");
+  if(savedTheme==="light"){isLight=true;document.body.classList.add("light");document.getElementById("themeBtn").textContent="🌙";const hex=document.querySelector(".avatar-hex2");if(hex)hex.style.background="#f7f9ff"}
+  if(savedLang==="en")isEn=true;
+  applyTranslations();updateProgressDots();updateClock();
+  const lastProjects=isEn?["3 days","5 days","1 week","2 days"]:["3 أيام","5 أيام","أسبوع","يومين"];
+  document.getElementById("lastProjectTime").textContent=lastProjects[Math.floor(Math.random()*lastProjects.length)];
   loadLead();
-
-  setTimeout(() => {
-    addMsg(currentLang().botStart, "bot");
-  }, 800);
+  setTimeout(()=>addMsg(currentLang().botStart,"bot"),800);
 })();
 </script>
-
 </body>
 </html>
-
-
-  
-
-  
-
-  
-
-
-
-  
-
-  
