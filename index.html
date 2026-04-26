@@ -1,2651 +1,519 @@
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
-
 <head>
-
-  <meta charset="UTF-8" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Fadi AbuSaada — AI Engineer & Automation Expert</title>
-
-  <meta name="description" content="فادي أبوسعدة — مهندس AI وخبير أتمتة. حلول AI و Automation توفر الوقت وتزيد الإنتاجية." />
-
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Tajawal:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-
-  <style>
-
-    *{box-sizing:border-box;margin:0;padding:0}
-
-    :root{
-
-      --bg:#00040f;
-
-      --card:rgba(0,245,255,.05);
-
-      --border:rgba(0,245,255,.16);
-
-      --text:#e2eeff;
-
-      --muted:rgba(226,238,255,.6);
-
-      --cyan:#00f5ff;
-
-      --purple:#8b5cf6;
-
-      --green:#10b981;
-
-      --gold:#fbbf24;
-
-      --red:#ff4466;
-
-    }
-
-    body{
-
-      min-height:100vh;
-
-      background:var(--bg);
-
-      color:var(--text);
-
-      font-family:'Tajawal',sans-serif;
-
-      overflow-x:hidden;
-
-    }
-
-    body.light{
-
-      --bg:#f8f9ff;
-
-      --card:rgba(255,255,255,.9);
-
-      --border:rgba(79,70,229,.18);
-
-      --text:#1a1a2e;
-
-      --muted:rgba(26,26,46,.6);
-
-      --cyan:#4f46e5;
-
-      --purple:#7c3aed;
-
-      background:var(--bg);
-
-    }
-
-    a{text-decoration:none;color:inherit}
-
-    .bg{
-
-      position:fixed;
-
-      inset:0;
-
-      z-index:0;
-
-      pointer-events:none;
-
-      background:
-
-        radial-gradient(circle at 10% 10%,rgba(139,92,246,.2),transparent 35%),
-
-        radial-gradient(circle at 90% 80%,rgba(0,245,255,.13),transparent 35%),
-
-        linear-gradient(rgba(0,245,255,.025) 1px,transparent 1px),
-
-        linear-gradient(90deg,rgba(0,245,255,.025) 1px,transparent 1px);
-
-      background-size:auto,auto,80px 80px,80px 80px;
-
-    }
-
-    #scrollBar{
-
-      position:fixed;
-
-      top:0;
-
-      left:0;
-
-      height:3px;
-
-      width:0;
-
-      z-index:999;
-
-      background:linear-gradient(90deg,var(--cyan),var(--purple),var(--gold));
-
-    }
-
-    main{
-
-      position:relative;
-
-      z-index:1;
-
-      width:min(470px,100%);
-
-      margin:auto;
-
-      padding:90px 18px 110px;
-
-    }
-
-    .notif{
-
-      position:fixed;
-
-      top:0;
-
-      left:0;
-
-      right:0;
-
-      z-index:50;
-
-      text-align:center;
-
-      padding:9px 42px;
-
-      font-size:13px;
-
-      color:#fff;
-
-      background:linear-gradient(90deg,#7c3aed,#1877f2,#7c3aed);
-
-      background-size:200%;
-
-      animation:shine 5s linear infinite;
-
-    }
-
-    .notif button{
-
-      position:absolute;
-
-      right:12px;
-
-      top:6px;
-
-      border:0;
-
-      background:transparent;
-
-      color:#fff;
-
-      font-size:18px;
-
-      cursor:pointer;
-
-    }
-
-    @keyframes shine{to{background-position:200% center}}
-
-    .top-btns{
-
-      position:fixed;
-
-      top:48px;
-
-      right:16px;
-
-      z-index:60;
-
-      display:flex;
-
-      gap:8px;
-
-    }
-
-    .top-btn{
-
-      border:1px solid var(--border);
-
-      background:rgba(0,10,30,.8);
-
-      color:var(--cyan);
-
-      border-radius:20px;
-
-      padding:7px 12px;
-
-      font-family:'JetBrains Mono',monospace;
-
-      font-size:11px;
-
-      cursor:pointer;
-
-      backdrop-filter:blur(12px);
-
-    }
-
-    body.light .top-btn{background:rgba(255,255,255,.9)}
-
-    .hero{text-align:center;margin-bottom:34px}
-
-    .avatar-wrap{
-
-      position:relative;
-
-      width:120px;
-
-      height:120px;
-
-      margin:0 auto 24px;
-
-    }
-
-    .avatar-ring{
-
-      position:absolute;
-
-      inset:-7px;
-
-      border-radius:50%;
-
-      background:conic-gradient(var(--cyan),var(--purple),var(--gold),var(--cyan));
-
-      animation:spin 7s linear infinite;
-
-    }
-
-    @keyframes spin{to{transform:rotate(360deg)}}
-
-    .avatar{
-
-      position:relative;
-
-      z-index:1;
-
-      width:100%;
-
-      height:100%;
-
-      border-radius:50%;
-
-      overflow:hidden;
-
-      background:linear-gradient(135deg,#060d2e,#16063a);
-
-      border:1px solid rgba(0,245,255,.35);
-
-      display:flex;
-
-      align-items:center;
-
-      justify-content:center;
-
-      font-family:'Orbitron',monospace;
-
-      font-size:31px;
-
-      font-weight:900;
-
-      color:var(--cyan);
-
-    }
-
-    .avatar img{
-
-      width:100%;
-
-      height:100%;
-
-      object-fit:cover;
-
-      object-position:center top;
-
-    }
-
-    .status-dot{
-
-      position:absolute;
-
-      right:7px;
-
-      bottom:7px;
-
-      z-index:2;
-
-      width:15px;
-
-      height:15px;
-
-      border-radius:50%;
-
-      background:var(--green);
-
-      border:2px solid var(--bg);
-
-    }
-
-    .status-dot::after{
-
-      content:"";
-
-      position:absolute;
-
-      inset:-4px;
-
-      border-radius:50%;
-
-      background:rgba(16,185,129,.45);
-
-      animation:pulse 2s infinite;
-
-    }
-
-    @keyframes pulse{50%{transform:scale(1.7);opacity:0}}
-
-    .name{
-
-      direction:ltr;
-
-      font-family:'Orbitron',monospace;
-
-      font-size:clamp(23px,5vw,35px);
-
-      font-weight:900;
-
-      letter-spacing:2px;
-
-      background:linear-gradient(90deg,var(--cyan),#a78bfa,var(--cyan));
-
-      background-size:200%;
-
-      -webkit-background-clip:text;
-
-      background-clip:text;
-
-      -webkit-text-fill-color:transparent;
-
-      animation:shine 4s linear infinite;
-
-    }
-
-    .name-row{
-
-      display:flex;
-
-      justify-content:center;
-
-      align-items:center;
-
-      gap:8px;
-
-      flex-wrap:wrap;
-
-    }
-
-    .verified{
-
-      width:27px;
-
-      height:27px;
-
-      border-radius:50%;
-
-      background:#1877f2;
-
-      color:#fff;
-
-      display:flex;
-
-      align-items:center;
-
-      justify-content:center;
-
-      box-shadow:0 0 16px rgba(24,119,242,.55);
-
-    }
-
-    .pro{
-
-      padding:4px 10px;
-
-      border-radius:20px;
-
-      background:linear-gradient(135deg,#7c3aed,#a78bfa);
-
-      font-family:'Orbitron',monospace;
-
-      font-size:9px;
-
-      font-weight:700;
-
-      color:#fff;
-
-      letter-spacing:1.5px;
-
-    }
-
-    .badges{
-
-      display:flex;
-
-      justify-content:center;
-
-      gap:8px;
-
-      flex-wrap:wrap;
-
-      margin-top:10px;
-
-    }
-
-    .badge{
-
-      font-family:'JetBrains Mono',monospace;
-
-      font-size:10px;
-
-      padding:4px 10px;
-
-      border:1px solid;
-
-      border-radius:20px;
-
-      letter-spacing:1px;
-
-    }
-
-    .cyan{color:var(--cyan);border-color:rgba(0,245,255,.4);background:rgba(0,245,255,.06)}
-
-    .purple{color:#a78bfa;border-color:rgba(167,139,250,.4);background:rgba(167,139,250,.06)}
-
-    .green{color:var(--green);border-color:rgba(16,185,129,.4);background:rgba(16,185,129,.06)}
-
-    .avail{
-
-      display:inline-flex;
-
-      align-items:center;
-
-      gap:7px;
-
-      margin-top:13px;
-
-      padding:6px 14px;
-
-      border:1px solid rgba(16,185,129,.45);
-
-      background:rgba(16,185,129,.08);
-
-      border-radius:20px;
-
-      color:var(--green);
-
-      font-family:'JetBrains Mono',monospace;
-
-      font-size:11px;
-
-      cursor:pointer;
-
-    }
-
-    .avail.busy{
-
-      color:var(--red);
-
-      border-color:rgba(255,68,102,.45);
-
-      background:rgba(255,68,102,.08);
-
-    }
-
-    .avail i{
-
-      width:7px;
-
-      height:7px;
-
-      border-radius:50%;
-
-      background:currentColor;
-
-      display:block;
-
-      animation:pulse 2s infinite;
-
-    }
-
-    .tagline{
-
-      min-height:48px;
-
-      max-width:350px;
-
-      margin:13px auto 0;
-
-      color:var(--muted);
-
-      font-size:14px;
-
-      line-height:1.7;
-
-    }
-
-    .typing-cursor{
-
-      display:inline-block;
-
-      width:2px;
-
-      height:14px;
-
-      background:var(--cyan);
-
-      animation:blink .7s infinite;
-
-      vertical-align:middle;
-
-    }
-
-    @keyframes blink{50%{opacity:0}}
-
-    .visitor{
-
-      margin-top:11px;
-
-      color:var(--muted);
-
-      font-family:'JetBrains Mono',monospace;
-
-      font-size:10px;
-
-    }
-
-    .sep{
-
-      width:210px;
-
-      height:1px;
-
-      margin:18px auto 0;
-
-      background:linear-gradient(90deg,transparent,var(--cyan),transparent);
-
-      opacity:.45;
-
-    }
-
-    .section-title{
-
-      text-align:center;
-
-      margin:34px 0 14px;
-
-      color:var(--muted);
-
-      font-family:'Orbitron',monospace;
-
-      font-size:10px;
-
-      letter-spacing:3px;
-
-      direction:ltr;
-
-    }
-
-    .card,.link-card,.service-card,.project-card,.result-card,.faq-item,.chat-box,.live-card,.stat{
-
-      background:var(--card);
-
-      border:1px solid var(--border);
-
-      border-radius:16px;
-
-      backdrop-filter:blur(16px);
-
-    }
-
-    .card{
-
-      padding:20px;
-
-      margin-bottom:26px;
-
-      position:relative;
-
-      overflow:hidden;
-
-    }
-
-    .card::before{
-
-      content:"";
-
-      position:absolute;
-
-      top:0;
-
-      left:0;
-
-      right:0;
-
-      height:2px;
-
-      background:linear-gradient(90deg,var(--cyan),var(--purple),var(--gold));
-
-    }
-
-    .about{
-
-      display:flex;
-
-      gap:16px;
-
-      align-items:flex-start;
-
-    }
-
-    .about .emoji{
-
-      font-size:36px;
-
-      line-height:1;
-
-    }
-
-    .label{
-
-      font-family:'Orbitron',monospace;
-
-      color:var(--cyan);
-
-      font-size:10px;
-
-      font-weight:700;
-
-      letter-spacing:2px;
-
-      margin-bottom:8px;
-
-      direction:ltr;
-
-    }
-
-    .text{
-
-      color:var(--muted);
-
-      font-size:13px;
-
-      line-height:1.85;
-
-    }
-
-    .text strong{color:var(--text)}
-
-    .tags{
-
-      display:flex;
-
-      gap:6px;
-
-      flex-wrap:wrap;
-
-      margin-top:12px;
-
-    }
-
-    .tag{
-
-      font-size:10px;
-
-      padding:4px 10px;
-
-      border:1px solid rgba(0,245,255,.22);
-
-      border-radius:20px;
-
-      color:rgba(0,245,255,.75);
-
-      font-family:'JetBrains Mono',monospace;
-
-      background:rgba(0,245,255,.045);
-
-    }
-
-    .stats{
-
-      display:grid;
-
-      grid-template-columns:repeat(4,1fr);
-
-      overflow:hidden;
-
-      margin-bottom:26px;
-
-    }
-
-    .stat{
-
-      border-radius:0;
-
-      text-align:center;
-
-      padding:14px 5px;
-
-    }
-
-    .stat:not(:last-child){border-left:1px solid var(--border)}
-
-    .stat-n{
-
-      font-family:'Orbitron',monospace;
-
-      font-size:18px;
-
-      color:var(--cyan);
-
-      font-weight:700;
-
-    }
-
-    .stat-l{
-
-      font-family:'JetBrains Mono',monospace;
-
-      font-size:9px;
-
-      color:var(--muted);
-
-      margin-top:4px;
-
-    }
-
-    .links,.projects,.results,.faq{
-
-      display:flex;
-
-      flex-direction:column;
-
-      gap:10px;
-
-    }
-
-    .link-card{
-
-      display:flex;
-
-      align-items:center;
-
-      gap:14px;
-
-      padding:14px 16px;
-
-      transition:.25s;
-
-      direction:ltr;
-
-    }
-
-    .link-card:hover,.service-card:hover,.project-card:hover{
-
-      transform:translateY(-2px);
-
-      border-color:rgba(0,245,255,.42);
-
-      box-shadow:0 6px 26px rgba(0,245,255,.12);
-
-    }
-
-    .link-icon{
-
-      width:44px;
-
-      height:44px;
-
-      border-radius:13px;
-
-      display:flex;
-
-      align-items:center;
-
-      justify-content:center;
-
-      font-size:22px;
-
-      flex-shrink:0;
-
-      background:rgba(0,245,255,.08);
-
-    }
-
-    .link-text{flex:1}
-
-    .link-title{
-
-      font-family:'Orbitron',monospace;
-
-      font-size:11px;
-
-      font-weight:700;
-
-      color:var(--cyan);
-
-      letter-spacing:1px;
-
-    }
-
-    .link-sub{
-
-      font-family:'JetBrains Mono',monospace;
-
-      font-size:11px;
-
-      color:var(--muted);
-
-      margin-top:2px;
-
-    }
-
-    .arrow{
-
-      width:29px;
-
-      height:29px;
-
-      border-radius:50%;
-
-      border:1px solid var(--border);
-
-      display:flex;
-
-      align-items:center;
-
-      justify-content:center;
-
-      color:var(--muted);
-
-    }
-
-    .copy-btn{
-
-      width:27px;
-
-      height:27px;
-
-      border-radius:8px;
-
-      border:1px solid var(--border);
-
-      background:rgba(0,245,255,.07);
-
-      color:var(--muted);
-
-      cursor:pointer;
-
-      margin-inline-end:6px;
-
-    }
-
-    .services,.certs,.live-info{
-
-      display:grid;
-
-      grid-template-columns:1fr 1fr;
-
-      gap:10px;
-
-    }
-
-    .service-card{
-
-      padding:18px 14px;
-
-      text-align:center;
-
-      transition:.25s;
-
-    }
-
-    .service-icon{font-size:29px;margin-bottom:10px}
-
-    .service-name{
-
-      font-family:'Orbitron',monospace;
-
-      font-size:10px;
-
-      color:var(--cyan);
-
-      font-weight:700;
-
-      letter-spacing:1px;
-
-      margin-bottom:7px;
-
-    }
-
-    .service-desc{
-
-      color:var(--muted);
-
-      font-size:11px;
-
-      line-height:1.55;
-
-      min-height:50px;
-
-    }
-
-    .service-price{
-
-      color:var(--gold);
-
-      font-family:'JetBrains Mono',monospace;
-
-      font-size:11px;
-
-      margin:11px 0;
-
-    }
-
-    .service-btn,.main-cta,.chat-cta,.sticky-cta-btn{
-
-      display:inline-block;
-
-      border:0;
-
-      border-radius:22px;
-
-      padding:8px 15px;
-
-      background:linear-gradient(135deg,var(--green),#059669);
-
-      color:#fff;
-
-      font-size:11px;
-
-      font-weight:700;
-
-      cursor:pointer;
-
-    }
-
-    .how-step{
-
-      display:flex;
-
-      gap:14px;
-
-      align-items:flex-start;
-
-      padding:16px;
-
-      margin-bottom:8px;
-
-      background:var(--card);
-
-      border:1px solid var(--border);
-
-      border-radius:16px;
-
-    }
-
-    .how-num{
-
-      font-family:'Orbitron',monospace;
-
-      color:var(--cyan);
-
-      font-size:22px;
-
-      font-weight:900;
-
-    }
-
-    .how-title{
-
-      color:var(--cyan);
-
-      font-weight:700;
-
-      margin-bottom:4px;
-
-    }
-
-    .how-desc{
-
-      color:var(--muted);
-
-      font-size:12px;
-
-      line-height:1.6;
-
-    }
-
-    .result-card,.project-card,.live-card{
-
-      padding:15px 16px;
-
-      display:flex;
-
-      align-items:center;
-
-      gap:13px;
-
-    }
-
-    .result-icon,.project-icon,.live-icon{
-
-      font-size:27px;
-
-      flex-shrink:0;
-
-    }
-
-    .result-title,.project-desc,.live-sub{
-
-      color:var(--muted);
-
-      font-size:12px;
-
-      line-height:1.55;
-
-    }
-
-    .result-num,.project-name,.live-value{
-
-      color:var(--cyan);
-
-      font-family:'Orbitron',monospace;
-
-      font-weight:700;
-
-      font-size:15px;
-
-      margin-top:3px;
-
-    }
-
-    .project-tags{
-
-      display:flex;
-
-      flex-wrap:wrap;
-
-      gap:5px;
-
-      margin-top:7px;
-
-    }
-
-    .ptag{
-
-      font-size:9px;
-
-      padding:3px 8px;
-
-      border:1px solid rgba(0,245,255,.25);
-
-      border-radius:12px;
-
-      color:var(--cyan);
-
-      font-family:'JetBrains Mono',monospace;
-
-    }
-
-    .chat-box{
-
-      overflow:hidden;
-
-      border-color:rgba(139,92,246,.32);
-
-    }
-
-    .chat-header{
-
-      display:flex;
-
-      align-items:center;
-
-      gap:11px;
-
-      padding:14px 16px;
-
-      border-bottom:1px solid rgba(139,92,246,.2);
-
-      background:rgba(139,92,246,.06);
-
-    }
-
-    .chat-avatar{
-
-      width:36px;
-
-      height:36px;
-
-      border-radius:50%;
-
-      background:linear-gradient(135deg,var(--purple),#a78bfa);
-
-      display:flex;
-
-      align-items:center;
-
-      justify-content:center;
-
-      font-size:18px;
-
-    }
-
-    .chat-name{
-
-      font-family:'Orbitron',monospace;
-
-      font-size:11px;
-
-      color:#a78bfa;
-
-      font-weight:700;
-
-      direction:ltr;
-
-    }
-
-    .chat-status{
-
-      color:#a78bfa;
-
-      font-family:'JetBrains Mono',monospace;
-
-      font-size:10px;
-
-      margin-top:2px;
-
-    }
-
-    .ai-badge{
-
-      margin-right:auto;
-
-      padding:3px 9px;
-
-      border-radius:14px;
-
-      background:linear-gradient(135deg,#7c3aed,#a78bfa);
-
-      color:#fff;
-
-      font-family:'Orbitron',monospace;
-
-      font-size:9px;
-
-      letter-spacing:1px;
-
-    }
-
-    .messages{
-
-      height:265px;
-
-      overflow-y:auto;
-
-      display:flex;
-
-      flex-direction:column;
-
-      gap:10px;
-
-      padding:14px;
-
-      scroll-behavior:smooth;
-
-    }
-
-    .msg{
-
-      max-width:90%;
-
-      padding:10px 14px;
-
-      border-radius:13px;
-
-      font-size:13px;
-
-      line-height:1.65;
-
-      white-space:pre-wrap;
-
-      animation:msgIn .25s ease;
-
-    }
-
-    @keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-
-    .msg.bot{
-
-      align-self:flex-start;
-
-      border:1px solid rgba(139,92,246,.2);
-
-      background:rgba(139,92,246,.08);
-
-      border-radius:5px 13px 13px 13px;
-
-    }
-
-    .msg.user{
-
-      align-self:flex-end;
-
-      border:1px solid rgba(0,245,255,.2);
-
-      background:linear-gradient(135deg,rgba(0,245,255,.12),rgba(139,92,246,.08));
-
-      border-radius:13px 5px 13px 13px;
-
-    }
-
-    .typing .dots{
-
-      display:flex;
-
-      gap:4px;
-
-    }
-
-    .dots span{
-
-      width:6px;
-
-      height:6px;
-
-      border-radius:50%;
-
-      background:var(--cyan);
-
-      animation:dot .9s infinite;
-
-    }
-
-    .dots span:nth-child(2){animation-delay:.2s}
-
-    .dots span:nth-child(3){animation-delay:.4s}
-
-    @keyframes dot{50%{transform:translateY(-5px);opacity:.55}}
-
-    .chat-cta{
-
-      margin-top:8px;
-
-      color:#fff;
-
-    }
-
-    .quick{
-
-      display:flex;
-
-      flex-wrap:wrap;
-
-      gap:6px;
-
-      padding:10px 14px;
-
-      border-top:1px solid rgba(139,92,246,.15);
-
-    }
-
-    .quick button{
-
-      border:1px solid rgba(139,92,246,.28);
-
-      background:rgba(139,92,246,.08);
-
-      color:#a78bfa;
-
-      border-radius:20px;
-
-      padding:6px 12px;
-
-      font-size:11px;
-
-      cursor:pointer;
-
-      font-family:'Tajawal',sans-serif;
-
-    }
-
-    .input-row{
-
-      display:flex;
-
-      gap:8px;
-
-      padding:12px 14px;
-
-      border-top:1px solid rgba(139,92,246,.15);
-
-    }
-
-    .chat-input{
-
-      flex:1;
-
-      border:1px solid rgba(139,92,246,.24);
-
-      background:rgba(139,92,246,.06);
-
-      color:var(--text);
-
-      border-radius:11px;
-
-      padding:10px 13px;
-
-      outline:none;
-
-      font-family:'Tajawal',sans-serif;
-
-      font-size:13px;
-
-    }
-
-    .send{
-
-      width:42px;
-
-      height:42px;
-
-      border:0;
-
-      border-radius:11px;
-
-      background:linear-gradient(135deg,#7c3aed,#a78bfa);
-
-      color:#fff;
-
-      cursor:pointer;
-
-      font-size:16px;
-
-      flex-shrink:0;
-
-    }
-
-    .send.loading::after{
-
-      content:"";
-
-      display:block;
-
-      width:17px;
-
-      height:17px;
-
-      margin:auto;
-
-      border:2px solid transparent;
-
-      border-top-color:#fff;
-
-      border-radius:50%;
-
-      animation:spin .8s linear infinite;
-
-    }
-
-    .powered{
-
-      text-align:center;
-
-      padding:7px;
-
-      border-top:1px solid rgba(139,92,246,.1);
-
-      color:rgba(167,139,250,.6);
-
-      font-family:'JetBrains Mono',monospace;
-
-      font-size:9px;
-
-      direction:ltr;
-
-    }
-
-    .main-cta{
-
-      width:100%;
-
-      text-align:center;
-
-      padding:15px;
-
-      margin-top:12px;
-
-      font-family:'Orbitron',monospace;
-
-      font-size:12px;
-
-      letter-spacing:1px;
-
-    }
-
-    .live-label{
-
-      color:var(--muted);
-
-      font-family:'JetBrains Mono',monospace;
-
-      font-size:9px;
-
-      direction:ltr;
-
-    }
-
-    .faq-item{overflow:hidden}
-
-    .faq-q{
-
-      display:flex;
-
-      align-items:center;
-
-      justify-content:space-between;
-
-      padding:14px 16px;
-
-      cursor:pointer;
-
-      font-size:13px;
-
-      font-weight:700;
-
-    }
-
-    .faq-a{
-
-      max-height:0;
-
-      overflow:hidden;
-
-      transition:.3s;
-
-      color:var(--muted);
-
-      font-size:12px;
-
-      line-height:1.7;
-
-    }
-
-    .faq.open .faq-a,.faq-item.open .faq-a{
-
-      max-height:160px;
-
-      padding:0 16px 14px;
-
-    }
-
-    .faq-icon{
-
-      color:var(--cyan);
-
-      font-family:'Orbitron',monospace;
-
-    }
-
-    .sticky-cta{
-
-      position:fixed;
-
-      bottom:0;
-
-      left:0;
-
-      right:0;
-
-      z-index:40;
-
-      background:rgba(0,4,15,.94);
-
-      border-top:1px solid var(--border);
-
-      backdrop-filter:blur(18px);
-
-      display:flex;
-
-      align-items:center;
-
-      justify-content:space-between;
-
-      gap:10px;
-
-      padding:10px 18px;
-
-      transform:translateY(105%);
-
-      transition:.3s;
-
-    }
-
-    .sticky-cta.show{transform:none}
-
-    body.light .sticky-cta{background:rgba(248,249,255,.94)}
-
-    .sticky-text{
-
-      font-size:12px;
-
-      color:var(--muted);
-
-    }
-
-    .sticky-text strong{
-
-      display:block;
-
-      color:var(--cyan);
-
-      font-family:'JetBrains Mono',monospace;
-
-      font-size:10px;
-
-    }
-
-    .wa-float{
-
-      position:fixed;
-
-      right:20px;
-
-      bottom:76px;
-
-      z-index:45;
-
-      width:54px;
-
-      height:54px;
-
-      border-radius:50%;
-
-      background:linear-gradient(135deg,#25D366,#128C7E);
-
-      display:flex;
-
-      align-items:center;
-
-      justify-content:center;
-
-      color:#fff;
-
-      font-size:27px;
-
-      box-shadow:0 4px 25px rgba(37,211,102,.4);
-
-    }
-
-    .toast{
-
-      position:fixed;
-
-      right:20px;
-
-      bottom:140px;
-
-      z-index:80;
-
-      background:linear-gradient(135deg,#10b981,#059669);
-
-      color:#fff;
-
-      border-radius:12px;
-
-      padding:9px 15px;
-
-      font-size:12px;
-
-      opacity:0;
-
-      transform:translateY(10px);
-
-      transition:.25s;
-
-    }
-
-    .toast.show{
-
-      opacity:1;
-
-      transform:none;
-
-    }
-
-    footer{
-
-      text-align:center;
-
-      color:rgba(226,238,255,.28);
-
-      font-family:'JetBrains Mono',monospace;
-
-      font-size:10px;
-
-      letter-spacing:1px;
-
-      margin-top:55px;
-
-      direction:ltr;
-
-    }
-
-    @media(max-width:420px){
-
-      main{padding-left:14px;padding-right:14px}
-
-      .services,.certs,.live-info{grid-template-columns:1fr}
-
-      .stats{grid-template-columns:repeat(2,1fr)}
-
-      .name{font-size:24px}
-
-      .messages{height:300px}
-
-    }
-
-  </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Fadi AbuSaada — AI Engineer & Automation Expert</title>
+<meta name="description" content="فادي أبوسعدة — مهندس AI وخبير أتمتة. حلول AI وAutomation توفر الوقت وتزيد الإنتاجية.">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Tajawal:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#00040f;--card:rgba(0,245,255,.05);--border:rgba(0,245,255,.16);--text:#e2eeff;--muted:rgba(226,238,255,.62);--cyan:#00f5ff;--purple:#8b5cf6;--green:#10b981;--gold:#fbbf24;--red:#ff4466}
+body{min-height:100vh;background:var(--bg);color:var(--text);font-family:'Tajawal',sans-serif;overflow-x:hidden}
+body.light{--bg:#f8f9ff;--card:rgba(255,255,255,.92);--border:rgba(79,70,229,.18);--text:#1a1a2e;--muted:rgba(26,26,46,.62);--cyan:#4f46e5;--purple:#7c3aed;background:var(--bg)}
+a{text-decoration:none;color:inherit}
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(circle at 10% 10%,rgba(139,92,246,.2),transparent 35%),radial-gradient(circle at 90% 80%,rgba(0,245,255,.13),transparent 35%),linear-gradient(rgba(0,245,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,.025) 1px,transparent 1px);background-size:auto,auto,80px 80px,80px 80px}
+#scrollBar{position:fixed;top:0;left:0;height:3px;width:0;z-index:999;background:linear-gradient(90deg,var(--cyan),var(--purple),var(--gold))}
+main{position:relative;z-index:1;width:min(470px,100%);margin:auto;padding:90px 18px 110px}
+.notif{position:fixed;top:0;left:0;right:0;z-index:50;text-align:center;padding:9px 42px;font-size:13px;color:#fff;background:linear-gradient(90deg,#7c3aed,#1877f2,#7c3aed);background-size:200%;animation:shine 5s linear infinite}
+.notif button{position:absolute;right:12px;top:6px;border:0;background:transparent;color:#fff;font-size:18px;cursor:pointer}
+@keyframes shine{to{background-position:200% center}}
+.top-btns{position:fixed;top:48px;right:16px;z-index:60;display:flex;gap:8px}
+.top-btn{border:1px solid var(--border);background:rgba(0,10,30,.8);color:var(--cyan);border-radius:20px;padding:7px 12px;font-family:'JetBrains Mono',monospace;font-size:11px;cursor:pointer;backdrop-filter:blur(12px)}
+body.light .top-btn{background:rgba(255,255,255,.9)}
+.hero{text-align:center;margin-bottom:34px}
+.avatar-wrap{position:relative;width:120px;height:120px;margin:0 auto 24px}
+.avatar-ring{position:absolute;inset:-7px;border-radius:50%;background:conic-gradient(var(--cyan),var(--purple),var(--gold),var(--cyan));animation:spin 7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.avatar{position:relative;z-index:1;width:100%;height:100%;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,#060d2e,#16063a);border:1px solid rgba(0,245,255,.35);display:flex;align-items:center;justify-content:center;font-family:'Orbitron',monospace;font-size:31px;font-weight:900;color:var(--cyan)}
+.avatar img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.status-dot{position:absolute;right:7px;bottom:7px;z-index:2;width:15px;height:15px;border-radius:50%;background:var(--green);border:2px solid var(--bg)}
+.status-dot:after{content:"";position:absolute;inset:-4px;border-radius:50%;background:rgba(16,185,129,.45);animation:pulse 2s infinite}
+@keyframes pulse{50%{transform:scale(1.7);opacity:0}}
+.name{direction:ltr;font-family:'Orbitron',monospace;font-size:clamp(23px,5vw,35px);font-weight:900;letter-spacing:2px;background:linear-gradient(90deg,var(--cyan),#a78bfa,var(--cyan));background-size:200%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 4s linear infinite}
+.name-row{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap}
+.verified{width:27px;height:27px;border-radius:50%;background:#1877f2;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 16px rgba(24,119,242,.55)}
+.pro{padding:4px 10px;border-radius:20px;background:linear-gradient(135deg,#7c3aed,#a78bfa);font-family:'Orbitron',monospace;font-size:9px;font-weight:700;color:#fff;letter-spacing:1.5px}
+.badges{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:10px}
+.badge{font-family:'JetBrains Mono',monospace;font-size:10px;padding:4px 10px;border:1px solid;border-radius:20px;letter-spacing:1px}
+.cyan{color:var(--cyan);border-color:rgba(0,245,255,.4);background:rgba(0,245,255,.06)}
+.purple{color:#a78bfa;border-color:rgba(167,139,250,.4);background:rgba(167,139,250,.06)}
+.green{color:var(--green);border-color:rgba(16,185,129,.4);background:rgba(16,185,129,.06)}
+.avail{display:inline-flex;align-items:center;gap:7px;margin-top:13px;padding:6px 14px;border:1px solid rgba(16,185,129,.45);background:rgba(16,185,129,.08);border-radius:20px;color:var(--green);font-family:'JetBrains Mono',monospace;font-size:11px;cursor:pointer}
+.avail.busy{color:var(--red);border-color:rgba(255,68,102,.45);background:rgba(255,68,102,.08)}
+.avail i{width:7px;height:7px;border-radius:50%;background:currentColor;display:block;animation:pulse 2s infinite}
+.tagline{min-height:48px;max-width:350px;margin:13px auto 0;color:var(--muted);font-size:14px;line-height:1.7}
+.typing-cursor{display:inline-block;width:2px;height:14px;background:var(--cyan);animation:blink .7s infinite;vertical-align:middle}
+@keyframes blink{50%{opacity:0}}
+.visitor{margin-top:11px;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:10px}
+.sep{width:210px;height:1px;margin:18px auto 0;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:.45}
+.section-title{text-align:center;margin:34px 0 14px;color:var(--muted);font-family:'Orbitron',monospace;font-size:10px;letter-spacing:3px;direction:ltr}
+.card,.link-card,.service-card,.project-card,.result-card,.faq-item,.chat-box,.live-card,.stat,.trust-card,.selector-card{background:var(--card);border:1px solid var(--border);border-radius:16px;backdrop-filter:blur(16px)}
+.card{padding:20px;margin-bottom:26px;position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--purple),var(--gold))}
+.about{display:flex;gap:16px;align-items:flex-start}
+.about .emoji{font-size:36px;line-height:1}
+.label{font-family:'Orbitron',monospace;color:var(--cyan);font-size:10px;font-weight:700;letter-spacing:2px;margin-bottom:8px;direction:ltr}
+.text{color:var(--muted);font-size:13px;line-height:1.85}
+.text strong{color:var(--text)}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.tag{font-size:10px;padding:4px 10px;border:1px solid rgba(0,245,255,.22);border-radius:20px;color:rgba(0,245,255,.75);font-family:'JetBrains Mono',monospace;background:rgba(0,245,255,.045)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;margin-bottom:26px}
+.stat{border-radius:0;text-align:center;padding:14px 5px}
+.stat:not(:last-child){border-left:1px solid var(--border)}
+.stat-n{font-family:'Orbitron',monospace;font-size:18px;color:var(--cyan);font-weight:700}
+.stat-l{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);margin-top:4px}
+.links,.projects,.results,.faq,.trust-grid{display:flex;flex-direction:column;gap:10px}
+.link-card{display:flex;align-items:center;gap:14px;padding:14px 16px;transition:.25s;direction:ltr}
+.link-card:hover,.service-card:hover,.project-card:hover,.trust-card:hover{transform:translateY(-2px);border-color:rgba(0,245,255,.42);box-shadow:0 6px 26px rgba(0,245,255,.12)}
+.link-icon{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;background:rgba(0,245,255,.08)}
+.link-text{flex:1}.link-title{font-family:'Orbitron',monospace;font-size:11px;font-weight:700;color:var(--cyan);letter-spacing:1px}.link-sub{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);margin-top:2px}
+.arrow{width:29px;height:29px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted)}
+.copy-btn{width:27px;height:27px;border-radius:8px;border:1px solid var(--border);background:rgba(0,245,255,.07);color:var(--muted);cursor:pointer;margin-inline-end:6px}
+.services,.live-info{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.service-card{padding:18px 14px;text-align:center;transition:.25s}
+.service-icon{font-size:29px;margin-bottom:10px}.service-name{font-family:'Orbitron',monospace;font-size:10px;color:var(--cyan);font-weight:700;letter-spacing:1px;margin-bottom:7px}.service-desc{color:var(--muted);font-size:11px;line-height:1.55;min-height:50px}.service-price{color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:11px;margin:11px 0}
+.service-btn,.main-cta,.chat-cta,.sticky-cta-btn,.emergency-btn,.summary-btn{display:inline-block;border:0;border-radius:22px;padding:8px 15px;background:linear-gradient(135deg,var(--green),#059669);color:#fff;font-size:11px;font-weight:700;cursor:pointer}
+.selector-card{padding:15px;margin-bottom:12px}
+.selector-title{color:var(--cyan);font-weight:700;margin-bottom:10px}
+.selector-buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.selector-buttons button{border:1px solid var(--border);background:rgba(0,245,255,.07);color:var(--cyan);border-radius:12px;padding:10px;font-family:'Tajawal',sans-serif;cursor:pointer}
+.trust-card{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;transition:.25s}
+.trust-icon{font-size:24px}.trust-title{color:var(--cyan);font-weight:700;margin-bottom:3px}.trust-desc{color:var(--muted);font-size:12px;line-height:1.55}
+.how-step{display:flex;gap:14px;align-items:flex-start;padding:16px;margin-bottom:8px;background:var(--card);border:1px solid var(--border);border-radius:16px}.how-num{font-family:'Orbitron',monospace;color:var(--cyan);font-size:22px;font-weight:900}.how-title{color:var(--cyan);font-weight:700;margin-bottom:4px}.how-desc{color:var(--muted);font-size:12px;line-height:1.6}
+.result-card,.project-card,.live-card{padding:15px 16px;display:flex;align-items:center;gap:13px}.result-icon,.project-icon,.live-icon{font-size:27px;flex-shrink:0}.result-title,.project-desc,.live-sub{color:var(--muted);font-size:12px;line-height:1.55}.result-num,.project-name,.live-value{color:var(--cyan);font-family:'Orbitron',monospace;font-weight:700;font-size:15px;margin-top:3px}
+.project-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}.ptag{font-size:9px;padding:3px 8px;border:1px solid rgba(0,245,255,.25);border-radius:12px;color:var(--cyan);font-family:'JetBrains Mono',monospace}
+.chat-box{overflow:hidden;border-color:rgba(139,92,246,.32)}
+.chat-header{display:flex;align-items:center;gap:11px;padding:14px 16px;border-bottom:1px solid rgba(139,92,246,.2);background:rgba(139,92,246,.06)}
+.chat-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--purple),#a78bfa);display:flex;align-items:center;justify-content:center;font-size:18px}
+.chat-name{font-family:'Orbitron',monospace;font-size:11px;color:#a78bfa;font-weight:700;direction:ltr}.chat-status{color:#a78bfa;font-family:'JetBrains Mono',monospace;font-size:10px;margin-top:2px}.ai-badge{margin-right:auto;padding:3px 9px;border-radius:14px;background:linear-gradient(135deg,#7c3aed,#a78bfa);color:#fff;font-family:'Orbitron',monospace;font-size:9px;letter-spacing:1px}
+.messages{height:305px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;padding:14px;scroll-behavior:smooth}
+.msg{max-width:90%;padding:10px 14px;border-radius:13px;font-size:13px;line-height:1.65;white-space:pre-wrap;animation:msgIn .25s ease}
+@keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.msg.bot{align-self:flex-start;border:1px solid rgba(139,92,246,.2);background:rgba(139,92,246,.08);border-radius:5px 13px 13px 13px}
+.msg.user{align-self:flex-end;border:1px solid rgba(0,245,255,.2);background:linear-gradient(135deg,rgba(0,245,255,.12),rgba(139,92,246,.08));border-radius:13px 5px 13px 13px}
+.typing .dots{display:flex;gap:4px}.dots span{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:dot .9s infinite}.dots span:nth-child(2){animation-delay:.2s}.dots span:nth-child(3){animation-delay:.4s}@keyframes dot{50%{transform:translateY(-5px);opacity:.55}}
+.chat-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}.chat-cta,.summary-btn{color:#fff}
+.quick{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px;border-top:1px solid rgba(139,92,246,.15)}
+.quick button{border:1px solid rgba(139,92,246,.28);background:rgba(139,92,246,.08);color:#a78bfa;border-radius:20px;padding:6px 12px;font-size:11px;cursor:pointer;font-family:'Tajawal',sans-serif}
+.input-row{display:flex;gap:8px;padding:12px 14px;border-top:1px solid rgba(139,92,246,.15)}
+.chat-input{flex:1;border:1px solid rgba(139,92,246,.24);background:rgba(139,92,246,.06);color:var(--text);border-radius:11px;padding:10px 13px;outline:none;font-family:'Tajawal',sans-serif;font-size:13px}
+.send{width:42px;height:42px;border:0;border-radius:11px;background:linear-gradient(135deg,#7c3aed,#a78bfa);color:#fff;cursor:pointer;font-size:16px;flex-shrink:0}.send.loading::after{content:"";display:block;width:17px;height:17px;margin:auto;border:2px solid transparent;border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite}
+.powered{text-align:center;padding:7px;border-top:1px solid rgba(139,92,246,.1);color:rgba(167,139,250,.6);font-family:'JetBrains Mono',monospace;font-size:9px;direction:ltr}
+.main-cta,.emergency-btn{width:100%;text-align:center;padding:15px;margin-top:12px;font-family:'Orbitron',monospace;font-size:12px;letter-spacing:1px}.emergency-btn{background:linear-gradient(135deg,#f59e0b,#ef4444)}
+.live-label{color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:9px;direction:ltr}
+.faq-item{overflow:hidden}.faq-q{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;cursor:pointer;font-size:13px;font-weight:700}.faq-a{max-height:0;overflow:hidden;transition:.3s;color:var(--muted);font-size:12px;line-height:1.7}.faq-item.open .faq-a{max-height:160px;padding:0 16px 14px}.faq-icon{color:var(--cyan);font-family:'Orbitron',monospace}
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:40;background:rgba(0,4,15,.94);border-top:1px solid var(--border);backdrop-filter:blur(18px);display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 18px;transform:translateY(105%);transition:.3s}.sticky-cta.show{transform:none}body.light .sticky-cta{background:rgba(248,249,255,.94)}.sticky-text{font-size:12px;color:var(--muted)}.sticky-text strong{display:block;color:var(--cyan);font-family:'JetBrains Mono',monospace;font-size:10px}
+.wa-float{position:fixed;right:20px;bottom:76px;z-index:45;width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;color:#fff;font-size:27px;box-shadow:0 4px 25px rgba(37,211,102,.4)}
+.toast{position:fixed;right:20px;bottom:140px;z-index:80;background:linear-gradient(135deg,#10b981,#059669);color:#fff;border-radius:12px;padding:9px 15px;font-size:12px;opacity:0;transform:translateY(10px);transition:.25s}.toast.show{opacity:1;transform:none}
+footer{text-align:center;color:rgba(226,238,255,.28);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;margin-top:55px;direction:ltr}
+body.en{direction:ltr} body.en .section-title,body.en .name,body.en .chat-name,body.en footer{direction:ltr}
+@media(max-width:420px){main{padding-left:14px;padding-right:14px}.services,.live-info,.selector-buttons{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.name{font-size:24px}.messages{height:330px}}
+</style>
 </head>
 
 <body>
+<div class="bg"></div>
+<div id="scrollBar"></div>
 
-  <div class="bg"></div>
+<div class="notif" id="notif">🎉 خصم 20% على أول مشروع — اذكر كود <strong>FIRST20</strong><button onclick="document.getElementById('notif').style.display='none'">×</button></div>
 
-  <div id="scrollBar"></div>
+<div class="top-btns">
+  <button class="top-btn" onclick="toggleLang()" id="langBtn">EN</button>
+  <button class="top-btn" onclick="toggleTheme()" id="themeBtn">☀️</button>
+</div>
 
-  <div class="notif" id="notif">
+<a class="wa-float" href="https://wa.me/972599930699?text=مرحبا فادي، أريد استشارة مجانية 🚀" target="_blank" rel="noopener">☘</a>
 
-    🎉 خصم 20% على أول مشروع — اذكر كود <strong>FIRST20</strong>
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-text"><strong>🟢 متاح الآن للمشاريع</strong><span data-i="sticky">ابدأ مشروع AI أو أتمتة اليوم</span></div>
+  <a class="sticky-cta-btn" href="https://wa.me/972599930699?text=مرحبا فادي، أريد البدء بمشروع جديد 🚀" target="_blank" data-i="startNow">ابدأ الآن</a>
+</div>
 
-    <button onclick="document.getElementById('notif').style.display='none'">×</button>
+<div class="toast" id="copyToast">✓ تم النسخ</div>
 
+<main>
+<header class="hero">
+  <div class="avatar-wrap">
+    <div class="avatar-ring"></div>
+    <div class="avatar"><img src="avatar.jpg" alt="Fadi AbuSaada" onerror="this.style.display='none';document.getElementById('avatarText').style.display='block'"><span id="avatarText" style="display:none">FA</span></div>
+    <div class="status-dot"></div>
   </div>
 
-  <div class="top-btns">
+  <div class="name-row"><h1 class="name">FADI ABUSAADA</h1><span class="verified">✓</span><span class="pro">PRO</span></div>
+  <div class="badges"><span class="badge cyan">AI ENGINEER</span><span class="badge purple">AUTOMATION</span><span class="badge green">FREELANCER</span></div>
+  <div class="avail" id="availBadge" onclick="toggleAvail()"><i></i><span id="availText">متاح للمشاريع الجديدة</span></div>
+  <p class="tagline"><span id="typingText"></span><span class="typing-cursor"></span></p>
+  <div class="visitor" id="visitorCount">يتصفح الصفحة الآن <strong style="color:#00f5ff">---</strong> زائر</div>
+  <div class="sep"></div>
+</header>
 
-    <button class="top-btn" onclick="toggleTheme()" id="themeBtn">☀️</button>
-
-  </div>
-
-  <a class="wa-float" href="https://wa.me/972599930699?text=مرحبا فادي، أريد استشارة مجانية 🚀" target="_blank" rel="noopener">☘</a>
-
-  <div class="sticky-cta" id="stickyCta">
-
-    <div class="sticky-text">
-
-      <strong>🟢 متاح الآن للمشاريع</strong>
-
-      ابدأ مشروع AI أو أتمتة اليوم
-
-    </div>
-
-    <a class="sticky-cta-btn" href="https://wa.me/972599930699?text=مرحبا فادي، أريد البدء بمشروع جديد 🚀" target="_blank">ابدأ الآن</a>
-
-  </div>
-
-  <div class="toast" id="copyToast">✓ تم النسخ</div>
-
-  <main>
-
-    <header class="hero">
-
-      <div class="avatar-wrap">
-
-        <div class="avatar-ring"></div>
-
-        <div class="avatar">
-
-          <img src="avatar.jpg" alt="Fadi AbuSaada" onerror="this.style.display='none';document.getElementById('avatarText').style.display='block'">
-
-          <span id="avatarText" style="display:none">FA</span>
-
-        </div>
-
-        <div class="status-dot"></div>
-
-      </div>
-
-      <div class="name-row">
-
-        <h1 class="name">FADI ABUSAADA</h1>
-
-        <span class="verified">✓</span>
-
-        <span class="pro">PRO</span>
-
-      </div>
-
-      <div class="badges">
-
-        <span class="badge cyan">AI ENGINEER</span>
-
-        <span class="badge purple">AUTOMATION</span>
-
-        <span class="badge green">FREELANCER</span>
-
-      </div>
-
-      <div class="avail" id="availBadge" onclick="toggleAvail()">
-
-        <i></i><span id="availText">متاح للمشاريع الجديدة</span>
-
-      </div>
-
-      <p class="tagline">
-
-        <span id="typingText"></span><span class="typing-cursor"></span>
-
+<p class="section-title">— ABOUT ME —</p>
+<section class="card">
+  <div class="about">
+    <div class="emoji">👨‍💻</div>
+    <div>
+      <div class="label">WHO AM I</div>
+      <p class="text" data-i="aboutText">
+        أنا <strong>فادي أبوسعدة</strong>، مهندس AI وخبير أتمتة من <strong>فلسطين 🇵🇸</strong>.
+        أساعد أصحاب الأعمال على توفير الوقت وزيادة الإنتاجية عبر أنظمة AI Agents، Chatbots، و Automation تعمل بدلاً عنهم.
       </p>
-
-      <div class="visitor" id="visitorCount">يتصفح الصفحة الآن <strong style="color:#00f5ff">---</strong> زائر</div>
-
-      <div class="sep"></div>
-
-    </header>
-
-    <p class="section-title">— ABOUT ME —</p>
-
-    <section class="card">
-
-      <div class="about">
-
-        <div class="emoji">👨‍💻</div>
-
-        <div>
-
-          <div class="label">WHO AM I</div>
-
-          <p class="text">
-
-            أنا <strong>فادي أبوسعدة</strong>، مهندس AI وخبير أتمتة من <strong>فلسطين 🇵🇸</strong>.
-
-            أساعد أصحاب الأعمال على توفير الوقت وزيادة الإنتاجية عبر أنظمة AI Agents، Chatbots، و Automation تعمل بدلاً عنهم.
-
-            <br><br>
-
-            هدفي بسيط: أحوّل مشكلتك التجارية إلى حل ذكي واضح، سريع، وقابل للاستخدام مباشرة.
-
-          </p>
-
-          <div class="tags">
-
-            <span class="tag">🇵🇸 فلسطين</span>
-
-            <span class="tag">⚡ رد سريع</span>
-
-            <span class="tag">🌍 عربي وإنجليزي</span>
-
-            <span class="tag">🤝 30+ مشروع</span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <section class="stats">
-
-      <div class="stat"><div class="stat-n" data-count="30">0</div><div class="stat-l">PROJECTS</div></div>
-
-      <div class="stat"><div class="stat-n" data-count="25">0</div><div class="stat-l">CLIENTS</div></div>
-
-      <div class="stat"><div class="stat-n" data-count="3">0</div><div class="stat-l">YEARS</div></div>
-
-      <div class="stat"><div class="stat-n">⭐</div><div class="stat-l">TOP RATED</div></div>
-
-    </section>
-
-    <p class="section-title">— CONNECT WITH ME —</p>
-
-    <section class="links">
-
-      <a class="link-card" href="https://eng2fadi.github.io" target="_blank" rel="noopener">
-
-        <div class="link-icon">🌐</div>
-
-        <div class="link-text"><div class="link-title">PORTFOLIO</div><div class="link-sub">eng2fadi.github.io</div></div>
-
-        <div class="arrow">↗</div>
-
-      </a>
-
-      <a class="link-card" href="https://github.com/Eng2Fadi" target="_blank" rel="noopener">
-
-        <div class="link-icon">💻</div>
-
-        <div class="link-text"><div class="link-title">GITHUB</div><div class="link-sub">Eng2Fadi</div></div>
-
-        <div class="arrow">↗</div>
-
-      </a>
-
-      <a class="link-card" href="https://linkedin.com/in/eng-fadi-abusaada" target="_blank" rel="noopener">
-
-        <div class="link-icon">🔗</div>
-
-        <div class="link-text"><div class="link-title">LINKEDIN</div><div class="link-sub">eng-fadi-abusaada</div></div>
-
-        <div class="arrow">↗</div>
-
-      </a>
-
-      <a class="link-card" href="https://wa.me/972599930699" target="_blank" rel="noopener">
-
-        <div class="link-icon">💬</div>
-
-        <div class="link-text"><div class="link-title">WHATSAPP</div><div class="link-sub">+972 599 930 699</div></div>
-
-        <button class="copy-btn" onclick="copyText(event,'972599930699','رقم الواتساب')">📋</button>
-
-        <div class="arrow">↗</div>
-
-      </a>
-
-      <a class="link-card" href="mailto:Eng.Fadi990@gmail.com">
-
-        <div class="link-icon">📧</div>
-
-        <div class="link-text"><div class="link-title">EMAIL</div><div class="link-sub">Eng.Fadi990@gmail.com</div></div>
-
-        <button class="copy-btn" onclick="copyText(event,'Eng.Fadi990@gmail.com','الإيميل')">📋</button>
-
-        <div class="arrow">↗</div>
-
-      </a>
-
-    </section>
-
-    <p class="section-title">— MY SERVICES —</p>
-
-    <section class="services">
-
-      <div class="service-card">
-
-        <div class="service-icon">🤖</div>
-
-        <div class="service-name">AI AGENTS</div>
-
-        <div class="service-desc">وكلاء ذكية تنجز مهام معقدة وتتفاعل مع العملاء والبيانات</div>
-
-        <div class="service-price">من $150</div>
-
-        <a class="service-btn" href="https://wa.me/972599930699?text=مرحبا فادي، أريد AI Agent">احجز الآن</a>
-
-      </div>
-
-      <div class="service-card">
-
-        <div class="service-icon">⚡</div>
-
-        <div class="service-name">AUTOMATION</div>
-
-        <div class="service-desc">أتمتة n8n و Make لتوفير ساعات العمل اليدوي أسبوعياً</div>
-
-        <div class="service-price">من $100</div>
-
-        <a class="service-btn" href="https://wa.me/972599930699?text=مرحبا فادي، أريد Automation">احجز الآن</a>
-
-      </div>
-
-      <div class="service-card">
-
-        <div class="service-icon">💬</div>
-
-        <div class="service-name">CHATBOTS</div>
-
-        <div class="service-desc">شات بوتات ذكية تخدم العملاء وتجيب عن الأسئلة 24/7</div>
-
-        <div class="service-price">من $50</div>
-
-        <a class="service-btn" href="https://wa.me/972599930699?text=مرحبا فادي، أريد Chatbot">احجز الآن</a>
-
-      </div>
-
-      <div class="service-card">
-
-        <div class="service-icon">🌐</div>
-
-        <div class="service-name">SAAS DEV</div>
-
-        <div class="service-desc">تطوير أدوات ومنصات SaaS صغيرة قابلة للإطلاق بسرعة</div>
-
-        <div class="service-price">حسب الطلب</div>
-
-        <a class="service-btn" href="https://wa.me/972599930699?text=مرحبا فادي، أريد SaaS">احجز الآن</a>
-
-      </div>
-
-    </section>
-
-    <p class="section-title">— HOW I WORK —</p>
-
-    <section>
-
-      <div class="how-step">
-
-        <div class="how-num">①</div>
-
-        <div><div class="how-title">نحدد المشكلة</div><div class="how-desc">تخبرني ما الذي يضيع وقتك أو يسبب بطئاً في عملك.</div></div>
-
-      </div>
-
-      <div class="how-step">
-
-        <div class="how-num">②</div>
-
-        <div><div class="how-title">أقترح الحل</div><div class="how-desc">أعطيك خطة واضحة، تكلفة تقريبية، ومدة تنفيذ قبل البدء.</div></div>
-
-      </div>
-
-      <div class="how-step">
-
-        <div class="how-num">③</div>
-
-        <div><div class="how-title">أنفذ وأسلم</div><div class="how-desc">أسلمك النظام مع شرح بسيط ودعم مجاني لمدة 14 يوماً.</div></div>
-
-      </div>
-
-    </section>
-
-    <p class="section-title">— RESULTS —</p>
-
-    <section class="results">
-
-      <div class="result-card"><div class="result-icon">⏰</div><div><div class="result-title">متوسط الوقت الذي يمكن توفيره أسبوعياً</div><div class="result-num">20+ ساعة</div></div></div>
-
-      <div class="result-card"><div class="result-icon">🤖</div><div><div class="result-title">مشاريع AI وأتمتة منجزة</div><div class="result-num">30+ مشروع</div></div></div>
-
-      <div class="result-card"><div class="result-icon">⚡</div><div><div class="result-title">سرعة تسليم المشاريع البسيطة</div><div class="result-num">3-5 أيام</div></div></div>
-
-    </section>
-
-    <p class="section-title">— LATEST PROJECTS —</p>
-
-    <section class="projects">
-
-      <div class="project-card">
-
-        <div class="project-icon">🧠</div>
-
-        <div>
-
-          <div class="project-name">AI SALES AGENT</div>
-
-          <div class="project-desc">وكيل مبيعات ذكي يرد على العملاء ويقودهم للتواصل.</div>
-
-          <div class="project-tags"><span class="ptag">DeepSeek</span><span class="ptag">n8n</span><span class="ptag">WhatsApp</span></div>
-
-        </div>
-
-      </div>
-
-      <div class="project-card">
-
-        <div class="project-icon">📊</div>
-
-        <div>
-
-          <div class="project-name">DATA AUTOMATION</div>
-
-          <div class="project-desc">نظام يجمع البيانات ويولّد تقارير تلقائية.</div>
-
-          <div class="project-tags"><span class="ptag">Make</span><span class="ptag">Sheets</span><span class="ptag">AI</span></div>
-
-        </div>
-
-      </div>
-
-      <div class="project-card">
-
-        <div class="project-icon">🛒</div>
-
-        <div>
-
-          <div class="project-name">E-COMMERCE BOT</div>
-
-          <div class="project-desc">شات بوت متجر إلكتروني يرد على العملاء بالعربية.</div>
-
-          <div class="project-tags"><span class="ptag">Chatbot</span><span class="ptag">API</span><span class="ptag">CRM</span></div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <p class="section-title">— FADI AI SALES ASSISTANT —</p>
-
-    <section class="chat-box">
-
-      <div class="chat-header">
-
-        <div class="chat-avatar">🧠</div>
-
-        <div>
-
-          <div class="chat-name">FADI AI ASSISTANT</div>
-
-          <div class="chat-status">● DeepSeek عبر Cloudflare Worker</div>
-
-        </div>
-
-        <div class="ai-badge">AI</div>
-
-      </div>
-
-      <div class="messages" id="aiMessages"></div>
-
-      <div class="quick" id="aiQuickReplies">
-
-        <button onclick="sendAiQuick(this)">أريد Chatbot</button>
-
-        <button onclick="sendAiQuick(this)">أريد Automation</button>
-
-        <button onclick="sendAiQuick(this)">كم تكلفة AI Agent؟</button>
-
-        <button onclick="sendAiQuick(this)">أريد استشارة مجانية</button>
-
-      </div>
-
-      <div class="input-row">
-
-        <input class="chat-input" id="aiInput" type="text" placeholder="اكتب فكرة مشروعك أو سؤالك..." autocomplete="off">
-
-        <button class="send" id="aiSendBtn" onclick="sendAiMsg()">➤</button>
-
-      </div>
-
-      <div class="powered">⚡ Powered by DeepSeek AI via Cloudflare Worker</div>
-
-    </section>
-
-    <a class="main-cta" href="https://wa.me/972599930699?text=مرحبا فادي، أريد حجز استشارة مجانية 15 دقيقة 🚀" target="_blank">
-
-      📅 احجز استشارة مجانية — 15 دقيقة
-
-    </a>
-
-    <p class="section-title">— LIVE INFO —</p>
-
-    <section class="live-info">
-
-      <div class="live-card">
-
-        <div class="live-icon">🕐</div>
-
-        <div>
-
-          <div class="live-label">LOCAL TIME</div>
-
-          <div class="live-value" id="liveClock">--:--</div>
-
-          <div class="live-sub" id="liveDate">Gaza, Palestine</div>
-
-        </div>
-
-      </div>
-
-      <div class="live-card">
-
-        <div class="live-icon">✅</div>
-
-        <div>
-
-          <div class="live-label">LAST PROJECT</div>
-
-          <div class="live-value" id="lastProjectTime">3 أيام</div>
-
-          <div class="live-sub">أُنجز مؤخراً</div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <p class="section-title">— FAQ —</p>
-
-    <section class="faq">
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-
-        <div class="faq-q"><span>كم يستغرق تنفيذ مشروع AI Agent؟</span><span class="faq-icon">+</span></div>
-
-        <div class="faq-a"><div>المشاريع البسيطة 3-5 أيام، والمتوسطة 1-2 أسبوع. أبدأ بجلسة تحليل مجانية لتحديد الجدول الدقيق.</div></div>
-
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-
-        <div class="faq-q"><span>هل تدعم المشاريع بعد التسليم؟</span><span class="faq-icon">+</span></div>
-
-        <div class="faq-a"><div>نعم، دعم مجاني 14 يوماً بعد التسليم لضمان عمل المشروع بشكل ممتاز.</div></div>
-
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-
-        <div class="faq-q"><span>ما طرق الدفع المتاحة؟</span><span class="faq-icon">+</span></div>
-
-        <div class="faq-a"><div>Payoneer, Wise, Binance Pay، أو عبر Upwork وخمسات ومستقل للحماية الإضافية.</div></div>
-
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-
-        <div class="faq-q"><span>هل أحتاج خبرة تقنية؟</span><span class="faq-icon">+</span></div>
-
-        <div class="faq-a"><div>لا. فقط أخبرني بالمشكلة أو الهدف، وأنا أحولها إلى حل AI عملي.</div></div>
-
-      </div>
-
-    </section>
-
-    <footer>© 2026 FADI ABUSAADA · BUILT WITH AI & PASSION</footer>
-
-  </main>
-
-  <script>
-
-    const WORKER_URL = 'https://noisy-fire-91c3.eng-fadi990.workers.dev';
-
-    const WHATSAPP_URL = 'https://wa.me/972599930699?text=' + encodeURIComponent('مرحبا فادي، تحدثت مع مساعدك الذكي وأريد استشارة مجانية حول مشروعي 🚀');
-
-    window.addEventListener('scroll', () => {
-
-      const h = document.documentElement.scrollHeight - window.innerHeight;
-
-      document.getElementById('scrollBar').style.width = ((window.scrollY / h) * 100) + '%';
-
-      document.getElementById('stickyCta').classList.toggle('show', window.scrollY > 420);
-
+      <div class="tags"><span class="tag">🇵🇸 فلسطين</span><span class="tag">⚡ رد سريع</span><span class="tag">🌍 عربي وإنجليزي</span><span class="tag">🤝 30+ مشروع</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stat"><div class="stat-n" data-count="30">0</div><div class="stat-l">PROJECTS</div></div>
+  <div class="stat"><div class="stat-n" data-count="25">0</div><div class="stat-l">CLIENTS</div></div>
+  <div class="stat"><div class="stat-n" data-count="3">0</div><div class="stat-l">YEARS</div></div>
+  <div class="stat"><div class="stat-n">⭐</div><div class="stat-l">TOP RATED</div></div>
+</section>
+
+<p class="section-title">— CONNECT WITH ME —</p>
+<section class="links">
+  <a class="link-card" href="https://eng2fadi.github.io" target="_blank"><div class="link-icon">🌐</div><div class="link-text"><div class="link-title">PORTFOLIO</div><div class="link-sub">eng2fadi.github.io</div></div><div class="arrow">↗</div></a>
+  <a class="link-card" href="https://github.com/Eng2Fadi" target="_blank"><div class="link-icon">💻</div><div class="link-text"><div class="link-title">GITHUB</div><div class="link-sub">Eng2Fadi</div></div><div class="arrow">↗</div></a>
+  <a class="link-card" href="https://linkedin.com/in/eng-fadi-abusaada" target="_blank"><div class="link-icon">🔗</div><div class="link-text"><div class="link-title">LINKEDIN</div><div class="link-sub">eng-fadi-abusaada</div></div><div class="arrow">↗</div></a>
+  <a class="link-card" href="https://wa.me/972599930699" target="_blank"><div class="link-icon">💬</div><div class="link-text"><div class="link-title">WHATSAPP</div><div class="link-sub">+972 599 930 699</div></div><button class="copy-btn" onclick="copyText(event,'972599930699','رقم الواتساب')">📋</button><div class="arrow">↗</div></a>
+  <a class="link-card" href="mailto:Eng.Fadi990@gmail.com"><div class="link-icon">📧</div><div class="link-text"><div class="link-title">EMAIL</div><div class="link-sub">Eng.Fadi990@gmail.com</div></div><button class="copy-btn" onclick="copyText(event,'Eng.Fadi990@gmail.com','الإيميل')">📋</button><div class="arrow">↗</div></a>
+</section>
+
+<p class="section-title">— MY SERVICES —</p>
+<section class="services">
+  <div class="service-card"><div class="service-icon">🤖</div><div class="service-name">AI AGENTS</div><div class="service-desc">وكلاء ذكية تنجز مهام معقدة وتتفاعل مع العملاء والبيانات</div><div class="service-price">من $150</div><a class="service-btn" href="https://wa.me/972599930699?text=مرحبا فادي، أريد AI Agent">احجز الآن</a></div>
+  <div class="service-card"><div class="service-icon">⚡</div><div class="service-name">AUTOMATION</div><div class="service-desc">أتمتة n8n و Make لتوفير ساعات العمل اليدوي أسبوعياً</div><div class="service-price">من $100</div><a class="service-btn" href="https://wa.me/972599930699?text=مرحبا فادي، أريد Automation">احجز الآن</a></div>
+  <div class="service-card"><div class="service-icon">💬</div><div class="service-name">CHATBOTS</div><div class="service-desc">شات بوتات ذكية تخدم العملاء وتجيب عن الأسئلة 24/7</div><div class="service-price">من $50</div><a class="service-btn" href="https://wa.me/972599930699?text=مرحبا فادي، أريد Chatbot">احجز الآن</a></div>
+  <div class="service-card"><div class="service-icon">🌐</div><div class="service-name">SAAS DEV</div><div class="service-desc">تطوير أدوات ومنصات SaaS صغيرة قابلة للإطلاق بسرعة</div><div class="service-price">حسب الطلب</div><a class="service-btn" href="https://wa.me/972599930699?text=مرحبا فادي، أريد SaaS">احجز الآن</a></div>
+</section>
+
+<p class="section-title">— PROJECT TYPE —</p>
+<section class="selector-card">
+  <div class="selector-title">اختر نوع مشروعك وسيبدأ المساعد بأسئلة مناسبة:</div>
+  <div class="selector-buttons">
+    <button onclick="selectProject('Chatbot')">💬 Chatbot</button>
+    <button onclick="selectProject('Automation')">⚡ Automation</button>
+    <button onclick="selectProject('AI Agent')">🤖 AI Agent</button>
+    <button onclick="selectProject('SaaS')">🌐 SaaS</button>
+  </div>
+</section>
+
+<p class="section-title">— WHY WORK WITH ME —</p>
+<section class="trust-grid">
+  <div class="trust-card"><div class="trust-icon">🧭</div><div><div class="trust-title">خطة واضحة</div><div class="trust-desc">قبل التنفيذ تحصل على تصور واضح، تكلفة تقريبية، وخطوات العمل.</div></div></div>
+  <div class="trust-card"><div class="trust-icon">💵</div><div><div class="trust-title">سعر ثابت</div><div class="trust-desc">لا مفاجآت بعد الاتفاق. تعرف السعر والمدة من البداية.</div></div></div>
+  <div class="trust-card"><div class="trust-icon">🎥</div><div><div class="trust-title">شرح بالفيديو</div><div class="trust-desc">تستلم شرح مبسط لكيفية استخدام النظام بعد التسليم.</div></div></div>
+  <div class="trust-card"><div class="trust-icon">🛟</div><div><div class="trust-title">دعم 14 يوم</div><div class="trust-desc">متابعة بعد التسليم للتأكد أن كل شيء يعمل كما يجب.</div></div></div>
+</section>
+
+<p class="section-title">— RESULTS —</p>
+<section class="results">
+  <div class="result-card"><div class="result-icon">⏰</div><div><div class="result-title">متوسط الوقت الذي يمكن توفيره أسبوعياً</div><div class="result-num">20+ ساعة</div></div></div>
+  <div class="result-card"><div class="result-icon">🤖</div><div><div class="result-title">مشاريع AI وأتمتة منجزة</div><div class="result-num">30+ مشروع</div></div></div>
+  <div class="result-card"><div class="result-icon">⚡</div><div><div class="result-title">سرعة تسليم المشاريع البسيطة</div><div class="result-num">3-5 أيام</div></div></div>
+</section>
+
+<p class="section-title">— FADI AI SALES ASSISTANT —</p>
+<section class="chat-box">
+  <div class="chat-header">
+    <div class="chat-avatar">🧠</div>
+    <div><div class="chat-name">FADI AI ASSISTANT</div><div class="chat-status">● DeepSeek عبر Cloudflare Worker</div></div>
+    <div class="ai-badge">AI</div>
+  </div>
+  <div class="messages" id="aiMessages"></div>
+  <div class="quick" id="aiQuickReplies">
+    <button onclick="sendAiQuick(this)">أريد Chatbot</button>
+    <button onclick="sendAiQuick(this)">أريد Automation</button>
+    <button onclick="sendAiQuick(this)">كم تكلفة AI Agent؟</button>
+    <button onclick="sendAiQuick(this)">أريد استشارة مجانية</button>
+  </div>
+  <div class="input-row">
+    <input class="chat-input" id="aiInput" type="text" placeholder="اكتب فكرة مشروعك أو سؤالك..." autocomplete="off">
+    <button class="send" id="aiSendBtn" onclick="sendAiMsg()">➤</button>
+  </div>
+  <div class="powered">⚡ Powered by DeepSeek AI via Cloudflare Worker</div>
+</section>
+
+<a class="main-cta" href="https://wa.me/972599930699?text=مرحبا فادي، أريد حجز استشارة مجانية 15 دقيقة 🚀" target="_blank">📅 احجز استشارة مجانية — 15 دقيقة</a>
+<a class="emergency-btn" href="https://wa.me/972599930699?text=مرحبا فادي، أريد عرض سعر سريع الآن لمشروع AI 🚀" target="_blank">🔥 أريد عرض سعر الآن</a>
+
+<p class="section-title">— LIVE INFO —</p>
+<section class="live-info">
+  <div class="live-card"><div class="live-icon">🕐</div><div><div class="live-label">LOCAL TIME</div><div class="live-value" id="liveClock">--:--</div><div class="live-sub" id="liveDate">Gaza, Palestine</div></div></div>
+  <div class="live-card"><div class="live-icon">✅</div><div><div class="live-label">LAST PROJECT</div><div class="live-value" id="lastProjectTime">3 أيام</div><div class="live-sub">أُنجز مؤخراً</div></div></div>
+</section>
+
+<p class="section-title">— FAQ —</p>
+<section class="faq">
+  <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span>كم يستغرق تنفيذ مشروع AI Agent؟</span><span class="faq-icon">+</span></div><div class="faq-a"><div>المشاريع البسيطة 3-5 أيام، والمتوسطة 1-2 أسبوع.</div></div></div>
+  <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span>هل تدعم المشاريع بعد التسليم؟</span><span class="faq-icon">+</span></div><div class="faq-a"><div>نعم، دعم مجاني 14 يوماً بعد التسليم.</div></div></div>
+  <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span>هل أحتاج خبرة تقنية؟</span><span class="faq-icon">+</span></div><div class="faq-a"><div>لا. فقط أخبرني بالمشكلة، وأنا أحولها إلى حل AI عملي.</div></div></div>
+</section>
+
+<footer>© 2026 FADI ABUSAADA · BUILT WITH AI & PASSION</footer>
+</main>
+
+<script>
+const WORKER_URL="https://noisy-fire-91c3.eng-fadi990.workers.dev";
+const WHATSAPP_BASE="https://wa.me/972599930699?text=";
+let selectedService="";
+let aiHistory=[];
+let idleTimer=null;
+let isLight=false;
+let isAvail=true;
+let isEn=false;
+
+const AR={
+  phrases:["أوفّر لك 20+ ساعة أسبوعياً بأنظمة AI تعمل بدلاً عنك ⚡","أحوّل مشكلتك التجارية إلى حل AI يعمل 24/7 🤖","وكلاء ذكية + أتمتة = عمل أقل ونتائج أكثر 🚀"],
+  welcome:"👋 أهلاً! أنا مساعد فادي الذكي. اختر نوع مشروعك أو اكتب فكرتك، وسأعطيك تصوراً سريعاً.",
+  idle:"👀 هل ما زلت هنا؟ أقدر أساعدك بخطة AI سريعة لمشروعك خلال دقائق.",
+  cta:"💬 أرسل ملخص المحادثة لفادي",
+  whatsapp:"💬 تواصل واتساب الآن",
+  quote:"💰 احسب تكلفة مشروعي"
+};
+const EN={
+  phrases:["I save businesses 20+ hours weekly with AI automation ⚡","I turn business problems into 24/7 AI systems 🤖","AI Agents + Automation = less work, more results 🚀"],
+  welcome:"👋 Hi! I’m Fadi’s AI assistant. Choose your project type or describe your idea.",
+  idle:"👀 Still here? I can help you create a quick AI plan in minutes.",
+  cta:"💬 Send chat summary to Fadi",
+  whatsapp:"💬 Contact on WhatsApp",
+  quote:"💰 Estimate my project"
+};
+
+function lang(){return isEn?EN:AR}
+
+window.addEventListener("scroll",()=>{
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  document.getElementById("scrollBar").style.width=((window.scrollY/h)*100)+"%";
+  document.getElementById("stickyCta").classList.toggle("show",window.scrollY>420);
+});
+
+function toggleTheme(){
+  isLight=!isLight;
+  document.body.classList.toggle("light",isLight);
+  document.getElementById("themeBtn").textContent=isLight?"🌙":"☀️";
+}
+function toggleLang(){
+  isEn=!isEn;
+  document.body.classList.toggle("en",isEn);
+  document.documentElement.lang=isEn?"en":"ar";
+  document.documentElement.dir=isEn?"ltr":"rtl";
+  document.getElementById("langBtn").textContent=isEn?"AR":"EN";
+  resetTyping();
+}
+function toggleAvail(){
+  isAvail=!isAvail;
+  document.getElementById("availBadge").classList.toggle("busy",!isAvail);
+  document.getElementById("availText").textContent=isAvail?(isEn?"Available for projects":"متاح للمشاريع الجديدة"):(isEn?"Currently busy 🔴":"مشغول حالياً 🔴");
+}
+function copyText(e,text,label){
+  e.preventDefault();e.stopPropagation();
+  navigator.clipboard.writeText(text).then(()=>{
+    const t=document.getElementById("copyToast");
+    t.textContent="✓ تم نسخ "+label;
+    t.classList.add("show");
+    setTimeout(()=>t.classList.remove("show"),2400);
+  });
+}
+
+let p=0,c=0,del=false,typingTimer=null;
+const typing=document.getElementById("typingText");
+function resetTyping(){p=0;c=0;del=false;typing.textContent="";clearTimeout(typingTimer);typeLoop()}
+function typeLoop(){
+  const phrases=lang().phrases;
+  const ph=phrases[p];
+  if(!del){typing.textContent=ph.slice(0,++c);if(c===ph.length){del=true;typingTimer=setTimeout(typeLoop,1800);return}}
+  else{typing.textContent=ph.slice(0,--c);if(c===0){del=false;p=(p+1)%phrases.length}}
+  typingTimer=setTimeout(typeLoop,del?35:70);
+}
+setTimeout(typeLoop,700);
+
+document.querySelectorAll("[data-count]").forEach(el=>{
+  const target=Number(el.dataset.count);let n=0;
+  const timer=setInterval(()=>{n=Math.min(target,n+Math.ceil(target/35));el.textContent=n+"+";if(n>=target)clearInterval(timer)},45);
+});
+function updateVisitors(){
+  const n=39+Math.floor(Math.random()*10);
+  document.getElementById("visitorCount").innerHTML=(isEn?"Visitors online now ":"يتصفح الصفحة الآن ")+'<strong style="color:#00f5ff">'+n+"</strong>"+(isEn?"":" زائر");
+}
+updateVisitors();setInterval(updateVisitors,8000);
+
+function addMsg(text,type,actions=false){
+  const container=document.getElementById("aiMessages");
+  const d=document.createElement("div");
+  d.className="msg "+type;
+  d.textContent=text;
+  if(actions){
+    const box=document.createElement("div");
+    box.className="chat-actions";
+
+    const wa=document.createElement("a");
+    wa.className="chat-cta";
+    wa.href=WHATSAPP_BASE+encodeURIComponent(buildSummary());
+    wa.target="_blank";
+    wa.textContent=lang().whatsapp;
+
+    const sum=document.createElement("a");
+    sum.className="summary-btn";
+    sum.href=WHATSAPP_BASE+encodeURIComponent(buildSummary());
+    sum.target="_blank";
+    sum.textContent=lang().cta;
+
+    box.appendChild(wa);
+    box.appendChild(sum);
+    d.appendChild(document.createElement("br"));
+    d.appendChild(box);
+  }
+  container.appendChild(d);
+  container.scrollTop=container.scrollHeight;
+  return d;
+}
+function addTyping(){
+  const container=document.getElementById("aiMessages");
+  const d=document.createElement("div");
+  d.className="msg bot typing";
+  d.innerHTML='<div class="dots"><span></span><span></span><span></span></div>';
+  container.appendChild(d);
+  container.scrollTop=container.scrollHeight;
+  return d;
+}
+function addQuoteButton(){
+  const container=document.getElementById("aiMessages");
+  const wrap=document.createElement("div");
+  wrap.style.marginTop="6px";
+  const btn=document.createElement("button");
+  btn.textContent=lang().quote;
+  btn.style.padding="8px 14px";
+  btn.style.borderRadius="20px";
+  btn.style.border="1px solid rgba(0,245,255,.35)";
+  btn.style.background="rgba(0,245,255,.08)";
+  btn.style.color="var(--cyan)";
+  btn.style.cursor="pointer";
+  btn.onclick=()=>{document.getElementById("aiInput").value=isEn?"I want to estimate my project cost":"أريد حساب تكلفة مشروعي";sendAiMsg()};
+  wrap.appendChild(btn);
+  container.appendChild(wrap);
+  container.scrollTop=container.scrollHeight;
+}
+function buildSummary(){
+  const lines=[];
+  lines.push("مرحبا فادي، هذا ملخص محادثتي مع مساعدك الذكي:");
+  if(selectedService)lines.push("نوع المشروع: "+selectedService);
+  aiHistory.slice(-8).forEach(m=>lines.push((m.role==="user"?"العميل: ":"المساعد: ")+m.content));
+  lines.push("أريد استشارة مجانية.");
+  return lines.join("\n");
+}
+async function saveLead(lastMessage=""){
+  try{
+    await fetch(WORKER_URL+"/lead",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({
+        service:selectedService,
+        message:lastMessage,
+        summary:buildSummary()
+      })
     });
-
-    function copyText(e, text, label) {
-
-      e.preventDefault();
-
-      e.stopPropagation();
-
-      navigator.clipboard.writeText(text).then(() => {
-
-        const t = document.getElementById('copyToast');
-
-        t.textContent = '✓ تم نسخ ' + label;
-
-        t.classList.add('show');
-
-        setTimeout(() => t.classList.remove('show'), 2400);
-
-      });
-
-    }
-
-    let isLight = false;
-
-    function toggleTheme() {
-
-      isLight = !isLight;
-
-      document.body.classList.toggle('light', isLight);
-
-      document.getElementById('themeBtn').textContent = isLight ? '🌙' : '☀️';
-
-    }
-
-    let isAvail = true;
-
-    function toggleAvail() {
-
-      isAvail = !isAvail;
-
-      const b = document.getElementById('availBadge');
-
-      const t = document.getElementById('availText');
-
-      b.classList.toggle('busy', !isAvail);
-
-      t.textContent = isAvail ? 'متاح للمشاريع الجديدة' : 'مشغول حالياً 🔴';
-
-    }
-
-    const phrases = [
-
-      'أوفّر لك 20+ ساعة أسبوعياً بأنظمة AI تعمل بدلاً عنك ⚡',
-
-      'أحوّل مشكلتك التجارية إلى حل AI يعمل 24/7 🤖',
-
-      'وكلاء ذكية + أتمتة = عمل أقل ونتائج أكثر 🚀'
-
-    ];
-
-    let p = 0, c = 0, del = false;
-
-    const typing = document.getElementById('typingText');
-
-    function typeLoop() {
-
-      const ph = phrases[p];
-
-      if (!del) {
-
-        typing.textContent = ph.slice(0, ++c);
-
-        if (c === ph.length) {
-
-          del = true;
-
-          setTimeout(typeLoop, 1800);
-
-          return;
-
-        }
-
-      } else {
-
-        typing.textContent = ph.slice(0, --c);
-
-        if (c === 0) {
-
-          del = false;
-
-          p = (p + 1) % phrases.length;
-
-        }
-
-      }
-
-      setTimeout(typeLoop, del ? 35 : 70);
-
-    }
-
-    setTimeout(typeLoop, 700);
-
-    document.querySelectorAll('[data-count]').forEach(el => {
-
-      const target = Number(el.dataset.count);
-
-      let n = 0;
-
-      const timer = setInterval(() => {
-
-        n = Math.min(target, n + Math.ceil(target / 35));
-
-        el.textContent = n + '+';
-
-        if (n >= target) clearInterval(timer);
-
-      }, 45);
-
-    });
-
-    function updateVisitors() {
-
-      const n = 39 + Math.floor(Math.random() * 10);
-
-      document.getElementById('visitorCount').innerHTML =
-
-        'يتصفح الصفحة الآن <strong style="color:#00f5ff">' + n + '</strong> زائر';
-
-    }
-
-    updateVisitors();
-
-    setInterval(updateVisitors, 8000);
-
-    function addMsg(text, type, withCta = false) {
-
-      const container = document.getElementById('aiMessages');
-
-      const d = document.createElement('div');
-
-      d.className = 'msg ' + type;
-
-      d.textContent = text;
-
-      if (withCta) {
-
-        const a = document.createElement('a');
-
-        a.className = 'chat-cta';
-
-        a.href = WHATSAPP_URL;
-
-        a.target = '_blank';
-
-        a.rel = 'noopener';
-
-        a.textContent = '💬 تواصل واتساب الآن';
-
-        d.appendChild(document.createElement('br'));
-
-        d.appendChild(a);
-
-      }
-
-      container.appendChild(d);
-
-      container.scrollTop = container.scrollHeight;
-
-      return d;
-
-    }
-
-    function addTyping() {
-
-      const container = document.getElementById('aiMessages');
-
-      const d = document.createElement('div');
-
-      d.className = 'msg bot typing';
-
-      d.innerHTML = '<div class="dots"><span></span><span></span><span></span></div>';
-
-      container.appendChild(d);
-
-      container.scrollTop = container.scrollHeight;
-
-      return d;
-
-    }
-
-    function addQuoteButton() {
-
-      const container = document.getElementById('aiMessages');
-
-      const wrap = document.createElement('div');
-
-      wrap.style.marginTop = '6px';
-
-      const btn = document.createElement('button');
-
-      btn.textContent = '💰 احسب تكلفة مشروعي';
-
-      btn.style.padding = '8px 14px';
-
-      btn.style.borderRadius = '20px';
-
-      btn.style.border = '1px solid rgba(0,245,255,.35)';
-
-      btn.style.background = 'rgba(0,245,255,.08)';
-
-      btn.style.color = 'var(--cyan)';
-
-      btn.style.cursor = 'pointer';
-
-      btn.onclick = () => {
-
-        document.getElementById('aiInput').value = 'أريد حساب تكلفة مشروعي';
-
-        sendAiMsg();
-
-      };
-
-      wrap.appendChild(btn);
-
-      container.appendChild(wrap);
-
-      container.scrollTop = container.scrollHeight;
-
-    }
-
-    let aiHistory = [];
-
-    let idleTimer = null;
-
-    const AI_CONTEXT = `
-
+  }catch(e){console.log("Lead save skipped",e)}
+}
+function selectProject(service){
+  selectedService=service;
+  const msg=isEn?`I want a ${service} project. Ask me the right questions.`:`أريد مشروع ${service}. اسألني الأسئلة المناسبة.`;
+  document.getElementById("aiInput").value=msg;
+  sendAiMsg();
+}
+function resetIdleTimer(){
+  clearTimeout(idleTimer);
+  idleTimer=setTimeout(()=>{addMsg(lang().idle,"bot",false);addQuoteButton()},30000);
+}
+
+const AI_CONTEXT=`
 أنت مساعد مبيعات ذكي يتحدث نيابة عن فادي أبوسعدة، مهندس AI وخبير أتمتة من فلسطين.
+الاسم بالإنجليزي: Fadi AbuSaada.
+الاسم بالعربي: فادي أبوسعدة.
 
-معلومات عن فادي:
-
-- الاسم بالإنجليزي: Fadi AbuSaada.
-
-- الاسم بالعربي: فادي أبوسعدة.
-
-- خبرة 3+ سنوات في الذكاء الاصطناعي والأتمتة.
-
-- أنجز 30+ مشروع لعملاء من السعودية والإمارات والكويت وغيرها.
-
+معلومات:
+- خبرة 3+ سنوات في AI وAutomation.
+- أنجز 30+ مشروع.
 - متخصص في AI Agents، Chatbots، n8n، Make، Automation، SaaS، Next.js.
-
-- الأسعار التقريبية:
-
-  - Chatbot من 50$
-
-  - Automation من 100$
-
-  - AI Agent من 150$
-
-  - SaaS حسب الطلب
-
+- الأسعار: Chatbot من 50$، Automation من 100$، AI Agent من 150$، SaaS حسب الطلب.
 - يقدم استشارة مجانية 15 دقيقة.
-
-- يقدم دعم مجاني 14 يوم بعد التسليم.
-
+- دعم مجاني 14 يوم بعد التسليم.
 - التواصل: واتساب 972599930699، إيميل Eng.Fadi990@gmail.com.
 
 أسلوبك:
-
-- تحدث بالعربية بشكل مختصر وواثق وودي.
-
-- لا تطل الردود. اجعل الرد 3 إلى 5 جمل فقط.
-
+- مختصر، ودي، وواثق.
 - لا تقل إنك نموذج ذكاء اصطناعي.
-
-- ركز على تحويل الزائر إلى عميل محتمل بدون ضغط مزعج.
-
-مهمتك:
-
-1. افهم احتياج الزائر.
-
-2. إذا أظهر اهتماماً، اسأله:
-
-   - ما نوع المشروع؟
-
-   - هل لديه ميزانية تقريبية؟
-
-   - متى يريد البدء؟
-
-3. بعد ذلك شجعه على التواصل عبر واتساب.
-
-4. إذا طلب سعراً، اعطه نطاقاً تقريبياً واطلب تفاصيل أكثر.
-
-5. لا تخترع مشاريع أو شهادات غير مذكورة.
-
+- اجعل الرد 3 إلى 5 جمل.
+- اسأل العميل عن نوع المشروع، الميزانية، وموعد البدء.
+- إذا طلب FAQ عن السعر، الوقت، الدعم، الدفع، أجب بوضوح.
+- لا تخترع معلومات غير موجودة.
+- شجعه على إرسال ملخص المحادثة لفادي عبر واتساب.
 `;
 
-    function resetIdleTimer() {
+async function sendAiMsg(){
+  const inp=document.getElementById("aiInput");
+  const btn=document.getElementById("aiSendBtn");
+  const v=inp.value.trim();
+  if(!v||btn.classList.contains("loading"))return;
 
-      clearTimeout(idleTimer);
+  document.getElementById("aiQuickReplies").style.display="none";
+  addMsg(v,"user");
+  inp.value="";
+  btn.classList.add("loading");
+  btn.textContent="";
+  const ty=addTyping();
 
-      idleTimer = setTimeout(() => {
+  aiHistory.push({role:"user",content:v});
+  resetIdleTimer();
 
-        addMsg('👀 هل ما زلت هنا؟ أقدر أساعدك بخطة AI سريعة لمشروعك خلال دقائق.', 'bot', false);
-
-        addQuoteButton();
-
-      }, 30000);
-
-    }
-
-    async function sendAiMsg() {
-
-      const inp = document.getElementById('aiInput');
-
-      const btn = document.getElementById('aiSendBtn');
-
-      const v = inp.value.trim();
-
-      if (!v || btn.classList.contains('loading')) return;
-
-      document.getElementById('aiQuickReplies').style.display = 'none';
-
-      addMsg(v, 'user');
-
-      inp.value = '';
-
-      btn.classList.add('loading');
-
-      btn.textContent = '';
-
-      const ty = addTyping();
-
-      aiHistory.push({ role: 'user', content: v });
-
-      resetIdleTimer();
-
-      try {
-
-        const res = await fetch(WORKER_URL, {
-
-          method: 'POST',
-
-          headers: {
-
-            'Content-Type': 'application/json'
-
-          },
-
-          body: JSON.stringify({
-
-            messages: [
-
-              { role: 'system', content: AI_CONTEXT },
-
-              ...aiHistory
-
-            ]
-
-          })
-
-        });
-
-        const data = await res.json();
-
-        if (!res.ok) {
-
-          throw new Error(data.error || data.message || 'Worker request failed');
-
-        }
-
-        const reply =
-
-          data.choices?.[0]?.message?.content ||
-
-          'عذراً، لم أستطع توليد رد الآن. تواصل مع فادي مباشرة عبر واتساب 📱';
-
-        ty.remove();
-
-        addMsg(reply, 'bot', true);
-
-        aiHistory.push({ role: 'assistant', content: reply });
-
-        if (aiHistory.length > 12) {
-
-          aiHistory = aiHistory.slice(-12);
-
-        }
-
-      } catch (err) {
-
-        ty.remove();
-
-        console.error(err);
-
-        addMsg('عذراً، حدث خطأ مؤقت. تواصل مع فادي مباشرة عبر واتساب 📱', 'bot', true);
-
-      }
-
-      btn.classList.remove('loading');
-
-      btn.textContent = '➤';
-
-    }
-
-    function sendAiQuick(btn) {
-
-      document.getElementById('aiInput').value = btn.textContent;
-
-      sendAiMsg();
-
-    }
-
-    document.getElementById('aiInput').addEventListener('keydown', e => {
-
-      if (e.key === 'Enter') sendAiMsg();
-
+  try{
+    const res=await fetch(WORKER_URL,{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({messages:[{role:"system",content:AI_CONTEXT},...aiHistory]})
     });
+    const data=await res.json();
+    if(!res.ok)throw new Error(data.error||"Worker request failed");
 
-    ['mousemove','keydown','touchstart','scroll'].forEach(evt => {
+    const reply=data.choices?.[0]?.message?.content||"عذراً، لم أستطع توليد رد الآن. تواصل مع فادي مباشرة عبر واتساب 📱";
+    ty.remove();
+    addMsg(reply,"bot",true);
+    aiHistory.push({role:"assistant",content:reply});
+    if(aiHistory.length>12)aiHistory=aiHistory.slice(-12);
+    saveLead(v);
+  }catch(err){
+    ty.remove();
+    console.error(err);
+    addMsg("عذراً، حدث خطأ مؤقت. تواصل مع فادي مباشرة عبر واتساب 📱","bot",true);
+  }
+  btn.classList.remove("loading");
+  btn.textContent="➤";
+}
+function sendAiQuick(btn){
+  document.getElementById("aiInput").value=btn.textContent;
+  sendAiMsg();
+}
+document.getElementById("aiInput").addEventListener("keydown",e=>{if(e.key==="Enter")sendAiMsg()});
+["mousemove","keydown","touchstart","scroll"].forEach(evt=>document.addEventListener(evt,resetIdleTimer,{passive:true}));
 
-      document.addEventListener(evt, resetIdleTimer, { passive: true });
+setTimeout(()=>{addMsg(lang().welcome,"bot",true);addQuoteButton();resetIdleTimer()},1200);
 
-    });
-
-    setTimeout(() => {
-
-      addMsg('👋 أهلاً! أنا مساعد فادي الذكي. هل عندك مشروع AI أو أتمتة حالياً، أم تريد استشارة سريعة؟', 'bot', true);
-
-      addQuoteButton();
-
-      resetIdleTimer();
-
-    }, 1200);
-
-    function updateClock() {
-
-      const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Gaza' }));
-
-      const h = String(now.getHours()).padStart(2, '0');
-
-      const m = String(now.getMinutes()).padStart(2, '0');
-
-      const s = String(now.getSeconds()).padStart(2, '0');
-
-      document.getElementById('liveClock').textContent = h + ':' + m + ':' + s;
-
-      const days = ['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
-
-      const hr = now.getHours();
-
-      document.getElementById('liveDate').textContent =
-
-        days[now.getDay()] + ' — ' +
-
-        (hr < 6 ? '🌙 ليل' : hr < 12 ? '🌅 صباح' : hr < 17 ? '☀️ نهار' : hr < 21 ? '🌆 مساء' : '🌙 ليل');
-
-    }
-
-    updateClock();
-
-    setInterval(updateClock, 1000);
-
-    document.getElementById('lastProjectTime').textContent =
-
-      ['3 أيام','5 أيام','أسبوع','يومين'][Math.floor(Math.random() * 4)];
-
-    function toggleFaq(item) {
-
-      const open = item.classList.contains('open');
-
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-
-      if (!open) item.classList.add('open');
-
-    }
-
-  </script>
-
+function updateClock(){
+  const now=new Date(new Date().toLocaleString("en-US",{timeZone:"Asia/Gaza"}));
+  const h=String(now.getHours()).padStart(2,"0"),m=String(now.getMinutes()).padStart(2,"0"),s=String(now.getSeconds()).padStart(2,"0");
+  document.getElementById("liveClock").textContent=h+":"+m+":"+s;
+  const days=["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"];
+  const hr=now.getHours();
+  document.getElementById("liveDate").textContent=days[now.getDay()]+" — "+(hr<6?"🌙 ليل":hr<12?"🌅 صباح":hr<17?"☀️ نهار":hr<21?"🌆 مساء":"🌙 ليل");
+}
+updateClock();setInterval(updateClock,1000);
+document.getElementById("lastProjectTime").textContent=["3 أيام","5 أيام","أسبوع","يومين"][Math.floor(Math.random()*4)];
+function toggleFaq(item){
+  const open=item.classList.contains("open");
+  document.querySelectorAll(".faq-item").forEach(i=>i.classList.remove("open"));
+  if(!open)item.classList.add("open");
+}
+</script>
 </body>
-
 </html>
