@@ -337,3 +337,132 @@ window.open("https://wa.me/972599930699")
 </html>
 
   
+<script>
+
+let step = 0;
+
+let lead = {
+  type: "",
+  budget: "",
+  details: ""
+};
+
+function addMsg(text, type){
+  const d = document.createElement("div");
+  d.className = "msg " + type;
+  d.textContent = text;
+  document.getElementById("chatMessages").appendChild(d);
+}
+
+async function sendMsg(){
+
+  const input = document.getElementById("chatInput");
+  const msg = input.value.trim();
+  if(!msg) return;
+
+  addMsg(msg,"user");
+  input.value = "";
+
+  if(step === 0){
+    lead.type = msg;
+    addMsg("💰 ما ميزانيتك؟","bot");
+    step = 1;
+    return;
+  }
+
+  if(step === 1){
+    lead.budget = msg;
+    addMsg("📋 اشرح مشروعك","bot");
+    step = 2;
+    return;
+  }
+
+  if(step === 2){
+
+    lead.details = msg;
+    saveLead();
+
+    addMsg("⏳ جاري تحليل مشروعك...","bot");
+
+    try{
+
+      const res = await fetch("https://noisy-fire-91c3.eng-fadi990.workers.dev",{
+        method:"POST",
+        headers:{ "Content-Type":"application/json" },
+        body:JSON.stringify({
+          messages:[{
+            role:"user",
+            content:`
+حلل المشروع كخبير AI Freelancer:
+
+مشروع: ${lead.type}
+ميزانية: ${lead.budget}
+تفاصيل: ${lead.details}
+
+- حدد التعقيد
+- اعطِ سعر مناسب للسوق العربي
+- اعطِ مدة
+- اكتب بشكل مقنع
+`
+          }]
+        })
+      });
+
+      const data = await res.json();
+      const reply = data.choices?.[0]?.message?.content || "خطأ";
+
+      addMsg(reply,"bot");
+
+      addMsg("📱 تواصل معي الآن 👇","bot");
+
+      const btn = document.createElement("div");
+      btn.className="msg bot";
+      btn.innerHTML="اضغط للواتساب";
+      btn.onclick=()=>window.open("https://wa.me/972599930699");
+
+      document.getElementById("chatMessages").appendChild(btn);
+
+    }catch(e){
+      addMsg("❌ خطأ","bot");
+    }
+
+    step = 0;
+  }
+}
+function saveLead(){
+  localStorage.setItem("lead",JSON.stringify(lead));
+}
+
+function loadLead(){
+  const data = localStorage.getItem("lead");
+  if(!data) return;
+
+  const old = JSON.parse(data);
+
+  if(old.type){
+    setTimeout(()=>{
+      addMsg("👀 رجعت! نكمل مشروعك؟","bot");
+      addMsg("📌 مشروعك: "+old.type,"bot");
+    },1500);
+  }
+}
+
+loadLead();
+
+
+
+
+
+  
+  setTimeout(()=>{
+  addMsg("👋 أهلاً! احكيلي عن مشروعك","bot");
+},800);
+
+</script>
+</body>
+</html>
+
+
+
+
+  
